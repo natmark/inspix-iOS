@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		F73844DD1E7287D4000E7D18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73844DC1E7287D3000E7D18 /* AppDelegate.swift */; };
-		F73844DF1E7287D4000E7D18 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73844DE1E7287D4000E7D18 /* ViewController.swift */; };
 		F73844E21E7287D4000E7D18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F73844E01E7287D4000E7D18 /* Main.storyboard */; };
 		F73844E51E7287D4000E7D18 /* inspix_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F73844E31E7287D4000E7D18 /* inspix_iOS.xcdatamodeld */; };
 		F73844E71E7287D4000E7D18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F73844E61E7287D4000E7D18 /* Assets.xcassets */; };
 		F73844EA1E7287D4000E7D18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F73844E81E7287D4000E7D18 /* LaunchScreen.storyboard */; };
 		F73844F51E7287D4000E7D18 /* inspix_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73844F41E7287D4000E7D18 /* inspix_iOSTests.swift */; };
+		F748E40F1E76946500356B7E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748E40E1E76946500356B7E /* LoginViewController.swift */; };
+		F748E4111E76970700356B7E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F748E4101E76970700356B7E /* Home.storyboard */; };
+		F748E4171E76975C00356B7E /* Photo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F748E4161E76975C00356B7E /* Photo.storyboard */; };
+		F748E4191E76976F00356B7E /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F748E4181E76976F00356B7E /* Notification.storyboard */; };
+		F748E41B1E76978200356B7E /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F748E41A1E76978200356B7E /* MyPage.storyboard */; };
+		F748E41D1E76982900356B7E /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F748E41C1E76982900356B7E /* Camera.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +34,6 @@
 /* Begin PBXFileReference section */
 		F73844D91E7287D3000E7D18 /* inspix-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "inspix-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F73844DC1E7287D3000E7D18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F73844DE1E7287D4000E7D18 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F73844E11E7287D4000E7D18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F73844E41E7287D4000E7D18 /* inspix_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = inspix_iOS.xcdatamodel; sourceTree = "<group>"; };
 		F73844E61E7287D4000E7D18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +42,12 @@
 		F73844F01E7287D4000E7D18 /* inspix-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "inspix-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F73844F41E7287D4000E7D18 /* inspix_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inspix_iOSTests.swift; sourceTree = "<group>"; };
 		F73844F61E7287D4000E7D18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F748E40E1E76946500356B7E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F748E4101E76970700356B7E /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		F748E4161E76975C00356B7E /* Photo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Photo.storyboard; sourceTree = "<group>"; };
+		F748E4181E76976F00356B7E /* Notification.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
+		F748E41A1E76978200356B7E /* MyPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
+		F748E41C1E76982900356B7E /* Camera.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Camera.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,9 +71,9 @@
 		F73844D01E7287D3000E7D18 = {
 			isa = PBXGroup;
 			children = (
+				F73844DA1E7287D3000E7D18 /* Products */,
 				F73844DB1E7287D3000E7D18 /* inspix-iOS */,
 				F73844F31E7287D4000E7D18 /* inspix-iOSTests */,
-				F73844DA1E7287D3000E7D18 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,12 +89,12 @@
 		F73844DB1E7287D3000E7D18 /* inspix-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				F748E41E1E769C1400356B7E /* assets */,
+				F748E4201E769C4E00356B7E /* src */,
+				F748E41F1E769C2C00356B7E /* storyboards */,
 				F73844DC1E7287D3000E7D18 /* AppDelegate.swift */,
-				F73844DE1E7287D4000E7D18 /* ViewController.swift */,
-				F73844E01E7287D4000E7D18 /* Main.storyboard */,
-				F73844E61E7287D4000E7D18 /* Assets.xcassets */,
-				F73844E81E7287D4000E7D18 /* LaunchScreen.storyboard */,
 				F73844EB1E7287D4000E7D18 /* Info.plist */,
+				F73844E81E7287D4000E7D18 /* LaunchScreen.storyboard */,
 				F73844E31E7287D4000E7D18 /* inspix_iOS.xcdatamodeld */,
 			);
 			path = "inspix-iOS";
@@ -93,10 +103,96 @@
 		F73844F31E7287D4000E7D18 /* inspix-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				F73844F41E7287D4000E7D18 /* inspix_iOSTests.swift */,
 				F73844F61E7287D4000E7D18 /* Info.plist */,
+				F73844F41E7287D4000E7D18 /* inspix_iOSTests.swift */,
 			);
 			path = "inspix-iOSTests";
+			sourceTree = "<group>";
+		};
+		F748E41E1E769C1400356B7E /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				F73844E61E7287D4000E7D18 /* Assets.xcassets */,
+			);
+			name = assets;
+			path = assets;
+			sourceTree = "<group>";
+		};
+		F748E41F1E769C2C00356B7E /* storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				F748E41C1E76982900356B7E /* Camera.storyboard */,
+				F748E4101E76970700356B7E /* Home.storyboard */,
+				F73844E01E7287D4000E7D18 /* Main.storyboard */,
+				F748E41A1E76978200356B7E /* MyPage.storyboard */,
+				F748E4181E76976F00356B7E /* Notification.storyboard */,
+				F748E4161E76975C00356B7E /* Photo.storyboard */,
+			);
+			name = storyboards;
+			path = storyboards;
+			sourceTree = "<group>";
+		};
+		F748E4201E769C4E00356B7E /* src */ = {
+			isa = PBXGroup;
+			children = (
+				F748E4241E769C8300356B7E /* commons */,
+				F748E4261E769C8F00356B7E /* connection */,
+				F748E4251E769C8B00356B7E /* const */,
+				F748E4211E769C6500356B7E /* controllers */,
+				F748E4231E769C7D00356B7E /* models */,
+				F748E4221E769C7400356B7E /* views */,
+			);
+			name = src;
+			path = src;
+			sourceTree = "<group>";
+		};
+		F748E4211E769C6500356B7E /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F748E40E1E76946500356B7E /* LoginViewController.swift */,
+			);
+			name = controllers;
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		F748E4221E769C7400356B7E /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = views;
+			path = views;
+			sourceTree = "<group>";
+		};
+		F748E4231E769C7D00356B7E /* models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = models;
+			path = models;
+			sourceTree = "<group>";
+		};
+		F748E4241E769C8300356B7E /* commons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = commons;
+			path = commons;
+			sourceTree = "<group>";
+		};
+		F748E4251E769C8B00356B7E /* const */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = const;
+			path = const;
+			sourceTree = "<group>";
+		};
+		F748E4261E769C8F00356B7E /* connection */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = connection;
+			path = connection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,8 +281,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F73844EA1E7287D4000E7D18 /* LaunchScreen.storyboard in Resources */,
+				F748E41D1E76982900356B7E /* Camera.storyboard in Resources */,
 				F73844E71E7287D4000E7D18 /* Assets.xcassets in Resources */,
+				F748E4171E76975C00356B7E /* Photo.storyboard in Resources */,
 				F73844E21E7287D4000E7D18 /* Main.storyboard in Resources */,
+				F748E41B1E76978200356B7E /* MyPage.storyboard in Resources */,
+				F748E4111E76970700356B7E /* Home.storyboard in Resources */,
+				F748E4191E76976F00356B7E /* Notification.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,7 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F73844DF1E7287D4000E7D18 /* ViewController.swift in Sources */,
+				F748E40F1E76946500356B7E /* LoginViewController.swift in Sources */,
 				F73844DD1E7287D4000E7D18 /* AppDelegate.swift in Sources */,
 				F73844E51E7287D4000E7D18 /* inspix_iOS.xcdatamodeld in Sources */,
 			);
@@ -235,6 +336,7 @@
 				F73844E11E7287D4000E7D18 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		F73844E81E7287D4000E7D18 /* LaunchScreen.storyboard */ = {
@@ -243,6 +345,7 @@
 				F73844E91E7287D4000E7D18 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
