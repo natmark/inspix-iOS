@@ -19,6 +19,7 @@
 		F748E4191E76976F00356B7E /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F748E4181E76976F00356B7E /* Notification.storyboard */; };
 		F748E41B1E76978200356B7E /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F748E41A1E76978200356B7E /* MyPage.storyboard */; };
 		F748E41D1E76982900356B7E /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F748E41C1E76982900356B7E /* Camera.storyboard */; };
+		F748E4281E769E8E00356B7E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748E4271E769E8E00356B7E /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		F748E4181E76976F00356B7E /* Notification.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
 		F748E41A1E76978200356B7E /* MyPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		F748E41C1E76982900356B7E /* Camera.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Camera.storyboard; sourceTree = "<group>"; };
+		F748E4271E769E8E00356B7E /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +116,6 @@
 			children = (
 				F73844E61E7287D4000E7D18 /* Assets.xcassets */,
 			);
-			name = assets;
 			path = assets;
 			sourceTree = "<group>";
 		};
@@ -128,7 +129,6 @@
 				F748E4181E76976F00356B7E /* Notification.storyboard */,
 				F748E4161E76975C00356B7E /* Photo.storyboard */,
 			);
-			name = storyboards;
 			path = storyboards;
 			sourceTree = "<group>";
 		};
@@ -142,7 +142,6 @@
 				F748E4231E769C7D00356B7E /* models */,
 				F748E4221E769C7400356B7E /* views */,
 			);
-			name = src;
 			path = src;
 			sourceTree = "<group>";
 		};
@@ -150,8 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				F748E40E1E76946500356B7E /* LoginViewController.swift */,
+				F748E4271E769E8E00356B7E /* TabBarController.swift */,
 			);
-			name = controllers;
 			path = controllers;
 			sourceTree = "<group>";
 		};
@@ -159,7 +158,6 @@
 			isa = PBXGroup;
 			children = (
 			);
-			name = views;
 			path = views;
 			sourceTree = "<group>";
 		};
@@ -167,7 +165,6 @@
 			isa = PBXGroup;
 			children = (
 			);
-			name = models;
 			path = models;
 			sourceTree = "<group>";
 		};
@@ -175,7 +172,6 @@
 			isa = PBXGroup;
 			children = (
 			);
-			name = commons;
 			path = commons;
 			sourceTree = "<group>";
 		};
@@ -183,7 +179,6 @@
 			isa = PBXGroup;
 			children = (
 			);
-			name = const;
 			path = const;
 			sourceTree = "<group>";
 		};
@@ -191,7 +186,6 @@
 			isa = PBXGroup;
 			children = (
 			);
-			name = connection;
 			path = connection;
 			sourceTree = "<group>";
 		};
@@ -306,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F748E40F1E76946500356B7E /* LoginViewController.swift in Sources */,
+				F748E4281E769E8E00356B7E /* TabBarController.swift in Sources */,
 				F73844DD1E7287D4000E7D18 /* AppDelegate.swift in Sources */,
 				F73844E51E7287D4000E7D18 /* inspix_iOS.xcdatamodeld in Sources */,
 			);
