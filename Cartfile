@@ -1,0 +1,3 @@
+github "Anviking/Decodable" ~> 0.5
+github "ishkawa/APIKit" ~> 3.0
+github "pinterest/PINRemoteImage"
