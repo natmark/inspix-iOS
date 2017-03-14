@@ -11,7 +11,7 @@
         <!--Notification View Controller-->
         <scene sceneID="GEU-2t-Giy">
             <objects>
-                <tableViewController id="RM8-Xs-NbI" sceneMemberID="viewController">
+                <tableViewController id="RM8-Xs-NbI" customClass="NotificationTableViewController" customModule="inspix_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Wxw-T8-gFX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,9 +43,10 @@
                 <navigationController id="Ih4-ic-Er9" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="FDO-Er-aQR"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="stE-zd-7NX">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="stE-zd-7NX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="RM8-Xs-NbI" kind="relationship" relationship="rootViewController" id="Vp0-qg-eLY"/>

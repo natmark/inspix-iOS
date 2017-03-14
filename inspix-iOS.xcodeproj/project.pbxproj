@@ -16,6 +16,12 @@
 		F73965161E77CAD500F347C3 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73965151E77CAD500F347C3 /* String.swift */; };
 		F748D0401E77D39C001C9419 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F748D03F1E77D39C001C9419 /* PKHUD.framework */; };
 		F748D0421E77D7A1001C9419 /* UserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748D0411E77D7A1001C9419 /* UserLogin.swift */; };
+		F748D0441E7804BB001C9419 /* MyPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748D0431E7804BB001C9419 /* MyPageTableViewController.swift */; };
+		F748D04A1E7805C4001C9419 /* Common.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F748D0491E7805C4001C9419 /* Common.xcassets */; };
+		F748D04C1E780629001C9419 /* NotificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748D04B1E780629001C9419 /* NotificationTableViewController.swift */; };
+		F748D04E1E780658001C9419 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748D04D1E780658001C9419 /* PhotoViewController.swift */; };
+		F748D0501E780669001C9419 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748D04F1E780669001C9419 /* CameraViewController.swift */; };
+		F748D0521E780676001C9419 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748D0511E780676001C9419 /* HomeTableViewController.swift */; };
 		F748E40F1E76946500356B7E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748E40E1E76946500356B7E /* LoginViewController.swift */; };
 		F748E4111E76970700356B7E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F748E4101E76970700356B7E /* Home.storyboard */; };
 		F748E4171E76975C00356B7E /* Photo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F748E4161E76975C00356B7E /* Photo.storyboard */; };
@@ -60,6 +66,12 @@
 		F73965151E77CAD500F347C3 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		F748D03F1E77D39C001C9419 /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = Carthage/Build/iOS/PKHUD.framework; sourceTree = "<group>"; };
 		F748D0411E77D7A1001C9419 /* UserLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLogin.swift; sourceTree = "<group>"; };
+		F748D0431E7804BB001C9419 /* MyPageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyPageTableViewController.swift; path = ../../storyboards/MyPageTableViewController.swift; sourceTree = "<group>"; };
+		F748D0491E7805C4001C9419 /* Common.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Common.xcassets; sourceTree = "<group>"; };
+		F748D04B1E780629001C9419 /* NotificationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewController.swift; sourceTree = "<group>"; };
+		F748D04D1E780658001C9419 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		F748D04F1E780669001C9419 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		F748D0511E780676001C9419 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		F748E40E1E76946500356B7E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F748E4101E76970700356B7E /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		F748E4161E76975C00356B7E /* Photo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Photo.storyboard; sourceTree = "<group>"; };
@@ -151,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				F73844E61E7287D4000E7D18 /* Assets.xcassets */,
+				F748D0491E7805C4001C9419 /* Common.xcassets */,
 			);
 			path = assets;
 			sourceTree = "<group>";
@@ -184,6 +197,11 @@
 		F748E4211E769C6500356B7E /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F748D0431E7804BB001C9419 /* MyPageTableViewController.swift */,
+				F748D04D1E780658001C9419 /* PhotoViewController.swift */,
+				F748D04F1E780669001C9419 /* CameraViewController.swift */,
+				F748D0511E780676001C9419 /* HomeTableViewController.swift */,
+				F748D04B1E780629001C9419 /* NotificationTableViewController.swift */,
 				F748E40E1E76946500356B7E /* LoginViewController.swift */,
 				F748E4521E77C57700356B7E /* UserRegistViewController.swift */,
 				F748E4271E769E8E00356B7E /* TabBarController.swift */,
@@ -340,6 +358,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F748D04A1E7805C4001C9419 /* Common.xcassets in Resources */,
 				F73844EA1E7287D4000E7D18 /* LaunchScreen.storyboard in Resources */,
 				F748E41D1E76982900356B7E /* Camera.storyboard in Resources */,
 				F73844E71E7287D4000E7D18 /* Assets.xcassets in Resources */,
@@ -388,6 +407,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F748D04C1E780629001C9419 /* NotificationTableViewController.swift in Sources */,
 				F748E44B1E77BBFA00356B7E /* InspixRequest.swift in Sources */,
 				F748E4531E77C57700356B7E /* UserRegistViewController.swift in Sources */,
 				F73965161E77CAD500F347C3 /* String.swift in Sources */,
@@ -395,8 +415,12 @@
 				F748D0421E77D7A1001C9419 /* UserLogin.swift in Sources */,
 				F748E40F1E76946500356B7E /* LoginViewController.swift in Sources */,
 				F748E44F1E77BD5300356B7E /* Util.swift in Sources */,
+				F748D0521E780676001C9419 /* HomeTableViewController.swift in Sources */,
 				F748E4281E769E8E00356B7E /* TabBarController.swift in Sources */,
+				F748D0441E7804BB001C9419 /* MyPageTableViewController.swift in Sources */,
 				F73844DD1E7287D4000E7D18 /* AppDelegate.swift in Sources */,
+				F748D0501E780669001C9419 /* CameraViewController.swift in Sources */,
+				F748D04E1E780658001C9419 /* PhotoViewController.swift in Sources */,
 				F748E4511E77BD8B00356B7E /* UserConfigManager.swift in Sources */,
 				F73844E51E7287D4000E7D18 /* inspix_iOS.xcdatamodeld in Sources */,
 			);

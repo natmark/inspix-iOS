@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Home Table View Controller-->
         <scene sceneID="VfA-ih-n1p">
             <objects>
-                <tableViewController id="YwF-kT-O4C" sceneMemberID="viewController">
+                <tableViewController id="YwF-kT-O4C" customClass="HomeTableViewController" customModule="inspix_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="kdR-o6-bP8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,7 +31,7 @@
                             <outlet property="delegate" destination="YwF-kT-O4C" id="EiN-am-7hJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Home View Controller" id="8jp-hE-CkH"/>
+                    <navigationItem key="navigationItem" id="8jp-hE-CkH"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MId-x9-XD0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -43,9 +43,10 @@
                 <navigationController id="TUA-EJ-bLH" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="lMG-qH-igs"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UKp-Xf-SPg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="UKp-Xf-SPg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="YwF-kT-O4C" kind="relationship" relationship="rootViewController" id="5EY-uh-RwI"/>

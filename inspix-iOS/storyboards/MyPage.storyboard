@@ -11,7 +11,7 @@
         <!--MyPage View Controller-->
         <scene sceneID="AEK-4s-psd">
             <objects>
-                <tableViewController id="ciT-Fh-GYW" sceneMemberID="viewController">
+                <tableViewController id="ciT-Fh-GYW" customClass="MyPageTableViewController" customModule="inspix_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="zka-7f-JfN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
