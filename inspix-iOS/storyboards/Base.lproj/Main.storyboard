@@ -8,6 +8,51 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--User Regist View Controller-->
+        <scene sceneID="x7p-Qe-bRT">
+            <objects>
+                <viewController storyboardIdentifier="UserRegistViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cDF-0w-mYG" customClass="UserRegistViewController" customModule="inspix_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gZz-0W-q2g"/>
+                        <viewControllerLayoutGuide type="bottom" id="JPr-B0-IEo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hPg-14-YZg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KqS-l2-pQ2">
+                                <rect key="frame" x="66" y="193" width="242" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ユーザ名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zyM-p8-jZm">
+                                <rect key="frame" x="66" y="158" width="85" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pR-12-Cl9">
+                                <rect key="frame" x="164" y="419" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="登録"/>
+                                <connections>
+                                    <action selector="userRegist:" destination="cDF-0w-mYG" eventType="touchUpInside" id="bzv-yq-YRE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="userNameTextField" destination="KqS-l2-pQ2" id="N7z-0M-l0Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GaB-Mc-U8j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1093.5999999999999" y="33.733133433283363"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -19,11 +64,25 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashIcon" translatesAutoresizingMaskIntoConstraints="NO" id="x5z-2Y-bw3">
+                                <rect key="frame" x="133" y="258" width="108" height="151"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="151" id="CYf-E8-1RS"/>
+                                    <constraint firstAttribute="width" constant="108" id="DlG-p5-X1o"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="x5z-2Y-bw3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="96g-4Y-ivZ"/>
+                            <constraint firstItem="x5z-2Y-bw3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eUT-Nw-4fK"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YN3-Qi-9Qr"/>
                     <connections>
                         <segue destination="kUP-Zi-Xab" kind="presentation" modalTransitionStyle="crossDissolve" id="8L3-Ge-S01"/>
+                        <segue destination="cDF-0w-mYG" kind="show" identifier="" id="fUM-7h-mN4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -121,4 +180,7 @@
             <point key="canvasLocation" x="228" y="774.96251874062978"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="SplashIcon" width="192" height="269"/>
+    </resources>
 </document>

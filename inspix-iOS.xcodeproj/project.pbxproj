@@ -13,6 +13,7 @@
 		F73844E71E7287D4000E7D18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F73844E61E7287D4000E7D18 /* Assets.xcassets */; };
 		F73844EA1E7287D4000E7D18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F73844E81E7287D4000E7D18 /* LaunchScreen.storyboard */; };
 		F73844F51E7287D4000E7D18 /* inspix_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73844F41E7287D4000E7D18 /* inspix_iOSTests.swift */; };
+		F73965161E77CAD500F347C3 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73965151E77CAD500F347C3 /* String.swift */; };
 		F748E40F1E76946500356B7E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748E40E1E76946500356B7E /* LoginViewController.swift */; };
 		F748E4111E76970700356B7E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F748E4101E76970700356B7E /* Home.storyboard */; };
 		F748E4171E76975C00356B7E /* Photo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F748E4161E76975C00356B7E /* Photo.storyboard */; };
@@ -27,9 +28,11 @@
 		F748E4341E77851600356B7E /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F748E42F1E77851600356B7E /* Result.framework */; };
 		F748E4491E77BBF400356B7E /* UserRegist.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748E4481E77BBF400356B7E /* UserRegist.swift */; };
 		F748E44B1E77BBFA00356B7E /* InspixRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748E44A1E77BBFA00356B7E /* InspixRequest.swift */; };
-		F748E44D1E77BCEE00356B7E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748E44C1E77BCEE00356B7E /* String.swift */; };
 		F748E44F1E77BD5300356B7E /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748E44E1E77BD5300356B7E /* Util.swift */; };
 		F748E4511E77BD8B00356B7E /* UserConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748E4501E77BD8B00356B7E /* UserConfigManager.swift */; };
+		F748E4531E77C57700356B7E /* UserRegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748E4521E77C57700356B7E /* UserRegistViewController.swift */; };
+		F748E4551E77C63B00356B7E /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F748E4541E77C63B00356B7E /* CryptoSwift.framework */; };
+		F748E4571E77C68700356B7E /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F748E4561E77C68700356B7E /* SVProgressHUD.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,7 @@
 		F73844F01E7287D4000E7D18 /* inspix-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "inspix-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F73844F41E7287D4000E7D18 /* inspix_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inspix_iOSTests.swift; sourceTree = "<group>"; };
 		F73844F61E7287D4000E7D18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F73965151E77CAD500F347C3 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		F748E40E1E76946500356B7E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F748E4101E76970700356B7E /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		F748E4161E76975C00356B7E /* Photo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Photo.storyboard; sourceTree = "<group>"; };
@@ -67,9 +71,11 @@
 		F748E42F1E77851600356B7E /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		F748E4481E77BBF400356B7E /* UserRegist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRegist.swift; sourceTree = "<group>"; };
 		F748E44A1E77BBFA00356B7E /* InspixRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspixRequest.swift; sourceTree = "<group>"; };
-		F748E44C1E77BCEE00356B7E /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = SOURCE_ROOT; };
 		F748E44E1E77BD5300356B7E /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		F748E4501E77BD8B00356B7E /* UserConfigManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserConfigManager.swift; sourceTree = "<group>"; };
+		F748E4521E77C57700356B7E /* UserRegistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRegistViewController.swift; sourceTree = "<group>"; };
+		F748E4541E77C63B00356B7E /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
+		F748E4561E77C68700356B7E /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F748E4571E77C68700356B7E /* SVProgressHUD.framework in Frameworks */,
+				F748E4551E77C63B00356B7E /* CryptoSwift.framework in Frameworks */,
 				F748E4301E77851600356B7E /* APIKit.framework in Frameworks */,
 				F748E4311E77851600356B7E /* Decodable.framework in Frameworks */,
 				F748E4321E77851600356B7E /* PINCache.framework in Frameworks */,
@@ -175,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				F748E40E1E76946500356B7E /* LoginViewController.swift */,
+				F748E4521E77C57700356B7E /* UserRegistViewController.swift */,
 				F748E4271E769E8E00356B7E /* TabBarController.swift */,
 			);
 			path = controllers;
@@ -223,6 +232,8 @@
 		F748E42A1E77851500356B7E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F748E4561E77C68700356B7E /* SVProgressHUD.framework */,
+				F748E4541E77C63B00356B7E /* CryptoSwift.framework */,
 				F748E42B1E77851600356B7E /* APIKit.framework */,
 				F748E42C1E77851600356B7E /* Decodable.framework */,
 				F748E42D1E77851600356B7E /* PINCache.framework */,
@@ -235,7 +246,7 @@
 		F748E43D1E77BA4C00356B7E /* extensions */ = {
 			isa = PBXGroup;
 			children = (
-				F748E44C1E77BCEE00356B7E /* String.swift */,
+				F73965151E77CAD500F347C3 /* String.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -358,6 +369,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/PINCache.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/PINRemoteImage.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CryptoSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
 			);
 			outputPaths = (
 			);
@@ -373,11 +386,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F748E44B1E77BBFA00356B7E /* InspixRequest.swift in Sources */,
+				F748E4531E77C57700356B7E /* UserRegistViewController.swift in Sources */,
+				F73965161E77CAD500F347C3 /* String.swift in Sources */,
 				F748E4491E77BBF400356B7E /* UserRegist.swift in Sources */,
 				F748E40F1E76946500356B7E /* LoginViewController.swift in Sources */,
 				F748E44F1E77BD5300356B7E /* Util.swift in Sources */,
 				F748E4281E769E8E00356B7E /* TabBarController.swift in Sources */,
-				F748E44D1E77BCEE00356B7E /* String.swift in Sources */,
 				F73844DD1E7287D4000E7D18 /* AppDelegate.swift in Sources */,
 				F748E4511E77BD8B00356B7E /* UserConfigManager.swift in Sources */,
 				F73844E51E7287D4000E7D18 /* inspix_iOS.xcdatamodeld in Sources */,

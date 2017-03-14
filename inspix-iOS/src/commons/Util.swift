@@ -10,7 +10,7 @@ import Foundation
 class Util {
     let passLength = 10
     //[a-zA-Z0-9]の乱数をStringで返す
-    private func randomPassGenerator() -> String {
+    func randomPassGenerator() -> String {
         let base = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         var randomString: String = ""
         for _ in 0..<passLength {

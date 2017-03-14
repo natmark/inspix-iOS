@@ -7,15 +7,29 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.isNavigationBarHidden = true
+        SVProgressHUD.show()
+        let userAuth = UserConfigManager.sharedManager.getUserAuth()
+        if let userId = userAuth.userId, let userPassword = userAuth.userPassword {
+            //ログイン
+            login(userId,userPassword)
+        } else {
+            SVProgressHUD.dismiss()
+            let menuStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let nextView = menuStoryboard.instantiateViewController(withIdentifier: "UserRegistViewController") as! UserRegistViewController
+            self.present(nextView, animated: true, completion: nil)
+        }
         // Do any additional setup after loading the view.
     }
-
+    func login(_ userId:Int,_ password:String){
+        SVProgressHUD.dismiss()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
