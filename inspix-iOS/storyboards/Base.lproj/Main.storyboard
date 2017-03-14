@@ -92,7 +92,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="CnJ-gC-b2x">
             <objects>
-                <tabBarController id="kUP-Zi-Xab" customClass="TabBarController" customModule="inspix_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kUP-Zi-Xab" customClass="TabBarController" customModule="inspix_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="FDi-Bq-pw4"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="8JC-Jj-wRE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>

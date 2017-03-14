@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SVProgressHUD
+import PKHUD
 import APIKit
 
 class UserRegistViewController: UIViewController {
@@ -20,7 +20,7 @@ class UserRegistViewController: UIViewController {
         
     }
     @IBAction func userRegist(_ sender: Any) {
-        SVProgressHUD.show()
+        HUD.show(.progress)
         
         guard let userName = userNameTextField.text else{
             return
@@ -29,22 +29,48 @@ class UserRegistViewController: UIViewController {
         UserConfigManager.sharedManager.saveUserPassword(password)
         
         let request = PostUserRegistRequest(userName: userName, password: password)
-
+        //ユーザ登録
         Session.send(request) { result in
             switch result {
             case .success(let user):
                 print("userId: \(user.id)")
                 UserConfigManager.sharedManager.saveUserId(user.id)
-                SVProgressHUD.showSuccess(withStatus: "登録完了")
-                self.dismiss(animated: true, completion: nil)
+                self.login(user.id, password)
+                
+            case .failure(.responseError(let inspixError as InspixError)):
+                print(inspixError.message)
+                HUD.flash(.label(inspixError.message),delay:1.0)
+                
             case .failure(let error):
-                print("error: \(error)")
-                SVProgressHUD.showError(withStatus: error.localizedDescription)
+                print("Unknown error: \(error)")
+                HUD.flash(.error, delay: 1.0)
+
             }
-            
         }
     }
+    func login(_ userId:Int,_ password:String){
+        let request = PostUserLoginRequest(userId: userId, password: password)
+        Session.send(request) { result in
+            switch result {
+            case .success(let login):
+                if login.result == true {
+                    HUD.flash(.success, delay: 1.0)
+                    let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    let nextView = mainStoryboard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+                    self.present(nextView, animated: true, completion: nil)
+                }else{
+                    HUD.flash(.label("ログインに失敗しました"),delay:1.0)
+                }
+            case .failure(.responseError(let inspixError as InspixError)):
+                print(inspixError.message)
+                HUD.flash(.label(inspixError.message),delay:1.0)
 
+            case .failure(let error):
+                print("error: \(error)")
+                HUD.flash(.error, delay: 1.0)
+            }
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
