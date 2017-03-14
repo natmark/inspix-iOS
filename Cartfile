@@ -1,4 +1,5 @@
 github "Anviking/Decodable" ~> 0.5
 github "ishkawa/APIKit" ~> 3.0
 github "pinterest/PINRemoteImage"
-github "SVProgressHUD/SVProgressHUD"
+github "krzyzanowskim/CryptoSwift"
+github "pkluz/PKHUD" ~> 4.0

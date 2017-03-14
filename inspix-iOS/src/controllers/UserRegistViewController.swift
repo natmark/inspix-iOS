@@ -1,8 +1,8 @@
 //
-//  LoginViewController.swift
+//  UserRegistViewController.swift
 //  inspix-iOS
 //
-//  Created by AtsuyaSato on 2017/03/13.
+//  Created by AtsuyaSato on 2017/03/14.
 //  Copyright © 2017年 Atsuya Sato. All rights reserved.
 //
 
@@ -10,25 +10,45 @@ import UIKit
 import PKHUD
 import APIKit
 
-class LoginViewController: UIViewController {
+class UserRegistViewController: UIViewController {
 
+    @IBOutlet weak var userNameTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.isNavigationBarHidden = true
-        let userAuth = UserConfigManager.sharedManager.getUserAuth()
-        if let userId = userAuth.userId, let userPassword = userAuth.userPassword {
-            //ログイン
-            login(userId,userPassword)
-        } else {
-            //ユーザ登録
-            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let nextView = mainStoryboard.instantiateViewController(withIdentifier: "UserRegistViewController") as! UserRegistViewController
-            self.present(nextView, animated: true, completion: nil)
-        }
+        
         // Do any additional setup after loading the view.
+        
+    }
+    @IBAction func userRegist(_ sender: Any) {
+        HUD.show(.progress)
+        
+        guard let userName = userNameTextField.text else{
+            return
+        }
+        let password = Util().randomPassGenerator()
+        UserConfigManager.sharedManager.saveUserPassword(password)
+        
+        let request = PostUserRegistRequest(userName: userName, password: password)
+        //ユーザ登録
+        Session.send(request) { result in
+            switch result {
+            case .success(let user):
+                print("userId: \(user.id)")
+                UserConfigManager.sharedManager.saveUserId(user.id)
+                self.login(user.id, password)
+                
+            case .failure(.responseError(let inspixError as InspixError)):
+                print(inspixError.message)
+                HUD.flash(.label(inspixError.message),delay:1.0)
+                
+            case .failure(let error):
+                print("Unknown error: \(error)")
+                HUD.flash(.error, delay: 1.0)
+
+            }
+        }
     }
     func login(_ userId:Int,_ password:String){
-        HUD.show(.progress)
         let request = PostUserLoginRequest(userId: userId, password: password)
         Session.send(request) { result in
             switch result {
@@ -39,11 +59,12 @@ class LoginViewController: UIViewController {
                     let nextView = mainStoryboard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
                     self.present(nextView, animated: true, completion: nil)
                 }else{
-                    HUD.flash(.error, delay: 1.0)
-                    let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                    let nextView = mainStoryboard.instantiateViewController(withIdentifier: "UserRegistViewController") as! UserRegistViewController
-                    self.present(nextView, animated: true, completion: nil)
+                    HUD.flash(.label("ログインに失敗しました"),delay:1.0)
                 }
+            case .failure(.responseError(let inspixError as InspixError)):
+                print(inspixError.message)
+                HUD.flash(.label(inspixError.message),delay:1.0)
+
             case .failure(let error):
                 print("error: \(error)")
                 HUD.flash(.error, delay: 1.0)
