@@ -20,6 +20,11 @@
 		F748E41B1E76978200356B7E /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F748E41A1E76978200356B7E /* MyPage.storyboard */; };
 		F748E41D1E76982900356B7E /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F748E41C1E76982900356B7E /* Camera.storyboard */; };
 		F748E4281E769E8E00356B7E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748E4271E769E8E00356B7E /* TabBarController.swift */; };
+		F748E4301E77851600356B7E /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F748E42B1E77851600356B7E /* APIKit.framework */; };
+		F748E4311E77851600356B7E /* Decodable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F748E42C1E77851600356B7E /* Decodable.framework */; };
+		F748E4321E77851600356B7E /* PINCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F748E42D1E77851600356B7E /* PINCache.framework */; };
+		F748E4331E77851600356B7E /* PINRemoteImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F748E42E1E77851600356B7E /* PINRemoteImage.framework */; };
+		F748E4341E77851600356B7E /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F748E42F1E77851600356B7E /* Result.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +55,11 @@
 		F748E41A1E76978200356B7E /* MyPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		F748E41C1E76982900356B7E /* Camera.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Camera.storyboard; sourceTree = "<group>"; };
 		F748E4271E769E8E00356B7E /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		F748E42B1E77851600356B7E /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
+		F748E42C1E77851600356B7E /* Decodable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Decodable.framework; path = Carthage/Build/iOS/Decodable.framework; sourceTree = "<group>"; };
+		F748E42D1E77851600356B7E /* PINCache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PINCache.framework; path = Carthage/Build/iOS/PINCache.framework; sourceTree = "<group>"; };
+		F748E42E1E77851600356B7E /* PINRemoteImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PINRemoteImage.framework; path = Carthage/Build/iOS/PINRemoteImage.framework; sourceTree = "<group>"; };
+		F748E42F1E77851600356B7E /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +67,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F748E4301E77851600356B7E /* APIKit.framework in Frameworks */,
+				F748E4311E77851600356B7E /* Decodable.framework in Frameworks */,
+				F748E4321E77851600356B7E /* PINCache.framework in Frameworks */,
+				F748E4331E77851600356B7E /* PINRemoteImage.framework in Frameworks */,
+				F748E4341E77851600356B7E /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +91,7 @@
 				F73844DA1E7287D3000E7D18 /* Products */,
 				F73844DB1E7287D3000E7D18 /* inspix-iOS */,
 				F73844F31E7287D4000E7D18 /* inspix-iOSTests */,
+				F748E42A1E77851500356B7E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -189,6 +205,18 @@
 			path = connection;
 			sourceTree = "<group>";
 		};
+		F748E42A1E77851500356B7E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F748E42B1E77851600356B7E /* APIKit.framework */,
+				F748E42C1E77851600356B7E /* Decodable.framework */,
+				F748E42D1E77851600356B7E /* PINCache.framework */,
+				F748E42E1E77851600356B7E /* PINRemoteImage.framework */,
+				F748E42F1E77851600356B7E /* Result.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -199,6 +227,7 @@
 				F73844D51E7287D3000E7D18 /* Sources */,
 				F73844D61E7287D3000E7D18 /* Frameworks */,
 				F73844D71E7287D3000E7D18 /* Resources */,
+				F748E4291E7784CD00356B7E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -293,6 +322,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F748E4291E7784CD00356B7E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/APIKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Decodable.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PINCache.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PINRemoteImage.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F73844D51E7287D3000E7D18 /* Sources */ = {
@@ -442,6 +492,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DEQGLB9PU4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "inspix-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -456,6 +510,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DEQGLB9PU4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "inspix-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
