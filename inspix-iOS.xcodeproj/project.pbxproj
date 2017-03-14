@@ -25,6 +25,8 @@
 		F748E4321E77851600356B7E /* PINCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F748E42D1E77851600356B7E /* PINCache.framework */; };
 		F748E4331E77851600356B7E /* PINRemoteImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F748E42E1E77851600356B7E /* PINRemoteImage.framework */; };
 		F748E4341E77851600356B7E /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F748E42F1E77851600356B7E /* Result.framework */; };
+		F748E4491E77BBF400356B7E /* UserRegist.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748E4481E77BBF400356B7E /* UserRegist.swift */; };
+		F748E44B1E77BBFA00356B7E /* InspixRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748E44A1E77BBFA00356B7E /* InspixRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		F748E42D1E77851600356B7E /* PINCache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PINCache.framework; path = Carthage/Build/iOS/PINCache.framework; sourceTree = "<group>"; };
 		F748E42E1E77851600356B7E /* PINRemoteImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PINRemoteImage.framework; path = Carthage/Build/iOS/PINRemoteImage.framework; sourceTree = "<group>"; };
 		F748E42F1E77851600356B7E /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		F748E4481E77BBF400356B7E /* UserRegist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRegist.swift; sourceTree = "<group>"; };
+		F748E44A1E77BBFA00356B7E /* InspixRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspixRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,10 +92,10 @@
 		F73844D01E7287D3000E7D18 = {
 			isa = PBXGroup;
 			children = (
+				F748E42A1E77851500356B7E /* Frameworks */,
 				F73844DA1E7287D3000E7D18 /* Products */,
 				F73844DB1E7287D3000E7D18 /* inspix-iOS */,
 				F73844F31E7287D4000E7D18 /* inspix-iOSTests */,
-				F748E42A1E77851500356B7E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -187,6 +191,7 @@
 		F748E4241E769C8300356B7E /* commons */ = {
 			isa = PBXGroup;
 			children = (
+				F748E43D1E77BA4C00356B7E /* extensions */,
 			);
 			path = commons;
 			sourceTree = "<group>";
@@ -201,6 +206,8 @@
 		F748E4261E769C8F00356B7E /* connection */ = {
 			isa = PBXGroup;
 			children = (
+				F748E4481E77BBF400356B7E /* UserRegist.swift */,
+				F748E44A1E77BBFA00356B7E /* InspixRequest.swift */,
 			);
 			path = connection;
 			sourceTree = "<group>";
@@ -215,6 +222,13 @@
 				F748E42F1E77851600356B7E /* Result.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F748E43D1E77BA4C00356B7E /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,6 +363,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F748E44B1E77BBFA00356B7E /* InspixRequest.swift in Sources */,
+				F748E4491E77BBF400356B7E /* UserRegist.swift in Sources */,
 				F748E40F1E76946500356B7E /* LoginViewController.swift in Sources */,
 				F748E4281E769E8E00356B7E /* TabBarController.swift in Sources */,
 				F73844DD1E7287D4000E7D18 /* AppDelegate.swift in Sources */,
