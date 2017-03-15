@@ -40,6 +40,8 @@
 		F7B33FC01E79071800328883 /* Camera.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7B33FBF1E79071800328883 /* Camera.xcassets */; };
 		F7B33FC41E791D2900328883 /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B33FC31E791D2900328883 /* GuideView.swift */; };
 		F7B340391E79714800328883 /* Login.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7B340381E79714800328883 /* Login.xcassets */; };
+		F7B3403D1E7984B200328883 /* Home.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7B3403C1E7984B200328883 /* Home.xcassets */; };
+		F7B3403F1E79863A00328883 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B3403E1E79863A00328883 /* ShareViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +92,8 @@
 		F7B33FBF1E79071800328883 /* Camera.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Camera.xcassets; sourceTree = "<group>"; };
 		F7B33FC31E791D2900328883 /* GuideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
 		F7B340381E79714800328883 /* Login.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Login.xcassets; sourceTree = "<group>"; };
+		F7B3403C1E7984B200328883 /* Home.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Home.xcassets; sourceTree = "<group>"; };
+		F7B3403E1E79863A00328883 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +170,7 @@
 				F7B33FBF1E79071800328883 /* Camera.xcassets */,
 				F748D0491E7805C4001C9419 /* Common.xcassets */,
 				F7B340381E79714800328883 /* Login.xcassets */,
+				F7B3403C1E7984B200328883 /* Home.xcassets */,
 			);
 			path = assets;
 			sourceTree = "<group>";
@@ -197,6 +202,7 @@
 				F748D0431E7804BB001C9419 /* MyPageTableViewController.swift */,
 				F748D04D1E780658001C9419 /* PhotoViewController.swift */,
 				F748D04F1E780669001C9419 /* CameraViewController.swift */,
+				F7B3403E1E79863A00328883 /* ShareViewController.swift */,
 				F748D0531E781528001C9419 /* HomeViewController.swift */,
 				F748D04B1E780629001C9419 /* NotificationTableViewController.swift */,
 				F748E40E1E76946500356B7E /* LoginViewController.swift */,
@@ -362,6 +368,7 @@
 				F7B340391E79714800328883 /* Login.xcassets in Resources */,
 				F7B33FC01E79071800328883 /* Camera.xcassets in Resources */,
 				F73844EA1E7287D4000E7D18 /* LaunchScreen.storyboard in Resources */,
+				F7B3403D1E7984B200328883 /* Home.xcassets in Resources */,
 				F73844E71E7287D4000E7D18 /* Assets.xcassets in Resources */,
 				F73844E21E7287D4000E7D18 /* Main.storyboard in Resources */,
 			);
@@ -406,6 +413,7 @@
 			files = (
 				F748D04C1E780629001C9419 /* NotificationTableViewController.swift in Sources */,
 				F748E44B1E77BBFA00356B7E /* InspixRequest.swift in Sources */,
+				F7B3403F1E79863A00328883 /* ShareViewController.swift in Sources */,
 				F748E4531E77C57700356B7E /* UserRegistViewController.swift in Sources */,
 				F748D05A1E78D14F001C9419 /* CameraView.swift in Sources */,
 				F748D0541E781528001C9419 /* HomeViewController.swift in Sources */,
