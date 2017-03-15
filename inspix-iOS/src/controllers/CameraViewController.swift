@@ -63,8 +63,11 @@ class CameraViewController: UIViewController {
     
     @IBAction func takePhoto(_ sender: UIBarButtonItem) {
         cameraView.takePhoto(completionHandler: { image in
-            self.pinnedImageView.image = image
-            self.pinnedImageView.isHidden = false
+            var photo_image = image
+            if self.isPinningPhoto {
+                    photo_image = self.pinnedImageView.image!
+            }
+            var sketch_image = self.drawableView.image
         })
     }
     @IBAction func pinnedPhoto(_ sender: UIBarButtonItem) {
