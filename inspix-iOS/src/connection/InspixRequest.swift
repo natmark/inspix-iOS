@@ -20,6 +20,8 @@ extension InspixRequest {
         guard (200..<300).contains(urlResponse.statusCode) else {
             throw InspixError(object: object)
         }
+        //TODO: urlResponseからheader読み込んでUserDefaultsに突っ込むぞ
+        
         return object
     }
 }

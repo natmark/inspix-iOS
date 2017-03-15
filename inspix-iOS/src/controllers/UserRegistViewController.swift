@@ -68,8 +68,8 @@ class UserRegistViewController: UIViewController,UITextFieldDelegate {
                 if login.result == true {
                     HUD.flash(.success, delay: 1.0)
                     let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                    let nextView = mainStoryboard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
-                    self.present(nextView, animated: true, completion: nil)
+                    let nextView = mainStoryboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                    self.navigationController?.pushViewController(nextView, animated: false)
                 }else{
                     HUD.flash(.label("ログインに失敗しました"),delay:1.0)
                 }

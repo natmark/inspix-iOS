@@ -15,8 +15,11 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         let titleImageView = UIImageView(image: UIImage(named: "header"))
         self.navigationItem.titleView = titleImageView
-
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationItem.setHidesBackButton(true, animated: false)        
     }
 
     override func didReceiveMemoryWarning() {
