@@ -37,6 +37,7 @@
 		F748E4511E77BD8B00356B7E /* UserConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748E4501E77BD8B00356B7E /* UserConfigManager.swift */; };
 		F748E4531E77C57700356B7E /* UserRegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748E4521E77C57700356B7E /* UserRegistViewController.swift */; };
 		F748E4551E77C63B00356B7E /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F748E4541E77C63B00356B7E /* CryptoSwift.framework */; };
+		F7A43E711E79A32B006570E7 /* PlaceHolderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A43E701E79A32B006570E7 /* PlaceHolderTextView.swift */; };
 		F7B33FC01E79071800328883 /* Camera.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7B33FBF1E79071800328883 /* Camera.xcassets */; };
 		F7B33FC41E791D2900328883 /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B33FC31E791D2900328883 /* GuideView.swift */; };
 		F7B340391E79714800328883 /* Login.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7B340381E79714800328883 /* Login.xcassets */; };
@@ -89,6 +90,7 @@
 		F748E4501E77BD8B00356B7E /* UserConfigManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserConfigManager.swift; sourceTree = "<group>"; };
 		F748E4521E77C57700356B7E /* UserRegistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRegistViewController.swift; sourceTree = "<group>"; };
 		F748E4541E77C63B00356B7E /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
+		F7A43E701E79A32B006570E7 /* PlaceHolderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceHolderTextView.swift; sourceTree = "<group>"; };
 		F7B33FBF1E79071800328883 /* Camera.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Camera.xcassets; sourceTree = "<group>"; };
 		F7B33FC31E791D2900328883 /* GuideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
 		F7B340381E79714800328883 /* Login.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Login.xcassets; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				F748D0591E78D14F001C9419 /* CameraView.swift */,
 				F7B33FC31E791D2900328883 /* GuideView.swift */,
 				F748D0551E78D0F2001C9419 /* DrawableView.swift */,
+				F7A43E701E79A32B006570E7 /* PlaceHolderTextView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				F748E44B1E77BBFA00356B7E /* InspixRequest.swift in Sources */,
 				F7B3403F1E79863A00328883 /* ShareViewController.swift in Sources */,
 				F748E4531E77C57700356B7E /* UserRegistViewController.swift in Sources */,
+				F7A43E711E79A32B006570E7 /* PlaceHolderTextView.swift in Sources */,
 				F748D05A1E78D14F001C9419 /* CameraView.swift in Sources */,
 				F748D0541E781528001C9419 /* HomeViewController.swift in Sources */,
 				F73965161E77CAD500F347C3 /* String.swift in Sources */,
