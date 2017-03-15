@@ -8,52 +8,43 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Photo View Controller-->
-        <scene sceneID="goa-Dw-qgW">
-            <objects>
-                <tableViewController id="Sng-Et-fFu" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="GK7-ji-F6r">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="TNV-ID-pky">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TNV-ID-pky" id="TmQ-bF-IqO">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Sng-Et-fFu" id="lKE-u6-eZh"/>
-                            <outlet property="delegate" destination="Sng-Et-fFu" id="Xnj-7a-AEv"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Photo View Controller" id="OnF-cQ-pJb"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JCU-EV-Vhi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="710" y="184"/>
-        </scene>
         <!--Item-->
         <scene sceneID="C3x-O0-S4t">
             <objects>
                 <navigationController id="Z3U-YY-Pqd" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Rxs-Bt-oe5"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hYW-KW-BHd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="hYW-KW-BHd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Sng-Et-fFu" kind="relationship" relationship="rootViewController" id="hzo-wa-A5B"/>
+                        <segue destination="N0b-bk-HGj" kind="relationship" relationship="rootViewController" id="a9U-Sn-Lll"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P6R-fj-rOc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-242" y="184"/>
+        </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="dKe-RG-J9P">
+            <objects>
+                <viewController id="N0b-bk-HGj" customClass="PhotoViewController" customModule="inspix_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="C19-lO-TXi"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mzk-yy-ICL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sgh-G7-xU4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="DEI-iJ-Uke"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fyY-es-Hsw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="551" y="184"/>
         </scene>
     </scenes>
 </document>

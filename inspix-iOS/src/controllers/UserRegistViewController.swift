@@ -10,21 +10,33 @@ import UIKit
 import PKHUD
 import APIKit
 
-class UserRegistViewController: UIViewController {
+class UserRegistViewController: UIViewController,UITextFieldDelegate {
 
     @IBOutlet weak var userNameTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        userNameTextField.delegate = self
         // Do any additional setup after loading the view.
-        
     }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.userNameTextField.resignFirstResponder()
+        return true
+    }
+
     @IBAction func userRegist(_ sender: Any) {
         HUD.show(.progress)
         
         guard let userName = userNameTextField.text else{
             return
         }
+        // 英数字のみであることをチェック
+        let predicate = NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z]*")
+        if predicate.evaluate(with: userName) == false {
+            HUD.flash(.label("半角英数字のみを指定してください"),delay:1.0)
+            return
+        }
+
+        
         let password = Util().randomPassGenerator()
         UserConfigManager.sharedManager.saveUserPassword(password)
         
