@@ -172,13 +172,19 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AJR-qB-RqA" customClass="CameraView" customModule="inspix_iOS" customModuleProvider="target">
                                         <rect key="frame" x="8" y="8" width="359" height="587"/>
                                     </view>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aqn-IZ-Hra">
+                                        <rect key="frame" x="8" y="8" width="359" height="587"/>
+                                    </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hyy-va-jyK" customClass="DrawableView" customModule="inspix_iOS" customModuleProvider="target">
                                         <rect key="frame" x="8" y="8" width="359" height="587"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="aqn-IZ-Hra" firstAttribute="top" secondItem="AJR-qB-RqA" secondAttribute="top" id="CG4-W6-CHz"/>
                                     <constraint firstItem="hyy-va-jyK" firstAttribute="leading" secondItem="AJR-qB-RqA" secondAttribute="leading" id="DbQ-yC-Fq7"/>
+                                    <constraint firstItem="aqn-IZ-Hra" firstAttribute="bottom" secondItem="AJR-qB-RqA" secondAttribute="bottom" id="Nj4-Iq-upU"/>
+                                    <constraint firstItem="aqn-IZ-Hra" firstAttribute="trailing" secondItem="AJR-qB-RqA" secondAttribute="trailing" id="OK7-am-wQy"/>
                                     <constraint firstItem="hyy-va-jyK" firstAttribute="trailing" secondItem="AJR-qB-RqA" secondAttribute="trailing" id="WJe-fM-c9p"/>
                                     <constraint firstItem="hyy-va-jyK" firstAttribute="bottom" secondItem="AJR-qB-RqA" secondAttribute="bottom" id="Yxz-8Z-A4z"/>
                                     <constraint firstAttribute="trailing" secondItem="AJR-qB-RqA" secondAttribute="trailing" constant="8" id="fS3-EA-FDr"/>
@@ -186,6 +192,7 @@
                                     <constraint firstItem="hyy-va-jyK" firstAttribute="top" secondItem="AJR-qB-RqA" secondAttribute="top" id="j50-1y-I0J"/>
                                     <constraint firstItem="AJR-qB-RqA" firstAttribute="top" secondItem="or7-D7-fkg" secondAttribute="top" constant="8" id="pGv-06-FoZ"/>
                                     <constraint firstItem="AJR-qB-RqA" firstAttribute="leading" secondItem="or7-D7-fkg" secondAttribute="leading" constant="8" id="qYv-ky-a3Y"/>
+                                    <constraint firstItem="aqn-IZ-Hra" firstAttribute="leading" secondItem="AJR-qB-RqA" secondAttribute="leading" id="zEA-Qv-Y1d"/>
                                 </constraints>
                             </view>
                             <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EfN-SY-Ber" customClass="GuideView" customModule="inspix_iOS" customModuleProvider="target">
@@ -201,6 +208,9 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="4p7-bU-EsZ"/>
                                     <barButtonItem image="icon_shutter" id="jPf-3E-4hE">
                                         <color key="tintColor" red="0.039215686270000001" green="0.054901960780000002" blue="0.054901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="takePhoto:" destination="QsW-hT-yOa" id="kyK-6W-5fd"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="BdR-qT-28g"/>
                                     <barButtonItem image="icon_eraser" id="aqW-ps-Ww9">
@@ -273,6 +283,9 @@
                         <rightBarButtonItems>
                             <barButtonItem image="icon_pin" style="done" id="gZm-4H-Zh6">
                                 <color key="tintColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="pinnedPhoto:" destination="QsW-hT-yOa" id="DFo-3B-dVs"/>
+                                </connections>
                             </barButtonItem>
                             <barButtonItem image="icon_guide" id="loA-HO-EUv">
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -289,6 +302,8 @@
                         <outlet property="guideBtn" destination="loA-HO-EUv" id="lUj-he-xph"/>
                         <outlet property="guideView" destination="EfN-SY-Ber" id="Ye0-ty-Svf"/>
                         <outlet property="penBtn" destination="Kor-gS-8S2" id="hJ8-l8-YhA"/>
+                        <outlet property="pinBtn" destination="gZm-4H-Zh6" id="hMn-q5-cjm"/>
+                        <outlet property="pinnedImageView" destination="aqn-IZ-Hra" id="rtn-kC-PYH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Dw-Na-Hxh" userLabel="First Responder" sceneMemberID="firstResponder"/>

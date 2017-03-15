@@ -14,6 +14,7 @@ class CameraView: UIView, AVCaptureVideoDataOutputSampleBufferDelegate, UIGestur
     var output:AVCaptureVideoDataOutput!
     var session:AVCaptureSession!
     var camera:AVCaptureDevice!
+    var capturingImage:UIImage?
         
     init() {
         super.init(frame: CGRect.zero)
@@ -99,8 +100,7 @@ class CameraView: UIView, AVCaptureVideoDataOutputSampleBufferDelegate, UIGestur
     // 新しいキャプチャの追加で呼ばれる
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
         
-        // キャプチャしたsampleBufferからUIImageを作成
-        let image:UIImage = self.captureImage(sampleBuffer: sampleBuffer)
+        capturingImage = self.captureImage(sampleBuffer: sampleBuffer)
         
         // カメラの画像を画面に表示
 //        dispatch_get_main_queue().asynchronously() {

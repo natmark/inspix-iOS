@@ -14,11 +14,14 @@ class CameraViewController: UIViewController {
     @IBOutlet weak var drawableView: DrawableView!
     @IBOutlet weak var guideView: GuideView!
     @IBOutlet weak var guideBtn: UIBarButtonItem!
+    @IBOutlet weak var pinBtn: UIBarButtonItem!
     
     @IBOutlet weak var penBtn: UIBarButtonItem!
     @IBOutlet weak var eraserBtn: UIBarButtonItem!
+    @IBOutlet weak var pinnedImageView: UIImageView!
     
     var isShowingGuide = false
+    var isPinningPhoto = false
     var isSelectingPen = true
     
     override func viewDidLoad() {
@@ -57,6 +60,25 @@ class CameraViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func takePhoto(_ sender: UIBarButtonItem) {
+    
+    }
+    @IBAction func pinnedPhoto(_ sender: UIBarButtonItem) {
+        if isPinningPhoto == true{
+            pinBtn.tintColor = UIColor.black
+            pinnedImageView.isHidden = true
+            isPinningPhoto = false
+            return
+        }else{
+            guard let image = cameraView.capturingImage else{
+                return
+            }
+            pinnedImageView.image = image
+            pinnedImageView.isHidden = false
+            pinBtn.tintColor = UIColor.selectedTintColor()
+            isPinningPhoto = true
+        }
+    }
 
     /*
     // MARK: - Navigation
