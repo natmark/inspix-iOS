@@ -11,8 +11,9 @@ import UIKit
 class HomeTableViewController: UITableViewController {
 
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad()        
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.backgroundColor = UIColor.white
         self.navigationController?.navigationBar.shadowImage = UIImage()
         let titleImageView = UIImageView(image: UIImage(named: "header"))
         self.navigationItem.titleView = titleImageView
