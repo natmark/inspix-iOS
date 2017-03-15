@@ -12,6 +12,7 @@ import AVFoundation
 class CameraView: UIView, AVCaptureVideoDataOutputSampleBufferDelegate, UIGestureRecognizerDelegate {
     var input:AVCaptureDeviceInput!
     var output:AVCaptureVideoDataOutput!
+    var imageOutput: AVCaptureStillImageOutput!
     var session:AVCaptureSession!
     var camera:AVCaptureDevice!
     var capturingImage:UIImage?
@@ -63,6 +64,15 @@ class CameraView: UIView, AVCaptureVideoDataOutputSampleBufferDelegate, UIGestur
             session.addInput(input)
         }
         
+        //写真撮影用のImageOutput
+        imageOutput = AVCaptureStillImageOutput()
+        // 出力をセッションに追加
+        if(session.canAddOutput(imageOutput)) {
+            session.addOutput(imageOutput)
+        }
+
+        
+        //ピン留め用のVideoOutput
         // AVCaptureVideoDataOutput:動画フレームデータを出力に設定
         output = AVCaptureVideoDataOutput()
         
@@ -107,7 +117,20 @@ class CameraView: UIView, AVCaptureVideoDataOutputSampleBufferDelegate, UIGestur
 //            self.imageView.image = image
 //        }
     }
-    
+    func takePhoto(completionHandler: @escaping (_ image: UIImage) -> ()){
+        let output:AVCaptureStillImageOutput! = imageOutput
+        if let connection:AVCaptureConnection? = output.connection(withMediaType: AVMediaTypeVideo) {
+            output.captureStillImageAsynchronously(from: connection,
+                                                   completionHandler: {
+                                                    (imageDataBuffer, error) -> Void in
+                                                    
+                                                    let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageDataBuffer)
+                                                    //背景の写真
+                                                    let image = UIImage(data: imageData!)!
+                                                    completionHandler(image)
+            })
+        }
+    }
     // sampleBufferからUIImageを作成
     func captureImage(sampleBuffer:CMSampleBuffer) -> UIImage{
         

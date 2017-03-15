@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class CameraViewController: UIViewController {
 
@@ -61,7 +62,10 @@ class CameraViewController: UIViewController {
     }
     
     @IBAction func takePhoto(_ sender: UIBarButtonItem) {
-    
+        cameraView.takePhoto(completionHandler: { image in
+            self.pinnedImageView.image = image
+            self.pinnedImageView.isHidden = false
+        })
     }
     @IBAction func pinnedPhoto(_ sender: UIBarButtonItem) {
         if isPinningPhoto == true{
