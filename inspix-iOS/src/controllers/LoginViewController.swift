@@ -24,7 +24,7 @@ class LoginViewController: UIViewController {
             //ユーザ登録
             let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let nextView = mainStoryboard.instantiateViewController(withIdentifier: "UserRegistViewController") as! UserRegistViewController
-            self.present(nextView, animated: true, completion: nil)
+            self.navigationController?.pushViewController(nextView, animated: true)
         }
         // Do any additional setup after loading the view.
     }
@@ -43,7 +43,7 @@ class LoginViewController: UIViewController {
                     HUD.flash(.error, delay: 1.0)
                     let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
                     let nextView = mainStoryboard.instantiateViewController(withIdentifier: "UserRegistViewController") as! UserRegistViewController
-                    self.present(nextView, animated: true, completion: nil)
+                    self.navigationController?.pushViewController(nextView, animated: true)
                 }
             case .failure(let error):
                 print("error: \(error)")

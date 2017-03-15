@@ -37,6 +37,8 @@
 		F748E4511E77BD8B00356B7E /* UserConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748E4501E77BD8B00356B7E /* UserConfigManager.swift */; };
 		F748E4531E77C57700356B7E /* UserRegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748E4521E77C57700356B7E /* UserRegistViewController.swift */; };
 		F748E4551E77C63B00356B7E /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F748E4541E77C63B00356B7E /* CryptoSwift.framework */; };
+		F7B33FC01E79071800328883 /* Camera.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7B33FBF1E79071800328883 /* Camera.xcassets */; };
+		F7B33FC41E791D2900328883 /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B33FC31E791D2900328883 /* GuideView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,8 @@
 		F748E4501E77BD8B00356B7E /* UserConfigManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserConfigManager.swift; sourceTree = "<group>"; };
 		F748E4521E77C57700356B7E /* UserRegistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRegistViewController.swift; sourceTree = "<group>"; };
 		F748E4541E77C63B00356B7E /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
+		F7B33FBF1E79071800328883 /* Camera.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Camera.xcassets; sourceTree = "<group>"; };
+		F7B33FC31E791D2900328883 /* GuideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				F73844E61E7287D4000E7D18 /* Assets.xcassets */,
+				F7B33FBF1E79071800328883 /* Camera.xcassets */,
 				F748D0491E7805C4001C9419 /* Common.xcassets */,
 			);
 			path = assets;
@@ -201,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				F748D0591E78D14F001C9419 /* CameraView.swift */,
+				F7B33FC31E791D2900328883 /* GuideView.swift */,
 				F748D0551E78D0F2001C9419 /* DrawableView.swift */,
 			);
 			path = views;
@@ -350,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F748D04A1E7805C4001C9419 /* Common.xcassets in Resources */,
+				F7B33FC01E79071800328883 /* Camera.xcassets in Resources */,
 				F73844EA1E7287D4000E7D18 /* LaunchScreen.storyboard in Resources */,
 				F73844E71E7287D4000E7D18 /* Assets.xcassets in Resources */,
 				F73844E21E7287D4000E7D18 /* Main.storyboard in Resources */,
@@ -406,6 +413,7 @@
 				F748E40F1E76946500356B7E /* LoginViewController.swift in Sources */,
 				F748E44F1E77BD5300356B7E /* Util.swift in Sources */,
 				F748D0441E7804BB001C9419 /* MyPageTableViewController.swift in Sources */,
+				F7B33FC41E791D2900328883 /* GuideView.swift in Sources */,
 				F73844DD1E7287D4000E7D18 /* AppDelegate.swift in Sources */,
 				F748D0501E780669001C9419 /* CameraViewController.swift in Sources */,
 				F748D04E1E780658001C9419 /* PhotoViewController.swift in Sources */,
