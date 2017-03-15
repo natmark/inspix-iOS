@@ -12,17 +12,32 @@ import APIKit
 
 class UserRegistViewController: UIViewController,UITextFieldDelegate {
 
+    @IBOutlet weak var registerBtn: UIButton!
     @IBOutlet weak var userNameTextField: UITextField!
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .lightContent
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
         userNameTextField.delegate = self
+        userNameTextField.attributedPlaceholder = NSAttributedString(string: "ユーザIDを入力", attributes: [NSForegroundColorAttributeName:UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.6)])
         // Do any additional setup after loading the view.
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.userNameTextField.resignFirstResponder()
         return true
     }
-
+    @IBAction func textValueChanged(_ sender: UITextField) {
+        if (sender.text?.characters.count)! > 0 {
+            registerBtn.backgroundColor = UIColor.selectedTintColor()
+            registerBtn.isEnabled = true
+        }else{
+            registerBtn.backgroundColor = UIColor.lightGray
+            registerBtn.isEnabled = false
+        }
+    }
+    
     @IBAction func userRegist(_ sender: Any) {
         HUD.show(.progress)
         
