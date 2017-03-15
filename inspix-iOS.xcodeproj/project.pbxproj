@@ -39,6 +39,7 @@
 		F748E4551E77C63B00356B7E /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F748E4541E77C63B00356B7E /* CryptoSwift.framework */; };
 		F7B33FC01E79071800328883 /* Camera.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7B33FBF1E79071800328883 /* Camera.xcassets */; };
 		F7B33FC41E791D2900328883 /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B33FC31E791D2900328883 /* GuideView.swift */; };
+		F7B340391E79714800328883 /* Login.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7B340381E79714800328883 /* Login.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		F748E4541E77C63B00356B7E /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
 		F7B33FBF1E79071800328883 /* Camera.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Camera.xcassets; sourceTree = "<group>"; };
 		F7B33FC31E791D2900328883 /* GuideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
+		F7B340381E79714800328883 /* Login.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Login.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				F73844E61E7287D4000E7D18 /* Assets.xcassets */,
 				F7B33FBF1E79071800328883 /* Camera.xcassets */,
 				F748D0491E7805C4001C9419 /* Common.xcassets */,
+				F7B340381E79714800328883 /* Login.xcassets */,
 			);
 			path = assets;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F748D04A1E7805C4001C9419 /* Common.xcassets in Resources */,
+				F7B340391E79714800328883 /* Login.xcassets in Resources */,
 				F7B33FC01E79071800328883 /* Camera.xcassets in Resources */,
 				F73844EA1E7287D4000E7D18 /* LaunchScreen.storyboard in Resources */,
 				F73844E71E7287D4000E7D18 /* Assets.xcassets in Resources */,
