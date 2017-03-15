@@ -35,12 +35,23 @@ class ShareViewController: UIViewController {
 //        
 //        compositedImageView.image = compositedImage
         
+        let photoRect:(width:Int,height:Int) = ((photoImage?.cgImage?.width)!,(photoImage?.cgImage?.height)!)
+
+        UIGraphicsBeginImageContext(CGSize(width: photoRect.width, height: photoRect.height))
+        photoImage?.draw(in: CGRect(x: 0, y: 0, width: photoRect.width, height: photoRect.height))
+        sketchImage.draw(in: CGRect(x: 0, y: 0, width: photoRect.width, height: photoRect.height))
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        compositedImage = image
+        compositedImageView.image = image
 //        UIImage *background = [UIImage imageNamed:@"background.png"];
 //        UIImage *stamp = [UIImage imageNamed:@"stamp.png"];
 //        
 //        CGFloat backWidth = CGImageGetWidth(background.CGImage);
 //        CGFloat backHeight = CGImageGetHeight(background.CGImage);
-//        
+//
 //        CGFloat stampWidth = CGImageGetWidth(stamp.CGImage);
 //        CGFloat stampHeight = CGImageGetHeight(stamp.CGImage);
 //        
