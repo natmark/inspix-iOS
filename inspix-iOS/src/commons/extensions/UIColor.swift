@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 extension UIColor {
     class func hexString ( hexStr : NSString, alpha : CGFloat) -> UIColor {
         let hexStr = hexStr.replacingOccurrences(of: "#", with: "") as NSString

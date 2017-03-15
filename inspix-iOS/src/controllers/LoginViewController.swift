@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
+        
         let userAuth = UserConfigManager.sharedManager.getUserAuth()
         if let userId = userAuth.userId, let userPassword = userAuth.userPassword {
             //ログイン
@@ -36,8 +37,8 @@ class LoginViewController: UIViewController {
                 if login.result == true {
                     HUD.flash(.success, delay: 1.0)
                     let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                    let nextView = mainStoryboard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
-                    self.present(nextView, animated: true, completion: nil)
+                    let nextView = mainStoryboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                    self.navigationController?.pushViewController(nextView, animated: false)
                 }else{
                     HUD.flash(.error, delay: 1.0)
                     let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
