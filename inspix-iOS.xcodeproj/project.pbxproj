@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F72E5F311E7A5E9C00CE979D /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72E5F301E7A5E9C00CE979D /* PostDetailViewController.swift */; };
 		F72E5F331E7A617300CE979D /* Weather.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F72E5F321E7A617300CE979D /* Weather.xcassets */; };
+		F72E5F3D1E7AB26D00CE979D /* UserTimeLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72E5F3C1E7AB26D00CE979D /* UserTimeLine.swift */; };
 		F73844DD1E7287D4000E7D18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73844DC1E7287D3000E7D18 /* AppDelegate.swift */; };
 		F73844E21E7287D4000E7D18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F73844E01E7287D4000E7D18 /* Main.storyboard */; };
 		F73844E51E7287D4000E7D18 /* inspix_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F73844E31E7287D4000E7D18 /* inspix_iOS.xcdatamodeld */; };
@@ -64,6 +65,7 @@
 /* Begin PBXFileReference section */
 		F72E5F301E7A5E9C00CE979D /* PostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		F72E5F321E7A617300CE979D /* Weather.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Weather.xcassets; sourceTree = "<group>"; };
+		F72E5F3C1E7AB26D00CE979D /* UserTimeLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTimeLine.swift; sourceTree = "<group>"; };
 		F73844D91E7287D3000E7D18 /* inspix-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "inspix-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F73844DC1E7287D3000E7D18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F73844E11E7287D4000E7D18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				F748E4481E77BBF400356B7E /* UserRegist.swift */,
+				F72E5F3C1E7AB26D00CE979D /* UserTimeLine.swift */,
 				F748D0411E77D7A1001C9419 /* UserLogin.swift */,
 				F748E44A1E77BBFA00356B7E /* InspixRequest.swift */,
 			);
@@ -460,6 +463,7 @@
 				F748D0501E780669001C9419 /* CameraViewController.swift in Sources */,
 				F7A43E841E7A2AF1006570E7 /* SketchCollectionViewCell.swift in Sources */,
 				F748E4511E77BD8B00356B7E /* UserConfigManager.swift in Sources */,
+				F72E5F3D1E7AB26D00CE979D /* UserTimeLine.swift in Sources */,
 				F73844E51E7287D4000E7D18 /* inspix_iOS.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

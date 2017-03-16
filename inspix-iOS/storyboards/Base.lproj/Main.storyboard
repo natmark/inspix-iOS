@@ -7,7 +7,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -242,51 +241,43 @@
                                         <state key="normal" title="マイスケッチ">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="selectMySwitch:" destination="Jdi-Q1-RrY" eventType="touchUpInside" id="XJR-63-nuP"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uBe-U7-xMJ">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uBe-U7-xMJ">
                                         <rect key="frame" x="125" y="0.0" width="125" height="40"/>
                                         <state key="normal" title="ピックアップ">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="selectPickup:" destination="Jdi-Q1-RrY" eventType="touchUpInside" id="6SG-Hv-Mzm"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uaz-C5-Jce">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uaz-C5-Jce">
                                         <rect key="frame" x="250" y="0.0" width="125" height="40"/>
                                         <state key="normal" title="お気に入り">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="selectFavorite:" destination="Jdi-Q1-RrY" eventType="touchUpInside" id="UvA-HV-4E5"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcq-o4-EQc">
-                                        <rect key="frame" x="125" y="38" width="125" height="2"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <rect key="frame" x="0.0" y="38" width="125" height="2"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="Xgk-ea-lij"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W3F-9L-iw6">
-                                        <rect key="frame" x="-0.5" y="38" width="125" height="2"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="2" id="hgN-0M-KYH"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4vF-sW-jae">
-                                        <rect key="frame" x="251" y="38" width="125" height="2"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="2" id="oan-V3-iy7"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="uaz-C5-Jce" secondAttribute="trailing" id="3cv-1u-7hi"/>
-                                    <constraint firstItem="4vF-sW-jae" firstAttribute="width" secondItem="vcq-o4-EQc" secondAttribute="width" id="834-cb-MKF"/>
                                     <constraint firstItem="uBe-U7-xMJ" firstAttribute="leading" secondItem="brf-Qv-U4s" secondAttribute="trailing" id="8jv-O9-Z4y"/>
-                                    <constraint firstItem="4vF-sW-jae" firstAttribute="centerX" secondItem="pIn-Cu-avo" secondAttribute="centerX" multiplier="1.67" id="Dli-dg-lqO"/>
+                                    <constraint firstItem="vcq-o4-EQc" firstAttribute="centerX" secondItem="pIn-Cu-avo" secondAttribute="centerX" constant="-125" id="DFT-pD-Cqw"/>
                                     <constraint firstItem="uaz-C5-Jce" firstAttribute="leading" secondItem="uBe-U7-xMJ" secondAttribute="trailing" id="IeO-rp-VsD"/>
-                                    <constraint firstItem="vcq-o4-EQc" firstAttribute="centerX" secondItem="pIn-Cu-avo" secondAttribute="centerX" id="Pcv-jb-HMF"/>
-                                    <constraint firstItem="vcq-o4-EQc" firstAttribute="width" secondItem="W3F-9L-iw6" secondAttribute="width" id="Pxc-Dd-rdh"/>
-                                    <constraint firstAttribute="bottom" secondItem="4vF-sW-jae" secondAttribute="bottom" id="RhL-Av-IVh"/>
+                                    <constraint firstItem="vcq-o4-EQc" firstAttribute="centerX" secondItem="pIn-Cu-avo" secondAttribute="centerX" constant="125" id="MVF-2R-KPv"/>
                                     <constraint firstAttribute="bottom" secondItem="vcq-o4-EQc" secondAttribute="bottom" id="SBw-wv-DUr"/>
                                     <constraint firstAttribute="bottom" secondItem="brf-Qv-U4s" secondAttribute="bottom" id="ZRN-gl-lqp"/>
                                     <constraint firstItem="brf-Qv-U4s" firstAttribute="leading" secondItem="pIn-Cu-avo" secondAttribute="leading" id="aqp-uQ-j9W"/>
@@ -295,55 +286,84 @@
                                     <constraint firstAttribute="height" constant="40" id="cQU-tn-OWr"/>
                                     <constraint firstItem="vcq-o4-EQc" firstAttribute="width" secondItem="brf-Qv-U4s" secondAttribute="width" id="dHr-fU-8U2"/>
                                     <constraint firstItem="uaz-C5-Jce" firstAttribute="width" secondItem="brf-Qv-U4s" secondAttribute="width" id="dqq-7d-tbR"/>
+                                    <constraint firstItem="vcq-o4-EQc" firstAttribute="centerX" secondItem="pIn-Cu-avo" secondAttribute="centerX" id="dw1-3Q-pOK"/>
                                     <constraint firstItem="uaz-C5-Jce" firstAttribute="top" secondItem="pIn-Cu-avo" secondAttribute="top" id="hVf-zF-T43"/>
                                     <constraint firstAttribute="bottom" secondItem="uBe-U7-xMJ" secondAttribute="bottom" id="jXt-X7-Y3h"/>
                                     <constraint firstItem="brf-Qv-U4s" firstAttribute="top" secondItem="pIn-Cu-avo" secondAttribute="top" id="mNp-30-8Nf"/>
-                                    <constraint firstItem="W3F-9L-iw6" firstAttribute="centerX" secondItem="pIn-Cu-avo" secondAttribute="centerX" multiplier="0.33" id="nVO-qf-blV"/>
                                     <constraint firstAttribute="bottom" secondItem="uaz-C5-Jce" secondAttribute="bottom" id="uFZ-OQ-Adw"/>
-                                    <constraint firstAttribute="bottom" secondItem="W3F-9L-iw6" secondAttribute="bottom" id="zfI-ad-hgF"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="MVF-2R-KPv"/>
+                                        <exclude reference="dw1-3Q-pOK"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="0nc-ys-cmb" firstAttribute="trailing" secondItem="cem-W9-ljy" secondAttribute="trailing" constant="-16" id="0Ky-ff-BBB"/>
                             <constraint firstItem="mg4-Z2-UrJ" firstAttribute="leading" secondItem="cem-W9-ljy" secondAttribute="trailing" id="1jp-tv-yrj"/>
+                            <constraint firstItem="mg4-Z2-UrJ" firstAttribute="leading" secondItem="yM7-5Y-2se" secondAttribute="trailing" id="361-L7-x4W"/>
+                            <constraint firstItem="mg4-Z2-UrJ" firstAttribute="trailing" secondItem="yM7-5Y-2se" secondAttribute="leading" id="7kX-Ir-RSq"/>
                             <constraint firstItem="mg4-Z2-UrJ" firstAttribute="height" secondItem="dib-IC-H7S" secondAttribute="height" id="8DI-4R-LTK"/>
                             <constraint firstItem="qjN-2K-8v4" firstAttribute="top" secondItem="cem-W9-ljy" secondAttribute="bottom" id="90D-ZK-g13"/>
                             <constraint firstItem="0nc-ys-cmb" firstAttribute="bottom" secondItem="cem-W9-ljy" secondAttribute="bottom" constant="-20" id="BDw-0w-Q1y"/>
                             <constraint firstItem="mg4-Z2-UrJ" firstAttribute="width" secondItem="dib-IC-H7S" secondAttribute="width" id="CBp-4n-jbG"/>
                             <constraint firstItem="mg4-Z2-UrJ" firstAttribute="centerY" secondItem="cem-W9-ljy" secondAttribute="centerY" id="Dbr-eY-Ftg"/>
                             <constraint firstItem="pIn-Cu-avo" firstAttribute="leading" secondItem="yM7-5Y-2se" secondAttribute="leading" id="OEu-52-02d"/>
-                            <constraint firstItem="cem-W9-ljy" firstAttribute="leading" secondItem="yM7-5Y-2se" secondAttribute="trailing" id="UA6-gK-ytU"/>
                             <constraint firstItem="dib-IC-H7S" firstAttribute="leading" secondItem="mg4-Z2-UrJ" secondAttribute="trailing" id="VFH-cB-61Y"/>
                             <constraint firstItem="cem-W9-ljy" firstAttribute="width" secondItem="yM7-5Y-2se" secondAttribute="width" id="ViF-PM-EUp"/>
                             <constraint firstAttribute="trailing" secondItem="pIn-Cu-avo" secondAttribute="trailing" id="e8A-n9-khv"/>
+                            <constraint firstItem="mg4-Z2-UrJ" firstAttribute="centerX" secondItem="yM7-5Y-2se" secondAttribute="centerX" id="ebn-mg-uRN"/>
                             <constraint firstItem="cem-W9-ljy" firstAttribute="top" secondItem="pIn-Cu-avo" secondAttribute="bottom" id="fui-lA-d7P"/>
                             <constraint firstItem="mg4-Z2-UrJ" firstAttribute="centerY" secondItem="dib-IC-H7S" secondAttribute="centerY" id="hmO-8B-pji"/>
-                            <constraint firstItem="cem-W9-ljy" firstAttribute="trailing" secondItem="yM7-5Y-2se" secondAttribute="leading" id="irg-vV-g0r"/>
                             <constraint firstItem="mg4-Z2-UrJ" firstAttribute="width" secondItem="cem-W9-ljy" secondAttribute="width" id="kud-mm-u5j"/>
-                            <constraint firstItem="cem-W9-ljy" firstAttribute="centerX" secondItem="yM7-5Y-2se" secondAttribute="centerX" id="l3p-6r-BZ7"/>
                             <constraint firstItem="pIn-Cu-avo" firstAttribute="top" secondItem="F95-ai-8y8" secondAttribute="bottom" id="r2g-Bw-Pvl"/>
                             <constraint firstItem="mg4-Z2-UrJ" firstAttribute="height" secondItem="cem-W9-ljy" secondAttribute="height" id="sHO-ot-t3x"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="UA6-gK-ytU"/>
-                                <exclude reference="irg-vV-g0r"/>
+                                <exclude reference="7kX-Ir-RSq"/>
+                                <exclude reference="ebn-mg-uRN"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="jIV-31-g3I" appends="YES" id="Alc-xH-v7q"/>
+                            <outletCollection property="gestureRecognizers" destination="EXD-7Y-N5y" appends="YES" id="Qft-O3-uwS"/>
+                        </connections>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="XNz-wi-8si"/>
                     <connections>
                         <outlet property="favoriteCollectionView" destination="dib-IC-H7S" id="6mD-nD-qKV"/>
+                        <outlet property="firstViewConstraint" destination="361-L7-x4W" id="fUi-LD-iqw"/>
+                        <outlet property="firstViewSwitcherConstraint" destination="DFT-pD-Cqw" id="0tO-BA-lN1"/>
                         <outlet property="mySketchCollectionView" destination="cem-W9-ljy" id="mJZ-Rj-CX6"/>
                         <outlet property="pickupCollectionView" destination="mg4-Z2-UrJ" id="03k-ML-VJh"/>
+                        <outlet property="secondViewContstraint" destination="ebn-mg-uRN" id="vrQ-DS-sKg"/>
+                        <outlet property="secondViewSwitcherConstraint" destination="dw1-3Q-pOK" id="Edw-Te-gAX"/>
+                        <outlet property="thirdViewConstraint" destination="7kX-Ir-RSq" id="m8e-Vw-6gr"/>
+                        <outlet property="thirdViewSwitcherConstraint" destination="MVF-2R-KPv" id="D9d-pK-f9x"/>
+                        <outletCollection property="switcherButtons" destination="brf-Qv-U4s" id="W4w-U1-p8q"/>
+                        <outletCollection property="switcherButtons" destination="uBe-U7-xMJ" id="AaP-sC-Gmx"/>
+                        <outletCollection property="switcherButtons" destination="uaz-C5-Jce" id="8mC-t0-DgE"/>
                         <segue destination="QsW-hT-yOa" kind="show" id="7KI-N3-XyZ"/>
                         <segue destination="ux5-UC-p5P" kind="show" id="1ZX-h9-WC3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Be0-5I-dE5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="jIV-31-g3I">
+                    <connections>
+                        <action selector="swipeLeft:" destination="Jdi-Q1-RrY" id="wiG-Vi-o2J"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="EXD-7Y-N5y">
+                    <connections>
+                        <action selector="swipeRight:" destination="Jdi-Q1-RrY" id="lU1-to-aUO"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1537" y="778"/>
         </scene>

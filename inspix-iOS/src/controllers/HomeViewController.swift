@@ -9,13 +9,30 @@
 import UIKit
 import RealmSwift
 
+enum CollectionViewID : Int{
+    case MySketch = 0
+    case Pickup = 1
+    case Favorite = 2
+}
 class HomeViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
+    @IBOutlet weak var firstViewConstraint: NSLayoutConstraint!
+    @IBOutlet weak var secondViewContstraint: NSLayoutConstraint!
+    @IBOutlet weak var thirdViewConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var firstViewSwitcherConstraint: NSLayoutConstraint!
+    @IBOutlet weak var secondViewSwitcherConstraint: NSLayoutConstraint!
+    @IBOutlet weak var thirdViewSwitcherConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var mySketchCollectionView: UICollectionView!
     @IBOutlet weak var pickupCollectionView: UICollectionView!
     @IBOutlet weak var favoriteCollectionView: UICollectionView!
     
+    @IBOutlet var switcherButtons: [UIButton]!
+
+    var showingView:CollectionViewID = .MySketch
     var sketches:[Sketch] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let titleImageView = UIImageView(image: UIImage(named: "header"))
@@ -84,4 +101,70 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         return sketches.count
     }
 
+    @IBAction func selectMySwitch(_ sender: UIButton) {
+        switchShowingView(index: .MySketch)
+    }
+    @IBAction func selectPickup(_ sender: UIButton) {
+        switchShowingView(index: .Pickup)
+    }
+    @IBAction func selectFavorite(_ sender: UIButton) {
+        switchShowingView(index: .Favorite)
+    }
+    @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
+        //ページ戻し
+        if showingView != CollectionViewID.MySketch {
+            switchShowingView(index: CollectionViewID(rawValue: showingView.rawValue - 1)!)
+        }
+    }
+    @IBAction func swipeLeft(_ sender: UISwipeGestureRecognizer) {
+        //ページめくり
+        if showingView != CollectionViewID.Favorite {
+            switchShowingView(index: CollectionViewID(rawValue: showingView.rawValue + 1)!)
+        }
+    }
+    
+    func switchShowingView(index:CollectionViewID){
+        showingView = index
+
+        switch index {
+        case .MySketch:
+            NSLayoutConstraint.deactivate([secondViewContstraint,thirdViewConstraint])
+            NSLayoutConstraint.deactivate([secondViewSwitcherConstraint,thirdViewSwitcherConstraint])
+            NSLayoutConstraint.activate([firstViewConstraint])
+            NSLayoutConstraint.activate([firstViewSwitcherConstraint])
+            
+        case .Pickup:
+            NSLayoutConstraint.deactivate([firstViewConstraint,thirdViewConstraint])
+            NSLayoutConstraint.deactivate([firstViewSwitcherConstraint,thirdViewSwitcherConstraint])
+            NSLayoutConstraint.activate([secondViewContstraint])
+            NSLayoutConstraint.activate([secondViewSwitcherConstraint])
+ 
+        case .Favorite:
+            NSLayoutConstraint.deactivate([secondViewContstraint,firstViewConstraint])
+            NSLayoutConstraint.deactivate([secondViewSwitcherConstraint,firstViewSwitcherConstraint])
+            NSLayoutConstraint.activate([thirdViewConstraint])
+            NSLayoutConstraint.activate([thirdViewSwitcherConstraint])
+        
+        default:
+            break
+        }
+        
+        // 更新をかける
+        UIView.animate(
+            withDuration: 0.3,
+            delay:0.1,
+            options:UIViewAnimationOptions.curveEaseOut,
+            animations: {() -> Void in
+                self.view.layoutIfNeeded()
+
+                self.switcherButtons.forEach({ $0.titleLabel?.font = UIFont.systemFont(ofSize: 15) })
+                self.switcherButtons.forEach({ $0.setTitleColor(UIColor.lightGray, for: .normal) })
+                self.switcherButtons.filter({ $0.tag == self.showingView.rawValue}).forEach({ $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15) })
+                self.switcherButtons.filter({ $0.tag == self.showingView.rawValue}).forEach({ $0.setTitleColor(UIColor.black, for: .normal) })
+
+        },
+            completion: nil
+        )
+
+    }
 }
