@@ -11,7 +11,9 @@ import RealmSwift
 
 class HomeViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var mySketchCollectionView: UICollectionView!
+    @IBOutlet weak var pickupCollectionView: UICollectionView!
+    @IBOutlet weak var favoriteCollectionView: UICollectionView!
     
     var sketches:[Sketch] = []
     override func viewDidLoad() {
@@ -21,10 +23,10 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         self.navigationController?.navigationBar.backgroundColor = UIColor.white
         
         let sketchCellNib = UINib(nibName: "SketchCollectionViewCell", bundle: nil)
-        self.collectionView.register(sketchCellNib, forCellWithReuseIdentifier: "sketchCell")
-        self.collectionView.delegate = self
-        self.collectionView.dataSource = self
-        self.collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        self.mySketchCollectionView.register(sketchCellNib, forCellWithReuseIdentifier: "sketchCell")
+        self.mySketchCollectionView.delegate = self
+        self.mySketchCollectionView.dataSource = self
+        self.mySketchCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -36,7 +38,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         for sketch in realm.objects(Sketch.self) {
             sketches.insert(sketch, at: 0)
         }
-        self.collectionView.reloadData()
+        self.mySketchCollectionView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,7 +74,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         return 1.0
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = self.collectionView.frame.size.width / 2 - 0.5
+        let width = collectionView.frame.size.width / 2 - 0.5
         let returnSize = CGSize(width: width, height: width)
         
         return returnSize
