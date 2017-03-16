@@ -32,7 +32,7 @@ class CameraViewController: UIViewController {
     }
 
     @IBAction func returnHomeView(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+         _ = self.navigationController?.popViewController(animated: true)
     }
     @IBAction func bgColorChange(_ sender: UISlider) {
         self.drawableView.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: CGFloat(sender.value))
@@ -63,11 +63,18 @@ class CameraViewController: UIViewController {
     
     @IBAction func takePhoto(_ sender: UIBarButtonItem) {
         cameraView.takePhoto(completionHandler: { image in
-            var photo_image = image
+            var photoImage = image
             if self.isPinningPhoto {
-                    photo_image = self.pinnedImageView.image!
+                    photoImage = self.pinnedImageView.image!
             }
-            var sketch_image = self.drawableView.image
+            let sketchImage = self.drawableView.image
+            
+            //シェア画面へ
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let nextView = mainStoryboard.instantiateViewController(withIdentifier: "ShareViewController") as! ShareViewController
+            nextView.photoImage = photoImage
+            nextView.sketchImage = sketchImage
+            self.navigationController?.pushViewController(nextView, animated: true)
         })
     }
     @IBAction func pinnedPhoto(_ sender: UIBarButtonItem) {

@@ -29,6 +29,9 @@ class UserRegistViewController: UIViewController,UITextFieldDelegate {
         return true
     }
     @IBAction func textValueChanged(_ sender: UITextField) {
+        if (sender.text?.characters.count)! > 20 {
+            self.userNameTextField.text = sender.text?.substring(to: (sender.text?.index((sender.text?.startIndex)!, offsetBy: 20))!)
+        }
         if (sender.text?.characters.count)! > 0 {
             registerBtn.backgroundColor = UIColor.selectedTintColor()
             registerBtn.isEnabled = true
