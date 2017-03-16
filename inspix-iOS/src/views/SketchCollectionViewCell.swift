@@ -10,7 +10,6 @@ import UIKit
 
 class SketchCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var thumbnailImageView: UIImageView!
-    var sketch : Sketch?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
