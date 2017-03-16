@@ -18,7 +18,8 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         super.viewDidLoad()
         let titleImageView = UIImageView(image: UIImage(named: "header"))
         self.navigationItem.titleView = titleImageView
-
+        self.navigationController?.navigationBar.backgroundColor = UIColor.white
+        
         let sketchCellNib = UINib(nibName: "SketchCollectionViewCell", bundle: nil)
         self.collectionView.register(sketchCellNib, forCellWithReuseIdentifier: "sketchCell")
         self.collectionView.delegate = self
