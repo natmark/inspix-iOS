@@ -35,6 +35,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         for sketch in realm.objects(Sketch.self) {
             sketches.insert(sketch, at: 0)
         }
+        self.collectionView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,14 +50,15 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         let sketchCell:SketchCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "sketchCell", for: indexPath) as! SketchCollectionViewCell
         
         if let compositedImageData = sketches[indexPath.row].compositedImage {
-            let imageTmp = UIImage(data: compositedImageData as Data)
-            sketchCell.thumbnailImageView.image = UIImage(cgImage: imageTmp!.cgImage!, scale: imageTmp!.scale, orientation: .right)
+            sketchCell.thumbnailImageView.image = UIImage(data: compositedImageData as Data)
         }
-        sketchCell.sketch = sketches[indexPath.row]
         return sketchCell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextView = mainStoryboard.instantiateViewController(withIdentifier: "PostDetailViewController") as! PostDetailViewController
+        nextView.sketch = sketches[indexPath.row]
+        self.navigationController?.pushViewController(nextView, animated: true)
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
