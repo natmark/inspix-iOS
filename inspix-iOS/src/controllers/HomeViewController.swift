@@ -8,23 +8,56 @@
 
 import UIKit
 import RealmSwift
+import APIKit
 
+enum CollectionViewID : Int{
+    case MySketch = 0
+    case Pickup = 1
+    case Favorite = 2
+}
 class HomeViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var firstViewConstraint: NSLayoutConstraint!
+    @IBOutlet weak var secondViewContstraint: NSLayoutConstraint!
+    @IBOutlet weak var thirdViewConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var firstViewSwitcherConstraint: NSLayoutConstraint!
+    @IBOutlet weak var secondViewSwitcherConstraint: NSLayoutConstraint!
+    @IBOutlet weak var thirdViewSwitcherConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var mySketchCollectionView: UICollectionView!
+    @IBOutlet weak var pickupCollectionView: UICollectionView!
+    @IBOutlet weak var favoriteCollectionView: UICollectionView!
+    
+    @IBOutlet var switcherButtons: [UIButton]!
+
+    var showingView:CollectionViewID = .MySketch
     var sketches:[Sketch] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let titleImageView = UIImageView(image: UIImage(named: "header"))
         self.navigationItem.titleView = titleImageView
-
+        self.navigationController?.navigationBar.backgroundColor = UIColor.white
+        
         let sketchCellNib = UINib(nibName: "SketchCollectionViewCell", bundle: nil)
-        self.collectionView.register(sketchCellNib, forCellWithReuseIdentifier: "sketchCell")
-        self.collectionView.delegate = self
-        self.collectionView.dataSource = self
-        self.collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        self.mySketchCollectionView.register(sketchCellNib, forCellWithReuseIdentifier: "sketchCell")
+        self.mySketchCollectionView.delegate = self
+        self.mySketchCollectionView.dataSource = self
+        self.mySketchCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         // Do any additional setup after loading the view.
+        
+        let userAuth = UserConfigManager.sharedManager.getUserAuth()
+        let request = GetUserTimeLineRequest(userId: String(userAuth.userId!), pager: 1)
+        Session.send(request) { result in
+            switch result {
+            case .success(let timeline):
+                print(timeline)
+                
+            case .failure(let error):
+                print("error: \(error)")
+            }
+        }
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
@@ -35,7 +68,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         for sketch in realm.objects(Sketch.self) {
             sketches.insert(sketch, at: 0)
         }
-        self.collectionView.reloadData()
+        self.mySketchCollectionView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,7 +104,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         return 1.0
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = self.collectionView.frame.size.width / 2 - 0.5
+        let width = collectionView.frame.size.width / 2 - 0.5
         let returnSize = CGSize(width: width, height: width)
         
         return returnSize
@@ -81,4 +114,70 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         return sketches.count
     }
 
+    @IBAction func selectMySwitch(_ sender: UIButton) {
+        switchShowingView(index: .MySketch)
+    }
+    @IBAction func selectPickup(_ sender: UIButton) {
+        switchShowingView(index: .Pickup)
+    }
+    @IBAction func selectFavorite(_ sender: UIButton) {
+        switchShowingView(index: .Favorite)
+    }
+    @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
+        //ページ戻し
+        if showingView != CollectionViewID.MySketch {
+            switchShowingView(index: CollectionViewID(rawValue: showingView.rawValue - 1)!)
+        }
+    }
+    @IBAction func swipeLeft(_ sender: UISwipeGestureRecognizer) {
+        //ページめくり
+        if showingView != CollectionViewID.Favorite {
+            switchShowingView(index: CollectionViewID(rawValue: showingView.rawValue + 1)!)
+        }
+    }
+    
+    func switchShowingView(index:CollectionViewID){
+        showingView = index
+
+        switch index {
+        case .MySketch:
+            NSLayoutConstraint.deactivate([secondViewContstraint,thirdViewConstraint])
+            NSLayoutConstraint.deactivate([secondViewSwitcherConstraint,thirdViewSwitcherConstraint])
+            NSLayoutConstraint.activate([firstViewConstraint])
+            NSLayoutConstraint.activate([firstViewSwitcherConstraint])
+            
+        case .Pickup:
+            NSLayoutConstraint.deactivate([firstViewConstraint,thirdViewConstraint])
+            NSLayoutConstraint.deactivate([firstViewSwitcherConstraint,thirdViewSwitcherConstraint])
+            NSLayoutConstraint.activate([secondViewContstraint])
+            NSLayoutConstraint.activate([secondViewSwitcherConstraint])
+ 
+        case .Favorite:
+            NSLayoutConstraint.deactivate([secondViewContstraint,firstViewConstraint])
+            NSLayoutConstraint.deactivate([secondViewSwitcherConstraint,firstViewSwitcherConstraint])
+            NSLayoutConstraint.activate([thirdViewConstraint])
+            NSLayoutConstraint.activate([thirdViewSwitcherConstraint])
+        
+        default:
+            break
+        }
+        
+        // 更新をかける
+        UIView.animate(
+            withDuration: 0.3,
+            delay:0.1,
+            options:UIViewAnimationOptions.curveEaseOut,
+            animations: {() -> Void in
+                self.view.layoutIfNeeded()
+
+                self.switcherButtons.forEach({ $0.titleLabel?.font = UIFont.systemFont(ofSize: 15) })
+                self.switcherButtons.forEach({ $0.setTitleColor(UIColor.lightGray, for: .normal) })
+                self.switcherButtons.filter({ $0.tag == self.showingView.rawValue}).forEach({ $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15) })
+                self.switcherButtons.filter({ $0.tag == self.showingView.rawValue}).forEach({ $0.setTitleColor(UIColor.black, for: .normal) })
+
+        },
+            completion: nil
+        )
+
+    }
 }

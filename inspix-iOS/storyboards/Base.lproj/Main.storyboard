@@ -162,7 +162,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cem-W9-ljy">
-                                <rect key="frame" x="0.0" y="42" width="375" height="561"/>
+                                <rect key="frame" x="0.0" y="40" width="375" height="563"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DNF-qQ-U8W">
                                     <size key="itemSize" width="162" height="152"/>
@@ -172,6 +172,46 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="EIP-A8-H6E">
+                                        <rect key="frame" x="0.0" y="0.0" width="162" height="152"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="162" height="152"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mg4-Z2-UrJ">
+                                <rect key="frame" x="375" y="40" width="375" height="563"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wRx-6k-xLS">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="6e4-R4-GdI">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dib-IC-H7S">
+                                <rect key="frame" x="750" y="40" width="375" height="563"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="037-7w-Pt1">
+                                    <size key="itemSize" width="162" height="152"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ZjX-qo-fz1">
                                         <rect key="frame" x="0.0" y="0.0" width="162" height="152"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -192,43 +232,140 @@
                                     <segue destination="QsW-hT-yOa" kind="show" id="B6g-sU-wPh"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="T7g-as-l89">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pIn-Cu-avo">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brf-Qv-U4s">
+                                        <rect key="frame" x="0.0" y="0.0" width="125" height="40"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="マイスケッチ">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="selectMySwitch:" destination="Jdi-Q1-RrY" eventType="touchUpInside" id="XJR-63-nuP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uBe-U7-xMJ">
+                                        <rect key="frame" x="125" y="0.0" width="125" height="40"/>
+                                        <state key="normal" title="ピックアップ">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="selectPickup:" destination="Jdi-Q1-RrY" eventType="touchUpInside" id="6SG-Hv-Mzm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uaz-C5-Jce">
+                                        <rect key="frame" x="250" y="0.0" width="125" height="40"/>
+                                        <state key="normal" title="お気に入り">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="selectFavorite:" destination="Jdi-Q1-RrY" eventType="touchUpInside" id="UvA-HV-4E5"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcq-o4-EQc">
+                                        <rect key="frame" x="0.0" y="38" width="125" height="2"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="Xgk-ea-lij"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="tgs-QO-NuB"/>
+                                    <constraint firstAttribute="trailing" secondItem="uaz-C5-Jce" secondAttribute="trailing" id="3cv-1u-7hi"/>
+                                    <constraint firstItem="uBe-U7-xMJ" firstAttribute="leading" secondItem="brf-Qv-U4s" secondAttribute="trailing" id="8jv-O9-Z4y"/>
+                                    <constraint firstItem="vcq-o4-EQc" firstAttribute="centerX" secondItem="pIn-Cu-avo" secondAttribute="centerX" constant="-125" id="DFT-pD-Cqw"/>
+                                    <constraint firstItem="uaz-C5-Jce" firstAttribute="leading" secondItem="uBe-U7-xMJ" secondAttribute="trailing" id="IeO-rp-VsD"/>
+                                    <constraint firstItem="vcq-o4-EQc" firstAttribute="centerX" secondItem="pIn-Cu-avo" secondAttribute="centerX" constant="125" id="MVF-2R-KPv"/>
+                                    <constraint firstAttribute="bottom" secondItem="vcq-o4-EQc" secondAttribute="bottom" id="SBw-wv-DUr"/>
+                                    <constraint firstAttribute="bottom" secondItem="brf-Qv-U4s" secondAttribute="bottom" id="ZRN-gl-lqp"/>
+                                    <constraint firstItem="brf-Qv-U4s" firstAttribute="leading" secondItem="pIn-Cu-avo" secondAttribute="leading" id="aqp-uQ-j9W"/>
+                                    <constraint firstItem="uBe-U7-xMJ" firstAttribute="width" secondItem="brf-Qv-U4s" secondAttribute="width" id="b1q-RE-VwY"/>
+                                    <constraint firstItem="uBe-U7-xMJ" firstAttribute="top" secondItem="pIn-Cu-avo" secondAttribute="top" id="bMP-nZ-oeJ"/>
+                                    <constraint firstAttribute="height" constant="40" id="cQU-tn-OWr"/>
+                                    <constraint firstItem="vcq-o4-EQc" firstAttribute="width" secondItem="brf-Qv-U4s" secondAttribute="width" id="dHr-fU-8U2"/>
+                                    <constraint firstItem="uaz-C5-Jce" firstAttribute="width" secondItem="brf-Qv-U4s" secondAttribute="width" id="dqq-7d-tbR"/>
+                                    <constraint firstItem="vcq-o4-EQc" firstAttribute="centerX" secondItem="pIn-Cu-avo" secondAttribute="centerX" id="dw1-3Q-pOK"/>
+                                    <constraint firstItem="uaz-C5-Jce" firstAttribute="top" secondItem="pIn-Cu-avo" secondAttribute="top" id="hVf-zF-T43"/>
+                                    <constraint firstAttribute="bottom" secondItem="uBe-U7-xMJ" secondAttribute="bottom" id="jXt-X7-Y3h"/>
+                                    <constraint firstItem="brf-Qv-U4s" firstAttribute="top" secondItem="pIn-Cu-avo" secondAttribute="top" id="mNp-30-8Nf"/>
+                                    <constraint firstAttribute="bottom" secondItem="uaz-C5-Jce" secondAttribute="bottom" id="uFZ-OQ-Adw"/>
                                 </constraints>
-                                <segments>
-                                    <segment title="マイスケッチ"/>
-                                    <segment title="ピックアップ"/>
-                                    <segment title="フォロー"/>
-                                </segments>
-                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            </segmentedControl>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="MVF-2R-KPv"/>
+                                        <exclude reference="dw1-3Q-pOK"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="cem-W9-ljy" firstAttribute="top" secondItem="T7g-as-l89" secondAttribute="bottom" id="3ta-cC-cfK"/>
+                            <constraint firstItem="0nc-ys-cmb" firstAttribute="trailing" secondItem="cem-W9-ljy" secondAttribute="trailing" constant="-16" id="0Ky-ff-BBB"/>
+                            <constraint firstItem="mg4-Z2-UrJ" firstAttribute="leading" secondItem="cem-W9-ljy" secondAttribute="trailing" id="1jp-tv-yrj"/>
+                            <constraint firstItem="mg4-Z2-UrJ" firstAttribute="leading" secondItem="yM7-5Y-2se" secondAttribute="trailing" id="361-L7-x4W"/>
+                            <constraint firstItem="mg4-Z2-UrJ" firstAttribute="trailing" secondItem="yM7-5Y-2se" secondAttribute="leading" id="7kX-Ir-RSq"/>
+                            <constraint firstItem="mg4-Z2-UrJ" firstAttribute="height" secondItem="dib-IC-H7S" secondAttribute="height" id="8DI-4R-LTK"/>
                             <constraint firstItem="qjN-2K-8v4" firstAttribute="top" secondItem="cem-W9-ljy" secondAttribute="bottom" id="90D-ZK-g13"/>
-                            <constraint firstItem="cem-W9-ljy" firstAttribute="leading" secondItem="yM7-5Y-2se" secondAttribute="leading" id="EFh-TI-mTg"/>
-                            <constraint firstItem="T7g-as-l89" firstAttribute="leading" secondItem="yM7-5Y-2se" secondAttribute="leading" id="ZgZ-9B-Jaa"/>
-                            <constraint firstItem="qjN-2K-8v4" firstAttribute="top" secondItem="0nc-ys-cmb" secondAttribute="bottom" constant="20" id="j5t-vs-jVf"/>
-                            <constraint firstAttribute="trailing" secondItem="cem-W9-ljy" secondAttribute="trailing" id="qbz-Ty-OeM"/>
-                            <constraint firstAttribute="trailing" secondItem="T7g-as-l89" secondAttribute="trailing" id="w6W-e1-AXI"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="0nc-ys-cmb" secondAttribute="trailing" id="wTh-Ty-yBm"/>
-                            <constraint firstItem="T7g-as-l89" firstAttribute="top" secondItem="F95-ai-8y8" secondAttribute="bottom" id="xUu-5G-mLT"/>
+                            <constraint firstItem="0nc-ys-cmb" firstAttribute="bottom" secondItem="cem-W9-ljy" secondAttribute="bottom" constant="-20" id="BDw-0w-Q1y"/>
+                            <constraint firstItem="mg4-Z2-UrJ" firstAttribute="width" secondItem="dib-IC-H7S" secondAttribute="width" id="CBp-4n-jbG"/>
+                            <constraint firstItem="mg4-Z2-UrJ" firstAttribute="centerY" secondItem="cem-W9-ljy" secondAttribute="centerY" id="Dbr-eY-Ftg"/>
+                            <constraint firstItem="pIn-Cu-avo" firstAttribute="leading" secondItem="yM7-5Y-2se" secondAttribute="leading" id="OEu-52-02d"/>
+                            <constraint firstItem="dib-IC-H7S" firstAttribute="leading" secondItem="mg4-Z2-UrJ" secondAttribute="trailing" id="VFH-cB-61Y"/>
+                            <constraint firstItem="cem-W9-ljy" firstAttribute="width" secondItem="yM7-5Y-2se" secondAttribute="width" id="ViF-PM-EUp"/>
+                            <constraint firstAttribute="trailing" secondItem="pIn-Cu-avo" secondAttribute="trailing" id="e8A-n9-khv"/>
+                            <constraint firstItem="mg4-Z2-UrJ" firstAttribute="centerX" secondItem="yM7-5Y-2se" secondAttribute="centerX" id="ebn-mg-uRN"/>
+                            <constraint firstItem="cem-W9-ljy" firstAttribute="top" secondItem="pIn-Cu-avo" secondAttribute="bottom" id="fui-lA-d7P"/>
+                            <constraint firstItem="mg4-Z2-UrJ" firstAttribute="centerY" secondItem="dib-IC-H7S" secondAttribute="centerY" id="hmO-8B-pji"/>
+                            <constraint firstItem="mg4-Z2-UrJ" firstAttribute="width" secondItem="cem-W9-ljy" secondAttribute="width" id="kud-mm-u5j"/>
+                            <constraint firstItem="pIn-Cu-avo" firstAttribute="top" secondItem="F95-ai-8y8" secondAttribute="bottom" id="r2g-Bw-Pvl"/>
+                            <constraint firstItem="mg4-Z2-UrJ" firstAttribute="height" secondItem="cem-W9-ljy" secondAttribute="height" id="sHO-ot-t3x"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="7kX-Ir-RSq"/>
+                                <exclude reference="ebn-mg-uRN"/>
+                            </mask>
+                        </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="jIV-31-g3I" appends="YES" id="Alc-xH-v7q"/>
+                            <outletCollection property="gestureRecognizers" destination="EXD-7Y-N5y" appends="YES" id="Qft-O3-uwS"/>
+                        </connections>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="XNz-wi-8si"/>
                     <connections>
-                        <outlet property="collectionView" destination="cem-W9-ljy" id="byy-Xk-Z7i"/>
+                        <outlet property="favoriteCollectionView" destination="dib-IC-H7S" id="6mD-nD-qKV"/>
+                        <outlet property="firstViewConstraint" destination="361-L7-x4W" id="fUi-LD-iqw"/>
+                        <outlet property="firstViewSwitcherConstraint" destination="DFT-pD-Cqw" id="0tO-BA-lN1"/>
+                        <outlet property="mySketchCollectionView" destination="cem-W9-ljy" id="mJZ-Rj-CX6"/>
+                        <outlet property="pickupCollectionView" destination="mg4-Z2-UrJ" id="03k-ML-VJh"/>
+                        <outlet property="secondViewContstraint" destination="ebn-mg-uRN" id="vrQ-DS-sKg"/>
+                        <outlet property="secondViewSwitcherConstraint" destination="dw1-3Q-pOK" id="Edw-Te-gAX"/>
+                        <outlet property="thirdViewConstraint" destination="7kX-Ir-RSq" id="m8e-Vw-6gr"/>
+                        <outlet property="thirdViewSwitcherConstraint" destination="MVF-2R-KPv" id="D9d-pK-f9x"/>
+                        <outletCollection property="switcherButtons" destination="brf-Qv-U4s" id="W4w-U1-p8q"/>
+                        <outletCollection property="switcherButtons" destination="uBe-U7-xMJ" id="AaP-sC-Gmx"/>
+                        <outletCollection property="switcherButtons" destination="uaz-C5-Jce" id="8mC-t0-DgE"/>
                         <segue destination="QsW-hT-yOa" kind="show" id="7KI-N3-XyZ"/>
                         <segue destination="ux5-UC-p5P" kind="show" id="1ZX-h9-WC3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Be0-5I-dE5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="jIV-31-g3I">
+                    <connections>
+                        <action selector="swipeLeft:" destination="Jdi-Q1-RrY" id="wiG-Vi-o2J"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="EXD-7Y-N5y">
+                    <connections>
+                        <action selector="swipeRight:" destination="Jdi-Q1-RrY" id="lU1-to-aUO"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2021.5999999999999" y="777.66116941529242"/>
+            <point key="canvasLocation" x="1537" y="778"/>
         </scene>
         <!--Title-->
         <scene sceneID="tGd-ib-Bfb">
@@ -383,7 +520,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UY9-IC-XzI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2965.5999999999999" y="1410.0449775112445"/>
+            <point key="canvasLocation" x="1537" y="1557"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="1Vd-tj-PeV">
@@ -540,7 +677,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Dw-Na-Hxh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2965.5999999999999" y="696.7016491754124"/>
+            <point key="canvasLocation" x="3713" y="775"/>
         </scene>
         <!--コメントを追加-->
         <scene sceneID="3V5-4a-GrV">
@@ -662,7 +799,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oKU-Wd-FGF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3773.5999999999999" y="709.29535232383819"/>
+            <point key="canvasLocation" x="4500" y="775"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hkb-6p-DjW">
@@ -688,7 +825,7 @@
         <image name="SplashIcon" width="192" height="269"/>
         <image name="btn_back" width="12" height="20"/>
         <image name="btn_done" width="22" height="18"/>
-        <image name="btn_livesketch" width="70" height="70"/>
+        <image name="btn_livesketch" width="64" height="64"/>
         <image name="icon_eraser" width="33" height="31"/>
         <image name="icon_guide" width="22" height="22"/>
         <image name="icon_pencil" width="30" height="30"/>

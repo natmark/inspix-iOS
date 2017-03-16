@@ -67,10 +67,6 @@ class UserRegistViewController: UIViewController,UITextFieldDelegate {
                 UserConfigManager.sharedManager.saveUserId(user.id)
                 self.login(user.id, password)
                 
-            case .failure(.responseError(let inspixError as InspixError)):
-                print(inspixError.message)
-                HUD.flash(.label(inspixError.message),delay:1.0)
-                
             case .failure(let error):
                 print("Unknown error: \(error)")
                 HUD.flash(.error, delay: 1.0)
@@ -91,10 +87,6 @@ class UserRegistViewController: UIViewController,UITextFieldDelegate {
                 }else{
                     HUD.flash(.label("ログインに失敗しました"),delay:1.0)
                 }
-            case .failure(.responseError(let inspixError as InspixError)):
-                print(inspixError.message)
-                HUD.flash(.label(inspixError.message),delay:1.0)
-
             case .failure(let error):
                 print("error: \(error)")
                 HUD.flash(.error, delay: 1.0)

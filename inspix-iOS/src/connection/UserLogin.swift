@@ -8,12 +8,13 @@
 
 import Foundation
 import APIKit
+import Decodable
 
 struct PostUserLoginRequest : InspixRequest {
     let userId : Int
     let password : String
     
-    typealias Response = Login
+    typealias Response = LoginResponse
     
     var method: HTTPMethod {
         return .post
@@ -46,23 +47,15 @@ struct PostUserLoginRequest : InspixRequest {
         
         return object
     }
-    func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-        print(urlResponse.allHeaderFields)
-        print(object)
-        guard let dictionary = object as? [String: AnyObject],
-            let login = Login(dictionary: dictionary) else {
-                throw ResponseError.unexpectedObject(object)
-        }
-        return login
+    func response(from object: Any, urlResponse: HTTPURLResponse) throws -> LoginResponse {
+        return try LoginResponse.decode(object)
     }
 }
-struct Login {
+struct LoginResponse: Decodable {
     let result: Bool
-    init?(dictionary: [String: AnyObject]) {
-        guard let result = (dictionary["data"]?["result"] as? NSNumber) else {
-            self.result = false
-            return nil
-        }
-        self.result = result.boolValue
+    static func decode(_ json: Any) throws -> LoginResponse {
+        return try LoginResponse(
+            result: json => "data" => "result"
+        )
     }
 }

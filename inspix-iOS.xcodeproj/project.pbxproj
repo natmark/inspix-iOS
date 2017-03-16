@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		F72E5F311E7A5E9C00CE979D /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72E5F301E7A5E9C00CE979D /* PostDetailViewController.swift */; };
 		F72E5F331E7A617300CE979D /* Weather.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F72E5F321E7A617300CE979D /* Weather.xcassets */; };
+		F72E5F3D1E7AB26D00CE979D /* UserTimeLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72E5F3C1E7AB26D00CE979D /* UserTimeLine.swift */; };
+		F72E5F3F1E7AB72F00CE979D /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72E5F3E1E7AB72F00CE979D /* APIResponse.swift */; };
+		F72E5F411E7ADAE600CE979D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72E5F401E7ADAE600CE979D /* User.swift */; };
 		F72E5F351E7A728700CE979D /* PostInspiration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72E5F341E7A728700CE979D /* PostInspiration.swift */; };
 		F72E5F391E7A72A400CE979D /* ImageUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72E5F381E7A72A400CE979D /* ImageUpload.swift */; };
 		F72E5F3B1E7A7E6200CE979D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F72E5F3A1E7A7E6200CE979D /* CoreLocation.framework */; };
@@ -21,7 +24,6 @@
 		F73965161E77CAD500F347C3 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73965151E77CAD500F347C3 /* String.swift */; };
 		F748D0401E77D39C001C9419 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F748D03F1E77D39C001C9419 /* PKHUD.framework */; };
 		F748D0421E77D7A1001C9419 /* UserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748D0411E77D7A1001C9419 /* UserLogin.swift */; };
-		F748D0441E7804BB001C9419 /* MyPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748D0431E7804BB001C9419 /* MyPageTableViewController.swift */; };
 		F748D04A1E7805C4001C9419 /* Common.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F748D0491E7805C4001C9419 /* Common.xcassets */; };
 		F748D04C1E780629001C9419 /* NotificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748D04B1E780629001C9419 /* NotificationTableViewController.swift */; };
 		F748D0501E780669001C9419 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748D04F1E780669001C9419 /* CameraViewController.swift */; };
@@ -41,6 +43,8 @@
 		F748E4511E77BD8B00356B7E /* UserConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748E4501E77BD8B00356B7E /* UserConfigManager.swift */; };
 		F748E4531E77C57700356B7E /* UserRegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748E4521E77C57700356B7E /* UserRegistViewController.swift */; };
 		F748E4551E77C63B00356B7E /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F748E4541E77C63B00356B7E /* CryptoSwift.framework */; };
+		F76F5F781E7ADC0700AF2C4A /* Inspiration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76F5F771E7ADC0700AF2C4A /* Inspiration.swift */; };
+		F76F5F7A1E7ADD6500AF2C4A /* Nokkari.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76F5F791E7ADD6500AF2C4A /* Nokkari.swift */; };
 		F7A43E711E79A32B006570E7 /* PlaceHolderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A43E701E79A32B006570E7 /* PlaceHolderTextView.swift */; };
 		F7A43E841E7A2AF1006570E7 /* SketchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A43E821E7A2AF1006570E7 /* SketchCollectionViewCell.swift */; };
 		F7A43E851E7A2AF1006570E7 /* SketchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7A43E831E7A2AF1006570E7 /* SketchCollectionViewCell.xib */; };
@@ -67,6 +71,9 @@
 /* Begin PBXFileReference section */
 		F72E5F301E7A5E9C00CE979D /* PostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		F72E5F321E7A617300CE979D /* Weather.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Weather.xcassets; sourceTree = "<group>"; };
+		F72E5F3C1E7AB26D00CE979D /* UserTimeLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTimeLine.swift; sourceTree = "<group>"; };
+		F72E5F3E1E7AB72F00CE979D /* APIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		F72E5F401E7ADAE600CE979D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F72E5F341E7A728700CE979D /* PostInspiration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostInspiration.swift; sourceTree = "<group>"; };
 		F72E5F381E7A72A400CE979D /* ImageUpload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUpload.swift; sourceTree = "<group>"; };
 		F72E5F3A1E7A7E6200CE979D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -83,7 +90,6 @@
 		F73965151E77CAD500F347C3 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		F748D03F1E77D39C001C9419 /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = Carthage/Build/iOS/PKHUD.framework; sourceTree = "<group>"; };
 		F748D0411E77D7A1001C9419 /* UserLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLogin.swift; sourceTree = "<group>"; };
-		F748D0431E7804BB001C9419 /* MyPageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyPageTableViewController.swift; path = ../../storyboards/MyPageTableViewController.swift; sourceTree = "<group>"; };
 		F748D0491E7805C4001C9419 /* Common.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Common.xcassets; sourceTree = "<group>"; };
 		F748D04B1E780629001C9419 /* NotificationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewController.swift; sourceTree = "<group>"; };
 		F748D04F1E780669001C9419 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +109,8 @@
 		F748E4501E77BD8B00356B7E /* UserConfigManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserConfigManager.swift; sourceTree = "<group>"; };
 		F748E4521E77C57700356B7E /* UserRegistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRegistViewController.swift; sourceTree = "<group>"; };
 		F748E4541E77C63B00356B7E /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
+		F76F5F771E7ADC0700AF2C4A /* Inspiration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inspiration.swift; sourceTree = "<group>"; };
+		F76F5F791E7ADD6500AF2C4A /* Nokkari.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nokkari.swift; sourceTree = "<group>"; };
 		F7A43E701E79A32B006570E7 /* PlaceHolderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceHolderTextView.swift; sourceTree = "<group>"; };
 		F7A43E821E7A2AF1006570E7 /* SketchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SketchCollectionViewCell.swift; sourceTree = "<group>"; };
 		F7A43E831E7A2AF1006570E7 /* SketchCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SketchCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -223,7 +231,6 @@
 		F748E4211E769C6500356B7E /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F748D0431E7804BB001C9419 /* MyPageTableViewController.swift */,
 				F72E5F301E7A5E9C00CE979D /* PostDetailViewController.swift */,
 				F748D04F1E780669001C9419 /* CameraViewController.swift */,
 				F7B3403E1E79863A00328883 /* ShareViewController.swift */,
@@ -252,6 +259,9 @@
 			isa = PBXGroup;
 			children = (
 				F7A43E8C1E7A5005006570E7 /* Sketch.swift */,
+				F72E5F401E7ADAE600CE979D /* User.swift */,
+				F76F5F771E7ADC0700AF2C4A /* Inspiration.swift */,
+				F76F5F791E7ADD6500AF2C4A /* Nokkari.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -279,8 +289,10 @@
 				F72E5F341E7A728700CE979D /* PostInspiration.swift */,
 				F72E5F381E7A72A400CE979D /* ImageUpload.swift */,
 				F748E4481E77BBF400356B7E /* UserRegist.swift */,
+				F72E5F3C1E7AB26D00CE979D /* UserTimeLine.swift */,
 				F748D0411E77D7A1001C9419 /* UserLogin.swift */,
 				F748E44A1E77BBFA00356B7E /* InspixRequest.swift */,
+				F72E5F3E1E7AB72F00CE979D /* APIResponse.swift */,
 			);
 			path = connection;
 			sourceTree = "<group>";
@@ -448,8 +460,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F72E5F411E7ADAE600CE979D /* User.swift in Sources */,
 				F748D04C1E780629001C9419 /* NotificationTableViewController.swift in Sources */,
 				F72E5F311E7A5E9C00CE979D /* PostDetailViewController.swift in Sources */,
+				F76F5F781E7ADC0700AF2C4A /* Inspiration.swift in Sources */,
 				F748E44B1E77BBFA00356B7E /* InspixRequest.swift in Sources */,
 				F7B3403F1E79863A00328883 /* ShareViewController.swift in Sources */,
 				F7A43E8D1E7A5005006570E7 /* Sketch.swift in Sources */,
@@ -466,12 +480,14 @@
 				F72E5F351E7A728700CE979D /* PostInspiration.swift in Sources */,
 				F748E40F1E76946500356B7E /* LoginViewController.swift in Sources */,
 				F748E44F1E77BD5300356B7E /* Util.swift in Sources */,
-				F748D0441E7804BB001C9419 /* MyPageTableViewController.swift in Sources */,
 				F7B33FC41E791D2900328883 /* GuideView.swift in Sources */,
 				F73844DD1E7287D4000E7D18 /* AppDelegate.swift in Sources */,
 				F748D0501E780669001C9419 /* CameraViewController.swift in Sources */,
 				F7A43E841E7A2AF1006570E7 /* SketchCollectionViewCell.swift in Sources */,
+				F76F5F7A1E7ADD6500AF2C4A /* Nokkari.swift in Sources */,
 				F748E4511E77BD8B00356B7E /* UserConfigManager.swift in Sources */,
+				F72E5F3D1E7AB26D00CE979D /* UserTimeLine.swift in Sources */,
+				F72E5F3F1E7AB72F00CE979D /* APIResponse.swift in Sources */,
 				F73844E51E7287D4000E7D18 /* inspix_iOS.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
