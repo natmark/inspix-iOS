@@ -13,6 +13,7 @@ import RealmSwift
 class Sketch: Object {
     dynamic var title = ""
     dynamic var note = ""
+    dynamic var time = ""
     dynamic var photoImage : NSData?
     dynamic var sketchImage : NSData?
     dynamic var compositedImage : NSData?

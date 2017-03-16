@@ -29,11 +29,11 @@ class PostDetailViewController: UIViewController {
         }
         userNoteTextView.attributedText = String.tagAttributedStr(from: (sketch?.note)!)
         self.navItem.title = sketch?.title
-        
+        self.postedTimeLabel.text = sketch?.time
         // Do any additional setup after loading the view.
     }
     @IBAction func backToHome(_ sender: UIBarButtonItem) {
-        self.navigationController?.popViewController(animated: true)
+        _ = self.navigationController?.popViewController(animated: true)
     }
 
     override func didReceiveMemoryWarning() {

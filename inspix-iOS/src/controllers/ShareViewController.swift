@@ -63,14 +63,30 @@ class ShareViewController: UIViewController {
             sketch.compositedImage = UIImagePNGRepresentation(compositedImage) as NSData?
         }
         
-        let realm = try! Realm()
-        try! realm.write {
-            realm.add(sketch)
-        }
+        let now = NSDate()
         
-        for viewController in (self.navigationController?.viewControllers)! {
-            if viewController.isKind(of: HomeViewController.self) {
-                _ = self.navigationController?.popToViewController(viewController, animated: false)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd HH:mm"
+        
+        let timeString = formatter.string(from: now as Date)
+        sketch.time = timeString
+        
+        let realm = try! Realm()
+        
+        do{
+            try realm.write {
+                realm.add(sketch)
+            }
+            for viewController in (self.navigationController?.viewControllers)! {
+                if viewController.isKind(of: HomeViewController.self) {
+                    _ = self.navigationController?.popToViewController(viewController, animated: false)
+                }
+            }
+        }catch{
+            for viewController in (self.navigationController?.viewControllers)! {
+                if viewController.isKind(of: HomeViewController.self) {
+                    _ = self.navigationController?.popToViewController(viewController, animated: false)
+                }
             }
         }
     }

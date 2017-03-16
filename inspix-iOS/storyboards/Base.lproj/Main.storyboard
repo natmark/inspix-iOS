@@ -273,10 +273,10 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="ノートを追加 (# をつけるとタグ)"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </textView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15:12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHq-jC-oBe">
-                                                        <rect key="frame" x="317" y="10" width="42" height="21"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017/01/12 15:12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHq-jC-oBe">
+                                                        <rect key="frame" x="229" y="10" width="130" height="21"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="42" id="gIp-Bo-gGA"/>
+                                                            <constraint firstAttribute="width" constant="130" id="gIp-Bo-gGA"/>
                                                             <constraint firstAttribute="height" constant="21" id="xCI-HP-cTr"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -308,7 +308,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="東京都渋谷区千駄ヶ谷４丁目２３−５ JPR千駄ヶ谷ビル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJo-UD-iOU">
-                                                        <rect key="frame" x="117" y="10.5" width="192" height="21"/>
+                                                        <rect key="frame" x="117" y="11" width="104" height="21"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="21" id="f6T-g3-q0E"/>
                                                         </constraints>

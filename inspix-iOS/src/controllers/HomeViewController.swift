@@ -35,6 +35,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         for sketch in realm.objects(Sketch.self) {
             sketches.insert(sketch, at: 0)
         }
+        self.collectionView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
