@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import RealmSwift
 
 class HomeViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var sketches:[Sketch] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         let titleImageView = UIImageView(image: UIImage(named: "header"))
@@ -26,7 +28,13 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
-        self.navigationItem.setHidesBackButton(true, animated: false)        
+        self.navigationItem.setHidesBackButton(true, animated: false)
+        
+        sketches = []
+        let realm = try! Realm()
+        for sketch in realm.objects(Sketch.self) {
+            sketches.insert(sketch, at: 0)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,9 +47,17 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
         
         let sketchCell:SketchCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "sketchCell", for: indexPath) as! SketchCollectionViewCell
+        
+        if let compositedImageData = sketches[indexPath.row].compositedImage {
+            let imageTmp = UIImage(data: compositedImageData as Data)
+            sketchCell.thumbnailImageView.image = UIImage(cgImage: imageTmp!.cgImage!, scale: imageTmp!.scale, orientation: .right)
+        }
+        sketchCell.sketch = sketches[indexPath.row]
         return sketchCell
     }
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -60,7 +76,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // 要素数を入れる、要素以上の数字を入れると表示でエラーとなる
-        return 1
+        return sketches.count
     }
 
 }

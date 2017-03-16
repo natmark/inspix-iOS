@@ -106,12 +106,12 @@
                     <connections>
                         <outlet property="registerBtn" destination="6pR-12-Cl9" id="uG4-SD-iEB"/>
                         <outlet property="userNameTextField" destination="KqS-l2-pQ2" id="N7z-0M-l0Z"/>
-                        <segue destination="Jdi-Q1-RrY" kind="show" id="TOj-Yo-eN5"/>
+                        <segue destination="Jdi-Q1-RrY" kind="show" id="bqL-Rg-NGZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GaB-Mc-U8j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1093.5999999999999" y="-30.134932533733135"/>
+            <point key="canvasLocation" x="326" y="51"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -142,12 +142,12 @@
                     <navigationItem key="navigationItem" id="YN3-Qi-9Qr"/>
                     <connections>
                         <segue destination="cDF-0w-mYG" kind="show" identifier="" id="fUM-7h-mN4"/>
-                        <segue destination="Jdi-Q1-RrY" kind="show" id="Ff1-N3-RO4"/>
+                        <segue destination="Jdi-Q1-RrY" kind="show" id="Rjt-0D-bTx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1094" y="775"/>
+            <point key="canvasLocation" x="327" y="778"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="WGt-wA-v5p">
@@ -219,6 +219,7 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" id="XNz-wi-8si"/>
                     <connections>
                         <outlet property="collectionView" destination="cem-W9-ljy" id="byy-Xk-Z7i"/>
                         <segue destination="QsW-hT-yOa" kind="show" id="7KI-N3-XyZ"/>
@@ -508,10 +509,15 @@
                                 <action selector="backToCameraView:" destination="yAf-eu-Od7" id="tEa-EL-tE9"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="btn_done" id="AOA-3x-tWe"/>
+                        <barButtonItem key="rightBarButtonItem" image="btn_done" id="AOA-3x-tWe">
+                            <connections>
+                                <action selector="saveSketch:" destination="yAf-eu-Od7" id="mg5-TF-bTA"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="compositedImageView" destination="8yw-5z-smV" id="6uX-RY-qU7"/>
+                        <outlet property="noteTextView" destination="Lx9-i8-PXb" id="cq3-Vg-nlL"/>
                         <outlet property="scrollView" destination="K9Q-6O-nYb" id="q8W-98-UrS"/>
                         <outlet property="sketchTitleTextField" destination="Jlb-nW-cg1" id="Zo3-0a-EMQ"/>
                     </connections>
@@ -537,7 +543,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V3z-PE-3P5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="228" y="774.96251874062978"/>
+            <point key="canvasLocation" x="-559" y="775"/>
         </scene>
     </scenes>
     <resources>
@@ -554,7 +560,7 @@
         <image name="img_inspix" width="74" height="86"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TOj-Yo-eN5"/>
+        <segue reference="bqL-Rg-NGZ"/>
         <segue reference="7KI-N3-XyZ"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -40,6 +40,9 @@
 		F7A43E711E79A32B006570E7 /* PlaceHolderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A43E701E79A32B006570E7 /* PlaceHolderTextView.swift */; };
 		F7A43E841E7A2AF1006570E7 /* SketchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A43E821E7A2AF1006570E7 /* SketchCollectionViewCell.swift */; };
 		F7A43E851E7A2AF1006570E7 /* SketchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7A43E831E7A2AF1006570E7 /* SketchCollectionViewCell.xib */; };
+		F7A43E8A1E7A4F94006570E7 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7A43E881E7A4F94006570E7 /* Realm.framework */; };
+		F7A43E8B1E7A4F94006570E7 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7A43E891E7A4F94006570E7 /* RealmSwift.framework */; };
+		F7A43E8D1E7A5005006570E7 /* Sketch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A43E8C1E7A5005006570E7 /* Sketch.swift */; };
 		F7B33FC01E79071800328883 /* Camera.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7B33FBF1E79071800328883 /* Camera.xcassets */; };
 		F7B33FC41E791D2900328883 /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B33FC31E791D2900328883 /* GuideView.swift */; };
 		F7B340391E79714800328883 /* Login.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7B340381E79714800328883 /* Login.xcassets */; };
@@ -95,6 +98,9 @@
 		F7A43E701E79A32B006570E7 /* PlaceHolderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceHolderTextView.swift; sourceTree = "<group>"; };
 		F7A43E821E7A2AF1006570E7 /* SketchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SketchCollectionViewCell.swift; sourceTree = "<group>"; };
 		F7A43E831E7A2AF1006570E7 /* SketchCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SketchCollectionViewCell.xib; sourceTree = "<group>"; };
+		F7A43E881E7A4F94006570E7 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		F7A43E891E7A4F94006570E7 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		F7A43E8C1E7A5005006570E7 /* Sketch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sketch.swift; sourceTree = "<group>"; };
 		F7B33FBF1E79071800328883 /* Camera.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Camera.xcassets; sourceTree = "<group>"; };
 		F7B33FC31E791D2900328883 /* GuideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
 		F7B340381E79714800328883 /* Login.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Login.xcassets; sourceTree = "<group>"; };
@@ -107,6 +113,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7A43E8A1E7A4F94006570E7 /* Realm.framework in Frameworks */,
+				F7A43E8B1E7A4F94006570E7 /* RealmSwift.framework in Frameworks */,
 				F748D0401E77D39C001C9419 /* PKHUD.framework in Frameworks */,
 				F748E4551E77C63B00356B7E /* CryptoSwift.framework in Frameworks */,
 				F748E4301E77851600356B7E /* APIKit.framework in Frameworks */,
@@ -233,6 +241,7 @@
 		F748E4231E769C7D00356B7E /* models */ = {
 			isa = PBXGroup;
 			children = (
+				F7A43E8C1E7A5005006570E7 /* Sketch.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -267,6 +276,8 @@
 		F748E42A1E77851500356B7E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F7A43E881E7A4F94006570E7 /* Realm.framework */,
+				F7A43E891E7A4F94006570E7 /* RealmSwift.framework */,
 				F748D03F1E77D39C001C9419 /* PKHUD.framework */,
 				F748E4541E77C63B00356B7E /* CryptoSwift.framework */,
 				F748E42B1E77851600356B7E /* APIKit.framework */,
@@ -407,6 +418,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/CryptoSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/PKHUD.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 			);
 			outputPaths = (
 			);
@@ -424,6 +437,7 @@
 				F748D04C1E780629001C9419 /* NotificationTableViewController.swift in Sources */,
 				F748E44B1E77BBFA00356B7E /* InspixRequest.swift in Sources */,
 				F7B3403F1E79863A00328883 /* ShareViewController.swift in Sources */,
+				F7A43E8D1E7A5005006570E7 /* Sketch.swift in Sources */,
 				F748E4531E77C57700356B7E /* UserRegistViewController.swift in Sources */,
 				F7A43E711E79A32B006570E7 /* PlaceHolderTextView.swift in Sources */,
 				F748D05A1E78D14F001C9419 /* CameraView.swift in Sources */,

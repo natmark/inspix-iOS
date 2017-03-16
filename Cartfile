@@ -3,3 +3,4 @@ github "ishkawa/APIKit" ~> 3.0
 github "pinterest/PINRemoteImage"
 github "krzyzanowskim/CryptoSwift"
 github "pkluz/PKHUD" ~> 4.0
+github "realm/realm-cocoa"

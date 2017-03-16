@@ -29,6 +29,9 @@
                 <constraint firstAttribute="bottom" secondItem="jpC-Nc-hnb" secondAttribute="bottom" id="gg0-xt-JAL"/>
             </constraints>
             <size key="customSize" width="139" height="139"/>
+            <connections>
+                <outlet property="thumbnailImageView" destination="jpC-Nc-hnb" id="yvF-rg-mmS"/>
+            </connections>
             <point key="canvasLocation" x="78.5" y="195.5"/>
         </collectionViewCell>
     </objects>

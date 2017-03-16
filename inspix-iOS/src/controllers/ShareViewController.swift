@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ShareViewController: UIViewController {
     var photoImage : UIImage?
@@ -17,12 +18,14 @@ class ShareViewController: UIViewController {
     @IBOutlet weak var compositedImageView: UIImageView!
     
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var noteTextView: PlaceHolderTextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         guard let sketchImage = sketchImage else{
+            compositedImage = photoImage
             compositedImageView.image = photoImage
             return
         }
@@ -40,6 +43,37 @@ class ShareViewController: UIViewController {
         compositedImageView.image = image
     }
 
+    @IBAction func saveSketch(_ sender: UIBarButtonItem) {
+        let sketch = Sketch()
+        
+        if let title = sketchTitleTextField.text {
+            sketch.title = title
+        }else{
+            sketch.title = ""
+        }
+        sketch.note = noteTextView.text
+        
+        if let sketchImage = sketchImage {
+            sketch.sketchImage = UIImagePNGRepresentation(sketchImage) as NSData?
+        }
+        if let photoImage = photoImage {
+            sketch.photoImage = UIImagePNGRepresentation(photoImage) as NSData?
+        }
+        if let compositedImage = compositedImage {
+            sketch.compositedImage = UIImagePNGRepresentation(compositedImage) as NSData?
+        }
+        
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(sketch)
+        }
+        
+        for viewController in (self.navigationController?.viewControllers)! {
+            if viewController.isKind(of: HomeViewController.self) {
+                _ = self.navigationController?.popToViewController(viewController, animated: false)
+            }
+        }
+    }
     @IBAction func backToCameraView(_ sender: Any) {
         _ = self.navigationController?.popViewController(animated: true)
     }
