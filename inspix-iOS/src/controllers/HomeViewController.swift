@@ -47,13 +47,15 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         self.mySketchCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         // Do any additional setup after loading the view.
         
-        let userAuth = UserConfigManager.sharedManager.getUserAuth()
-        let request = GetUserTimeLineRequest(userId: String(userAuth.userId!), pager: 1)
+        let request = GetFollowTimeLineRequest(pager: 1)
         Session.send(request) { result in
             switch result {
             case .success(let timeline):
                 print(timeline)
                 
+            case .failure(.responseError(let inspixError as InspixError)):
+                print(inspixError.message)
+        
             case .failure(let error):
                 print("error: \(error)")
             }

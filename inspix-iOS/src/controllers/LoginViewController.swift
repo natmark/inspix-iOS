@@ -45,6 +45,10 @@ class LoginViewController: UIViewController {
                     let nextView = mainStoryboard.instantiateViewController(withIdentifier: "UserRegistViewController") as! UserRegistViewController
                     self.navigationController?.pushViewController(nextView, animated: true)
                 }
+            case .failure(.responseError(let inspixError as InspixError)):
+                print(inspixError.message)
+                HUD.flash(.label(inspixError.message),delay:1.0)
+
             case .failure(let error):
                 print("error: \(error)")
                 HUD.flash(.error, delay: 1.0)
