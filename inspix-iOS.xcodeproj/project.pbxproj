@@ -21,7 +21,6 @@
 		F73965161E77CAD500F347C3 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73965151E77CAD500F347C3 /* String.swift */; };
 		F748D0401E77D39C001C9419 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F748D03F1E77D39C001C9419 /* PKHUD.framework */; };
 		F748D0421E77D7A1001C9419 /* UserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748D0411E77D7A1001C9419 /* UserLogin.swift */; };
-		F748D0441E7804BB001C9419 /* MyPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748D0431E7804BB001C9419 /* MyPageTableViewController.swift */; };
 		F748D04A1E7805C4001C9419 /* Common.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F748D0491E7805C4001C9419 /* Common.xcassets */; };
 		F748D04C1E780629001C9419 /* NotificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748D04B1E780629001C9419 /* NotificationTableViewController.swift */; };
 		F748D0501E780669001C9419 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748D04F1E780669001C9419 /* CameraViewController.swift */; };
@@ -85,7 +84,6 @@
 		F73965151E77CAD500F347C3 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		F748D03F1E77D39C001C9419 /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = Carthage/Build/iOS/PKHUD.framework; sourceTree = "<group>"; };
 		F748D0411E77D7A1001C9419 /* UserLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLogin.swift; sourceTree = "<group>"; };
-		F748D0431E7804BB001C9419 /* MyPageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyPageTableViewController.swift; path = ../../storyboards/MyPageTableViewController.swift; sourceTree = "<group>"; };
 		F748D0491E7805C4001C9419 /* Common.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Common.xcassets; sourceTree = "<group>"; };
 		F748D04B1E780629001C9419 /* NotificationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewController.swift; sourceTree = "<group>"; };
 		F748D04F1E780669001C9419 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -226,7 +224,6 @@
 		F748E4211E769C6500356B7E /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F748D0431E7804BB001C9419 /* MyPageTableViewController.swift */,
 				F72E5F301E7A5E9C00CE979D /* PostDetailViewController.swift */,
 				F748D04F1E780669001C9419 /* CameraViewController.swift */,
 				F7B3403E1E79863A00328883 /* ShareViewController.swift */,
@@ -471,7 +468,6 @@
 				F748D0581E78D12A001C9419 /* UIColor.swift in Sources */,
 				F748E40F1E76946500356B7E /* LoginViewController.swift in Sources */,
 				F748E44F1E77BD5300356B7E /* Util.swift in Sources */,
-				F748D0441E7804BB001C9419 /* MyPageTableViewController.swift in Sources */,
 				F7B33FC41E791D2900328883 /* GuideView.swift in Sources */,
 				F73844DD1E7287D4000E7D18 /* AppDelegate.swift in Sources */,
 				F748D0501E780669001C9419 /* CameraViewController.swift in Sources */,
