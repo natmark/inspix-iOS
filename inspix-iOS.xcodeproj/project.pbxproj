@@ -12,6 +12,9 @@
 		F72E5F3D1E7AB26D00CE979D /* UserTimeLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72E5F3C1E7AB26D00CE979D /* UserTimeLine.swift */; };
 		F72E5F3F1E7AB72F00CE979D /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72E5F3E1E7AB72F00CE979D /* APIResponse.swift */; };
 		F72E5F411E7ADAE600CE979D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72E5F401E7ADAE600CE979D /* User.swift */; };
+		F72E5F351E7A728700CE979D /* PostInspiration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72E5F341E7A728700CE979D /* PostInspiration.swift */; };
+		F72E5F391E7A72A400CE979D /* ImageUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72E5F381E7A72A400CE979D /* ImageUpload.swift */; };
+		F72E5F3B1E7A7E6200CE979D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F72E5F3A1E7A7E6200CE979D /* CoreLocation.framework */; };
 		F73844DD1E7287D4000E7D18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73844DC1E7287D3000E7D18 /* AppDelegate.swift */; };
 		F73844E21E7287D4000E7D18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F73844E01E7287D4000E7D18 /* Main.storyboard */; };
 		F73844E51E7287D4000E7D18 /* inspix_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F73844E31E7287D4000E7D18 /* inspix_iOS.xcdatamodeld */; };
@@ -71,6 +74,9 @@
 		F72E5F3C1E7AB26D00CE979D /* UserTimeLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTimeLine.swift; sourceTree = "<group>"; };
 		F72E5F3E1E7AB72F00CE979D /* APIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		F72E5F401E7ADAE600CE979D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F72E5F341E7A728700CE979D /* PostInspiration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostInspiration.swift; sourceTree = "<group>"; };
+		F72E5F381E7A72A400CE979D /* ImageUpload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUpload.swift; sourceTree = "<group>"; };
+		F72E5F3A1E7A7E6200CE979D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F73844D91E7287D3000E7D18 /* inspix-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "inspix-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F73844DC1E7287D3000E7D18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F73844E11E7287D4000E7D18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -123,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F72E5F3B1E7A7E6200CE979D /* CoreLocation.framework in Frameworks */,
 				F7A43E8A1E7A4F94006570E7 /* Realm.framework in Frameworks */,
 				F7A43E8B1E7A4F94006570E7 /* RealmSwift.framework in Frameworks */,
 				F748D0401E77D39C001C9419 /* PKHUD.framework in Frameworks */,
@@ -279,6 +286,8 @@
 		F748E4261E769C8F00356B7E /* connection */ = {
 			isa = PBXGroup;
 			children = (
+				F72E5F341E7A728700CE979D /* PostInspiration.swift */,
+				F72E5F381E7A72A400CE979D /* ImageUpload.swift */,
 				F748E4481E77BBF400356B7E /* UserRegist.swift */,
 				F72E5F3C1E7AB26D00CE979D /* UserTimeLine.swift */,
 				F748D0411E77D7A1001C9419 /* UserLogin.swift */,
@@ -291,6 +300,7 @@
 		F748E42A1E77851500356B7E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F72E5F3A1E7A7E6200CE979D /* CoreLocation.framework */,
 				F7A43E881E7A4F94006570E7 /* Realm.framework */,
 				F7A43E891E7A4F94006570E7 /* RealmSwift.framework */,
 				F748D03F1E77D39C001C9419 /* PKHUD.framework */,
@@ -464,8 +474,10 @@
 				F73965161E77CAD500F347C3 /* String.swift in Sources */,
 				F748E4491E77BBF400356B7E /* UserRegist.swift in Sources */,
 				F748D0561E78D0F2001C9419 /* DrawableView.swift in Sources */,
+				F72E5F391E7A72A400CE979D /* ImageUpload.swift in Sources */,
 				F748D0421E77D7A1001C9419 /* UserLogin.swift in Sources */,
 				F748D0581E78D12A001C9419 /* UIColor.swift in Sources */,
+				F72E5F351E7A728700CE979D /* PostInspiration.swift in Sources */,
 				F748E40F1E76946500356B7E /* LoginViewController.swift in Sources */,
 				F748E44F1E77BD5300356B7E /* Util.swift in Sources */,
 				F7B33FC41E791D2900328883 /* GuideView.swift in Sources */,

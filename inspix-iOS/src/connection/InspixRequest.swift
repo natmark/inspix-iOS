@@ -17,6 +17,14 @@ extension InspixRequest {
     var baseURL: URL {
         return URL(string: "https://theoldmoon0602.tk/inspix")!
     }
+    func intercept(urlRequest: URLRequest) throws -> URLRequest {
+        var urlRequest = urlRequest
+        
+        let cookies = HTTPCookieStorage.shared.cookies(for: urlRequest.url!)
+        let header  = HTTPCookie.requestHeaderFields(with: cookies!)
+        urlRequest.allHTTPHeaderFields = header
+        return urlRequest
+    }
     func intercept(object: Any, urlResponse: HTTPURLResponse) throws -> Any {
         guard (200..<300).contains(urlResponse.statusCode) else {
             throw ResponseError.unexpectedObject(object)
@@ -39,3 +47,4 @@ extension InspixRequest where Self.Response: Decodable {
     }
     
 }
+
