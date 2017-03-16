@@ -16,6 +16,10 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
         
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextView = mainStoryboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+        self.navigationController?.pushViewController(nextView, animated: false)
+        /*
         let userAuth = UserConfigManager.sharedManager.getUserAuth()
         if let userId = userAuth.userId, let userPassword = userAuth.userPassword {
             //ログイン
@@ -26,6 +30,7 @@ class LoginViewController: UIViewController {
             let nextView = mainStoryboard.instantiateViewController(withIdentifier: "UserRegistViewController") as! UserRegistViewController
             self.navigationController?.pushViewController(nextView, animated: true)
         }
+         */
         // Do any additional setup after loading the view.
     }
     func login(_ userId:Int,_ password:String){
