@@ -70,7 +70,7 @@ class PlaceHolderTextView: UITextView {
             if (self.markedTextRange == nil) {
                 self.attributedText =  String.tagAttributedStr(from: self.text)
             }
-            self.typingAttributes = [NSForegroundColorAttributeName:UIColor.black,NSFontAttributeName:UIFont.systemFont(ofSize: 20)]
+            self.typingAttributes = [NSForegroundColorAttributeName:UIColor.black,NSFontAttributeName:UIFont.systemFont(ofSize: 16)]
             // キャレットを現在の位置からひとつ後ろに移動する（-1）
             let position = self.position(from: (range?.start)!, offset:0)
             self.selectedTextRange = self.textRange(from: position!, to: position!)

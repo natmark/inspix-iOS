@@ -42,7 +42,7 @@ extension String {
     static func tagAttributedStr(from simpleText:String) -> NSAttributedString {
         let attrStr = NSMutableAttributedString(string: simpleText)
         //全体のフォントサイズ指定
-        attrStr.addAttributes([NSFontAttributeName:UIFont.systemFont(ofSize: 20)], range: NSMakeRange(0, attrStr.length))
+        attrStr.addAttributes([NSFontAttributeName:UIFont.systemFont(ofSize: 16)], range: NSMakeRange(0, attrStr.length))
         do {
             let regexp = try NSRegularExpression(pattern: "(#[a-zA-Z0-9ぁ-んァ-ヶ一-龠]+?\\s)", options:NSRegularExpression.Options(rawValue: 0))
             let arr:[NSTextCheckingResult] = regexp.matches(in: attrStr.string, options:NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, attrStr.length))
