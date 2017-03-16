@@ -27,15 +27,7 @@ class ShareViewController: UIViewController {
             return
         }
         //画像の合成
-//        let composeFilter = CIFilter(name: "CIMinimumCompositing")
-//        composeFilter?.setValue(CIImage(image: sketchImage), forKey: kCIInputImageKey)
-//        composeFilter?.setValue(CIImage(image: photoImage!), forKey: kCIInputBackgroundImageKey)
-//        
-//        compositedImage =  UIImage(ciImage: (composeFilter?.outputImage)!)
-//        
-//        compositedImageView.image = compositedImage
-        
-        let photoRect:(width:Int,height:Int) = ((photoImage?.cgImage?.width)!,(photoImage?.cgImage?.height)!)
+       let photoRect:(width:Int,height:Int) = ((photoImage?.cgImage?.width)!,(photoImage?.cgImage?.height)!)
 
         UIGraphicsBeginImageContext(CGSize(width: photoRect.width, height: photoRect.height))
         photoImage?.draw(in: CGRect(x: 0, y: 0, width: photoRect.width, height: photoRect.height))
@@ -46,26 +38,6 @@ class ShareViewController: UIViewController {
         
         compositedImage = image
         compositedImageView.image = image
-//        UIImage *background = [UIImage imageNamed:@"background.png"];
-//        UIImage *stamp = [UIImage imageNamed:@"stamp.png"];
-//        
-//        CGFloat backWidth = CGImageGetWidth(background.CGImage);
-//        CGFloat backHeight = CGImageGetHeight(background.CGImage);
-//
-//        CGFloat stampWidth = CGImageGetWidth(stamp.CGImage);
-//        CGFloat stampHeight = CGImageGetHeight(stamp.CGImage);
-//        
-//        
-//        UIGraphicsBeginImageContext(CGSizeMake(backWidth, backHeight));
-//        [background drawInRect:CGRectMake(0, 0, backWidth, backHeight)];
-//        [stamp drawInRect:CGRectMake(0, 0, stampWidth, stampHeight)];
-//        
-//        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-//        UIGraphicsEndImageContext();
-//        
-//        UIImageView *iv = [[UIImageView alloc]initWithImage:image];
-//        [iv setCenter:self.view.center];
-//        [self.view addSubview:iv];
     }
 
     @IBAction func backToCameraView(_ sender: Any) {

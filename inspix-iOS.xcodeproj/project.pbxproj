@@ -38,6 +38,8 @@
 		F748E4531E77C57700356B7E /* UserRegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748E4521E77C57700356B7E /* UserRegistViewController.swift */; };
 		F748E4551E77C63B00356B7E /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F748E4541E77C63B00356B7E /* CryptoSwift.framework */; };
 		F7A43E711E79A32B006570E7 /* PlaceHolderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A43E701E79A32B006570E7 /* PlaceHolderTextView.swift */; };
+		F7A43E841E7A2AF1006570E7 /* SketchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A43E821E7A2AF1006570E7 /* SketchCollectionViewCell.swift */; };
+		F7A43E851E7A2AF1006570E7 /* SketchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7A43E831E7A2AF1006570E7 /* SketchCollectionViewCell.xib */; };
 		F7B33FC01E79071800328883 /* Camera.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7B33FBF1E79071800328883 /* Camera.xcassets */; };
 		F7B33FC41E791D2900328883 /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B33FC31E791D2900328883 /* GuideView.swift */; };
 		F7B340391E79714800328883 /* Login.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7B340381E79714800328883 /* Login.xcassets */; };
@@ -91,6 +93,8 @@
 		F748E4521E77C57700356B7E /* UserRegistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRegistViewController.swift; sourceTree = "<group>"; };
 		F748E4541E77C63B00356B7E /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
 		F7A43E701E79A32B006570E7 /* PlaceHolderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceHolderTextView.swift; sourceTree = "<group>"; };
+		F7A43E821E7A2AF1006570E7 /* SketchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SketchCollectionViewCell.swift; sourceTree = "<group>"; };
+		F7A43E831E7A2AF1006570E7 /* SketchCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SketchCollectionViewCell.xib; sourceTree = "<group>"; };
 		F7B33FBF1E79071800328883 /* Camera.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Camera.xcassets; sourceTree = "<group>"; };
 		F7B33FC31E791D2900328883 /* GuideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
 		F7B340381E79714800328883 /* Login.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Login.xcassets; sourceTree = "<group>"; };
@@ -220,6 +224,8 @@
 				F7B33FC31E791D2900328883 /* GuideView.swift */,
 				F748D0551E78D0F2001C9419 /* DrawableView.swift */,
 				F7A43E701E79A32B006570E7 /* PlaceHolderTextView.swift */,
+				F7A43E821E7A2AF1006570E7 /* SketchCollectionViewCell.swift */,
+				F7A43E831E7A2AF1006570E7 /* SketchCollectionViewCell.xib */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -373,6 +379,7 @@
 				F73844EA1E7287D4000E7D18 /* LaunchScreen.storyboard in Resources */,
 				F7B3403D1E7984B200328883 /* Home.xcassets in Resources */,
 				F73844E71E7287D4000E7D18 /* Assets.xcassets in Resources */,
+				F7A43E851E7A2AF1006570E7 /* SketchCollectionViewCell.xib in Resources */,
 				F73844E21E7287D4000E7D18 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,6 +439,7 @@
 				F7B33FC41E791D2900328883 /* GuideView.swift in Sources */,
 				F73844DD1E7287D4000E7D18 /* AppDelegate.swift in Sources */,
 				F748D0501E780669001C9419 /* CameraViewController.swift in Sources */,
+				F7A43E841E7A2AF1006570E7 /* SketchCollectionViewCell.swift in Sources */,
 				F748D04E1E780658001C9419 /* PhotoViewController.swift in Sources */,
 				F748E4511E77BD8B00356B7E /* UserConfigManager.swift in Sources */,
 				F73844E51E7287D4000E7D18 /* inspix_iOS.xcdatamodeld in Sources */,
