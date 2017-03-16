@@ -8,13 +8,14 @@
 
 import Foundation
 import APIKit
-
+import Decodable
 struct PostUserRegistRequest : InspixRequest {
+
     let userName : String
     let password : String
     
-    typealias Response = User
-    
+    typealias Response = UserResponse
+
     var method: HTTPMethod {
         return .post
     }
@@ -28,24 +29,15 @@ struct PostUserRegistRequest : InspixRequest {
     var path: String {
         return "/register"
     }
-    
-    func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-        guard let dictionary = object as? [String: AnyObject],
-            let user = User(dictionary: dictionary) else {
-                throw ResponseError.unexpectedObject(object)
-        }
-        
-        return user
+    func response(from object: Any, urlResponse: HTTPURLResponse) throws -> UserResponse {
+        return try UserResponse.decode(object)
     }
 }
-struct User {
+struct UserResponse: Decodable {
     let id: Int
-    
-    init?(dictionary: [String: AnyObject]) {
-        guard let id = dictionary["data"]?["id"] as? Int else {
-            return nil
-        }
-        
-        self.id = id
+    static func decode(_ json: Any) throws -> UserResponse {
+        return try UserResponse(
+            id: json => "data" => "id"
+        )
     }
 }
