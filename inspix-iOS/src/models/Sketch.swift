@@ -14,6 +14,8 @@ class Sketch: Object {
     dynamic var title = ""
     dynamic var note = ""
     dynamic var time = ""
+    dynamic var latitude = 0.0
+    dynamic var longitude = 0.0
     dynamic var photoImage : NSData?
     dynamic var sketchImage : NSData?
     dynamic var compositedImage : NSData?

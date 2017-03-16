@@ -17,7 +17,6 @@ class PostDetailViewController: UIViewController {
     @IBOutlet weak var userNoteTextView: PlaceHolderTextView!
     @IBOutlet weak var postedTimeLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
-    @IBOutlet weak var locateLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         print(sketch)
@@ -31,6 +30,16 @@ class PostDetailViewController: UIViewController {
         self.navItem.title = sketch?.title
         self.postedTimeLabel.text = sketch?.time
         // Do any additional setup after loading the view.
+    }
+    @IBAction func showMap(_ sender: UIButton) {
+        if let url = URL(string: "http://maps.apple.com/maps?daddr=\((sketch?.latitude)!),\((sketch?.longitude)!)") {
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                // Fallback on earlier versions
+                UIApplication.shared.openURL(url)
+            }
+        }
     }
     @IBAction func backToHome(_ sender: UIBarButtonItem) {
         _ = self.navigationController?.popViewController(animated: true)

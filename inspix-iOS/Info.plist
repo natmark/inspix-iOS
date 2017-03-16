@@ -6,6 +6,8 @@
 	<string>カメラの使用を許可</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>カメラロールへの保存を許可</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>アプリ使用時に位置情報へのアクセスを許可</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
