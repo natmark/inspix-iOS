@@ -373,6 +373,9 @@
                     <navigationItem key="navigationItem" title="Title" id="kf1-CK-Agh">
                         <barButtonItem key="leftBarButtonItem" image="btn_back" id="MJ7-8l-IoY">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="backToHome:" destination="ux5-UC-p5P" id="BzO-bj-rhB"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="•••" id="g4i-xH-BuH">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
