@@ -335,7 +335,19 @@
                         </connections>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" id="XNz-wi-8si"/>
+                    <navigationItem key="navigationItem" id="XNz-wi-8si">
+                        <barButtonItem key="leftBarButtonItem" image="btn_menu" id="Pv7-T5-svX">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="btn_bell" id="rL5-ci-m5o">
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </barButtonItem>
+                            <barButtonItem image="btn_search" id="RU5-Re-EJS">
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="favoriteCollectionView" destination="dib-IC-H7S" id="6mD-nD-qKV"/>
                         <outlet property="firstViewConstraint" destination="361-L7-x4W" id="fUi-LD-iqw"/>
@@ -931,8 +943,11 @@
     <resources>
         <image name="SplashIcon" width="192" height="269"/>
         <image name="btn_back" width="12" height="20"/>
+        <image name="btn_bell" width="22" height="25"/>
         <image name="btn_done" width="22" height="18"/>
         <image name="btn_livesketch" width="64" height="64"/>
+        <image name="btn_menu" width="20" height="16"/>
+        <image name="btn_search" width="22" height="22"/>
         <image name="icon_eraser" width="33" height="31"/>
         <image name="icon_guide" width="22" height="22"/>
         <image name="icon_kininaru" width="26" height="26"/>

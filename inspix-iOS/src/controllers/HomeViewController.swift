@@ -35,6 +35,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     var showingView:CollectionViewID = .MySketch
     var sketches:[Sketch] = []
     var pickups:[Inspiration] = []
+    var kininals:[Inspiration] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +53,12 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         self.pickupCollectionView.delegate = self
         self.pickupCollectionView.dataSource = self
         self.pickupCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+
+        self.favoriteCollectionView.register(sketchCellNib, forCellWithReuseIdentifier: "sketchCell")
+        self.favoriteCollectionView.delegate = self
+        self.favoriteCollectionView.dataSource = self
+        self.favoriteCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+
         // Do any additional setup after loading the view.
         let request = GetPickupTimeLineRequest(pager: 1)
         Session.send(request) { result in
@@ -67,7 +74,22 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
                 print("error: \(error)")
             }
         }
-        
+
+        // Do any additional setup after loading the view.
+        let request2 = GetKininaruListRequest(pager: 1)
+        Session.send(request2) { result in
+            switch result {
+            case .success(let timeline):
+                self.kininals = timeline.inspirations
+                self.favoriteCollectionView.reloadData()
+                
+            case .failure(.responseError(let inspixError as InspixError)):
+                print(inspixError.message)
+                
+            case .failure(let error):
+                print("error: \(error)")
+            }
+        }
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
@@ -95,6 +117,21 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
                 print("error: \(error)")
             }
         }
+        // Do any additional setup after loading the view.
+        let request2 = GetKininaruListRequest(pager: 1)
+        Session.send(request2) { result in
+            switch result {
+            case .success(let timeline):
+                self.kininals = timeline.inspirations
+                self.favoriteCollectionView.reloadData()
+                
+            case .failure(.responseError(let inspixError as InspixError)):
+                print(inspixError.message)
+                
+            case .failure(let error):
+                print("error: \(error)")
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -114,6 +151,8 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
             }
         }else if collectionView.tag == CollectionViewID.Pickup.rawValue {
             sketchCell.thumbnailImageView.pin_setImage(from: URL(string: pickups[indexPath.row].compositedImageUrl))
+        }else if collectionView.tag == CollectionViewID.Favorite.rawValue {
+            sketchCell.thumbnailImageView.pin_setImage(from: URL(string: kininals[indexPath.row].compositedImageUrl))
         }
         
         return sketchCell
@@ -128,6 +167,11 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
             let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let nextView = mainStoryboard.instantiateViewController(withIdentifier: "PostDetailViewController") as! PostDetailViewController
             nextView.inspiration = pickups[indexPath.row]
+            self.navigationController?.pushViewController(nextView, animated: true)
+        }else if collectionView.tag == CollectionViewID.Favorite.rawValue {
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let nextView = mainStoryboard.instantiateViewController(withIdentifier: "PostDetailViewController") as! PostDetailViewController
+            nextView.inspiration = kininals[indexPath.row]
             self.navigationController?.pushViewController(nextView, animated: true)
         }
     }
@@ -153,7 +197,10 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
             return sketches.count
         }else if collectionView.tag == CollectionViewID.Pickup.rawValue {
             return pickups.count
+        }else if collectionView.tag == CollectionViewID.Favorite.rawValue {
+            return kininals.count
         }
+
         return 1
     }
 
