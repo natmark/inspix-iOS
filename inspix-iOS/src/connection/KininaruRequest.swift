@@ -41,11 +41,14 @@ struct DeleteKininaruRequest : InspixRequest {
     var method: HTTPMethod {
         return .delete
     }
-    var parameters: Any?{
-        return [
-            "inspiration_id": inspirationId
-        ]
-        
+//    var parameters: Any?{
+//        return [
+//            "inspiration_id": inspirationId
+//        ]
+//        
+//    }
+    var bodyParameters: BodyParameters? {
+         return JSONBodyParameters(JSONObject: ["inspiration_id":inspirationId])
     }
     var path: String {
         return "/kininaru"

@@ -110,7 +110,7 @@ class PostDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
         guard let inspiration = inspiration else {
             return
         }
-        if inspiration.kininatteru {
+        if self.isKininatteru {
             //解除
             let request = DeleteKininaruRequest(inspirationId: inspiration.id)
             Session.send(request) { result in
