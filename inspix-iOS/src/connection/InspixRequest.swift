@@ -23,13 +23,23 @@ extension InspixRequest {
         let cookies = HTTPCookieStorage.shared.cookies(for: urlRequest.url!)
         let header  = HTTPCookie.requestHeaderFields(with: cookies!)
         urlRequest.allHTTPHeaderFields = header
+        
+        print(urlRequest)
         return urlRequest
     }
     func intercept(object: Any, urlResponse: HTTPURLResponse) throws -> Any {
         guard (200..<300).contains(urlResponse.statusCode) else {
-            throw ResponseError.unexpectedObject(object)
+            throw InspixError(object: object)
         }
         return object
+    }
+}
+struct InspixError: Error {
+    let message: String
+    
+    init(object: Any) {
+        let dictionary = object as? [String: Any]
+        message = (dictionary?["error"] as? Array)?.first ?? "Unknown error occurred"
     }
 }
 extension InspixRequest where Self.Response: Decodable {

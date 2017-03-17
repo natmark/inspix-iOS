@@ -34,13 +34,11 @@ struct GetUserTimeLineRequest : InspixRequest {
     }
 }
 struct TimeLineResponse: Decodable {
-    let user : User
     let inspirations : [Inspiration]
     
     public static func decode(_ json: Any) throws -> TimeLineResponse {
         return try TimeLineResponse(
-            user: json => "data" => "user",
-            inspirations: json => "data" => "inspirations"
+            inspirations: json => "data" => "Inspirations"
         )
     }
 }

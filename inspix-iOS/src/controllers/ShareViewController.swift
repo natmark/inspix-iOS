@@ -18,6 +18,7 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate {
     var compositedImage : UIImage?
     var longitude : Float = 0.0
     var latitude : Float = 0.0
+    var inspiration : Inspiration?
     var locationManager = CLLocationManager()
     
     @IBOutlet weak var sketchTitleTextField: UITextField!
@@ -29,7 +30,9 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        if let _ = inspiration {
+            sketchTitleTextField.isHidden = true
+        }
         guard let sketchImage = sketchImage else{
             compositedImage = photoImage
             compositedImageView.image = photoImage
@@ -57,6 +60,7 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate {
     }
     @IBAction func saveSketch(_ sender: UIBarButtonItem) {
         HUD.show(.progress)
+        
        //位置情報取得終了
         if CLLocationManager.locationServicesEnabled() {
             locationManager.stopUpdatingLocation()
@@ -93,6 +97,7 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate {
         let timeString = formatter.string(from: now as Date)
         sketch.time = timeString
         
+        UIImageWriteToSavedPhotosAlbum(self.compositedImage!, self, nil, nil)
         let realm = try! Realm()
         
         //Realmへのアップロード
@@ -109,37 +114,72 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate {
             }
         }
         
-        // NSDate型 "date" をUNIX時間 "dateUnix" に変換
-        let dateUnix: TimeInterval? = NSDate().timeIntervalSince1970
-
-        //サーバへのアップロード
-        uploadImage(completionHandler:{ url in
+        
+        if let inspiration = inspiration {
+            //乗っかり
+            print(inspiration.id)
             
-             let request = PostInspirationRequest(baseImageUrl: url["base_image_url"]!, backgroundImageUrl: url["background_image_url"]!, compositedImageUrl: url["composited_image_url"]!, capturedTime: Int(dateUnix!), longitude: self.longitude, latitude: self.latitude, caption: sketch.note, title: sketch.title)
-            
-            print(request)
-            
-            Session.send(request) { result in
-                switch result {
-                case .success(let res):
-                    print(res)
-                    HUD.flash(.success, delay: 1.0)
-                    for viewController in (self.navigationController?.viewControllers)! {
-                        if viewController.isKind(of: HomeViewController.self) {
-                            _ = self.navigationController?.popToViewController(viewController, animated: false)
+            uploadImage(completionHandler:{ url in
+                let request = PostNokkariRequest(baseImageUrl: url["base_image_url"]!,
+                                                 compositedImageUrl: url["composited_image_url"]!,
+                                                 caption: self.noteTextView.text, nokkariFromId: inspiration.id)
+                Session.send(request) { result in
+                    switch result {
+                    case .success(let res):
+                        print(res)
+                        HUD.flash(.success, delay: 1.0)
+                        for viewController in (self.navigationController?.viewControllers)! {
+                            if viewController.isKind(of: HomeViewController.self) {
+                                _ = self.navigationController?.popToViewController(viewController, animated: false)
+                            }
                         }
-                    }
-                case .failure(let error):
-                    print("error: \(error)")
-                    HUD.flash(.error, delay: 1.0)
-                    for viewController in (self.navigationController?.viewControllers)! {
-                        if viewController.isKind(of: HomeViewController.self) {
-                            _ = self.navigationController?.popToViewController(viewController, animated: false)
+                    case .failure(let error):
+                        print("error: \(error)")
+                        HUD.flash(.error, delay: 1.0)
+                        for viewController in (self.navigationController?.viewControllers)! {
+                            if viewController.isKind(of: HomeViewController.self) {
+                                _ = self.navigationController?.popToViewController(viewController, animated: false)
+                            }
                         }
                     }
                 }
-            }
-        })
+            })
+            
+            
+        }else{
+            //投稿
+            // NSDate型 "date" をUNIX時間 "dateUnix" に変換
+            let dateUnix: TimeInterval? = NSDate().timeIntervalSince1970
+            
+            //サーバへのアップロード
+            uploadImage(completionHandler:{ url in
+                
+                let request = PostInspirationRequest(baseImageUrl: url["base_image_url"]!, backgroundImageUrl: url["background_image_url"]!, compositedImageUrl: url["composited_image_url"]!, capturedTime: Int(dateUnix!), longitude: self.longitude, latitude: self.latitude, caption: sketch.note, title: sketch.title)
+                
+                print(request)
+                
+                Session.send(request) { result in
+                    switch result {
+                    case .success(let res):
+                        print(res)
+                        HUD.flash(.success, delay: 1.0)
+                        for viewController in (self.navigationController?.viewControllers)! {
+                            if viewController.isKind(of: HomeViewController.self) {
+                                _ = self.navigationController?.popToViewController(viewController, animated: false)
+                            }
+                        }
+                    case .failure(let error):
+                        print("error: \(error)")
+                        HUD.flash(.error, delay: 1.0)
+                        for viewController in (self.navigationController?.viewControllers)! {
+                            if viewController.isKind(of: HomeViewController.self) {
+                                _ = self.navigationController?.popToViewController(viewController, animated: false)
+                            }
+                        }
+                    }
+                }
+            })
+        }
     }
     @IBAction func backToCameraView(_ sender: Any) {
         _ = self.navigationController?.popViewController(animated: true)

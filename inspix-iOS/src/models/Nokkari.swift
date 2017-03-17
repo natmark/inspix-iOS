@@ -15,7 +15,8 @@ struct Nokkari:Decodable {
     let kininaruCount: Int
     let kininaruUsers: [User]
     let kininatteru : Bool
-    let comment : String
+    let compositedImageUrl : String?
+    let comment : String?
     
     static func decode(_ json: Any) throws -> Nokkari {
         return try Nokkari(
@@ -24,7 +25,8 @@ struct Nokkari:Decodable {
             kininaruCount: json => "kininaru_count",
             kininaruUsers: json => "kininaru_users",
             kininatteru: json => "kininatteru",
-            comment: json => "comment"
+            compositedImageUrl: json =>? "composited_image_url",
+            comment: json =>? "comment"
         )
     }
 }

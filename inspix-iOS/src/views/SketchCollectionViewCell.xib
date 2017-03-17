@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="139" height="139"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn_livesketch" translatesAutoresizingMaskIntoConstraints="NO" id="jpC-Nc-hnb">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jpC-Nc-hnb">
                         <rect key="frame" x="0.0" y="0.0" width="139" height="139"/>
                     </imageView>
                 </subviews>
@@ -35,7 +35,4 @@
             <point key="canvasLocation" x="78.5" y="195.5"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="btn_livesketch" width="70" height="70"/>
-    </resources>
 </document>
