@@ -181,7 +181,7 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mg4-Z2-UrJ">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mg4-Z2-UrJ">
                                 <rect key="frame" x="375" y="40" width="375" height="563"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wRx-6k-xLS">
@@ -201,7 +201,7 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dib-IC-H7S">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dib-IC-H7S">
                                 <rect key="frame" x="750" y="40" width="375" height="563"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="037-7w-Pt1">
@@ -346,9 +346,9 @@
                         <outlet property="secondViewSwitcherConstraint" destination="dw1-3Q-pOK" id="Edw-Te-gAX"/>
                         <outlet property="thirdViewConstraint" destination="7kX-Ir-RSq" id="m8e-Vw-6gr"/>
                         <outlet property="thirdViewSwitcherConstraint" destination="MVF-2R-KPv" id="D9d-pK-f9x"/>
-                        <outletCollection property="switcherButtons" destination="brf-Qv-U4s" id="W4w-U1-p8q"/>
-                        <outletCollection property="switcherButtons" destination="uBe-U7-xMJ" id="AaP-sC-Gmx"/>
-                        <outletCollection property="switcherButtons" destination="uaz-C5-Jce" id="8mC-t0-DgE"/>
+                        <outletCollection property="switcherButtons" destination="brf-Qv-U4s" collectionClass="NSMutableArray" id="W4w-U1-p8q"/>
+                        <outletCollection property="switcherButtons" destination="uBe-U7-xMJ" collectionClass="NSMutableArray" id="AaP-sC-Gmx"/>
+                        <outletCollection property="switcherButtons" destination="uaz-C5-Jce" collectionClass="NSMutableArray" id="8mC-t0-DgE"/>
                         <segue destination="QsW-hT-yOa" kind="show" id="7KI-N3-XyZ"/>
                         <segue destination="ux5-UC-p5P" kind="show" id="1ZX-h9-WC3"/>
                     </connections>
@@ -391,8 +391,8 @@
                                                     <constraint firstAttribute="width" secondItem="dFB-NS-qn1" secondAttribute="height" multiplier="359:587" id="1Ie-yj-Wpu"/>
                                                 </constraints>
                                             </imageView>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gck-NX-RY0">
-                                                <rect key="frame" x="0.0" y="413" width="375" height="160"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gck-NX-RY0">
+                                                <rect key="frame" x="0.0" y="613" width="375" height="160"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NZj-pa-cnZ">
                                                         <rect key="frame" x="0.0" y="40" width="375" height="1"/>
@@ -469,11 +469,81 @@
                                                     <constraint firstAttribute="trailing" secondItem="NM4-SG-opD" secondAttribute="trailing" constant="16" id="xjx-GY-a6O"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Opn-Ye-EDI">
+                                                <rect key="frame" x="0.0" y="573" width="375" height="40"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EhF-xG-CRH">
+                                                        <rect key="frame" x="71.5" y="0.0" width="112" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="112" id="j59-L6-uYV"/>
+                                                        </constraints>
+                                                        <inset key="titleEdgeInsets" minX="10" minY="3" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal" image="icon_kininaru">
+                                                            <attributedString key="attributedTitle">
+                                                                <fragment content="6 ">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="12" name="HiraginoSans-W6"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="気になる！">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="12" name="HiraginoSans-W3"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                            </attributedString>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="pressedKininaru:" destination="ux5-UC-p5P" eventType="touchUpInside" id="neo-kc-Bod"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lsM-7d-o7n">
+                                                        <rect key="frame" x="192.5" y="0.0" width="110" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="110" id="9cL-Dr-UZc"/>
+                                                        </constraints>
+                                                        <inset key="titleEdgeInsets" minX="10" minY="3" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal" image="icon_resketch">
+                                                            <attributedString key="attributedTitle">
+                                                                <fragment content="3 ">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="12" name="HiraginoSans-W6"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="リスケッチ">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="12" name="HiraginoSans-W3"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                            </attributedString>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="pressedResketch:" destination="ux5-UC-p5P" eventType="touchUpInside" id="0f7-cc-LC0"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="0gb-uF-2no"/>
+                                                    <constraint firstItem="lsM-7d-o7n" firstAttribute="centerX" secondItem="Opn-Ye-EDI" secondAttribute="centerX" constant="60" id="As6-FX-mOa"/>
+                                                    <constraint firstItem="lsM-7d-o7n" firstAttribute="top" secondItem="Opn-Ye-EDI" secondAttribute="top" id="IgP-lq-tdE"/>
+                                                    <constraint firstItem="EhF-xG-CRH" firstAttribute="top" secondItem="Opn-Ye-EDI" secondAttribute="top" id="Utg-Oh-iy5"/>
+                                                    <constraint firstItem="EhF-xG-CRH" firstAttribute="centerX" secondItem="Opn-Ye-EDI" secondAttribute="centerX" constant="-60" id="uvY-Eb-SFS"/>
+                                                    <constraint firstAttribute="bottom" secondItem="lsM-7d-o7n" secondAttribute="bottom" id="wy8-cE-MVl"/>
+                                                    <constraint firstAttribute="bottom" secondItem="EhF-xG-CRH" secondAttribute="bottom" id="zmI-0T-yJo"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstItem="Opn-Ye-EDI" firstAttribute="leading" secondItem="JEA-OQ-fSw" secondAttribute="leading" id="1aK-V5-2GD"/>
                                             <constraint firstAttribute="height" constant="840" id="Baw-K4-Qyd"/>
                                             <constraint firstItem="gck-NX-RY0" firstAttribute="leading" secondItem="JEA-OQ-fSw" secondAttribute="leading" id="SVg-NC-ewi"/>
+                                            <constraint firstAttribute="trailing" secondItem="Opn-Ye-EDI" secondAttribute="trailing" id="UBN-bx-Sna"/>
+                                            <constraint firstItem="gck-NX-RY0" firstAttribute="top" secondItem="Opn-Ye-EDI" secondAttribute="bottom" id="iAo-sI-IdR"/>
                                             <constraint firstItem="gck-NX-RY0" firstAttribute="top" secondItem="dFB-NS-qn1" secondAttribute="bottom" id="iqg-zV-zAP"/>
                                             <constraint firstItem="dFB-NS-qn1" firstAttribute="leading" secondItem="JEA-OQ-fSw" secondAttribute="leading" id="o62-nY-gBP"/>
                                             <constraint firstAttribute="trailing" secondItem="dFB-NS-qn1" secondAttribute="trailing" id="ouO-t9-TxG"/>
@@ -511,21 +581,24 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="kininaruBtn" destination="EhF-xG-CRH" id="WHi-iI-9te"/>
                         <outlet property="navItem" destination="kf1-CK-Agh" id="Wfu-ec-hTZ"/>
                         <outlet property="postedImageView" destination="dFB-NS-qn1" id="mbc-S1-TPQ"/>
                         <outlet property="postedTimeLabel" destination="iHq-jC-oBe" id="6o6-Zc-Y9C"/>
+                        <outlet property="reactionView" destination="Opn-Ye-EDI" id="ZHq-GK-VZC"/>
+                        <outlet property="resketchBtn" destination="lsM-7d-o7n" id="2Fa-Gc-3No"/>
                         <outlet property="temperatureLabel" destination="kRn-dh-7vX" id="paa-0D-teS"/>
                         <outlet property="userNoteTextView" destination="NM4-SG-opD" id="qM8-Rf-lo5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UY9-IC-XzI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1537" y="1557"/>
+            <point key="canvasLocation" x="1536.8" y="1556.6716641679161"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="1Vd-tj-PeV">
             <objects>
-                <viewController id="QsW-hT-yOa" customClass="CameraViewController" customModule="inspix_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CameraViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QsW-hT-yOa" customClass="CameraViewController" customModule="inspix_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AvJ-MV-bNe"/>
                         <viewControllerLayoutGuide type="bottom" id="H9v-va-jtd"/>
@@ -828,9 +901,11 @@
         <image name="btn_livesketch" width="64" height="64"/>
         <image name="icon_eraser" width="33" height="31"/>
         <image name="icon_guide" width="22" height="22"/>
+        <image name="icon_kininaru" width="26" height="26"/>
         <image name="icon_pencil" width="30" height="30"/>
         <image name="icon_pin" width="24" height="24"/>
         <image name="icon_placemark" width="14" height="19"/>
+        <image name="icon_resketch" width="20" height="19"/>
         <image name="icon_shutter" width="64" height="64"/>
         <image name="icon_sun" width="24" height="24"/>
         <image name="img_background" width="375" height="667"/>

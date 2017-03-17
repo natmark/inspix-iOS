@@ -23,6 +23,8 @@ extension InspixRequest {
         let cookies = HTTPCookieStorage.shared.cookies(for: urlRequest.url!)
         let header  = HTTPCookie.requestHeaderFields(with: cookies!)
         urlRequest.allHTTPHeaderFields = header
+        
+        print(urlRequest)
         return urlRequest
     }
     func intercept(object: Any, urlResponse: HTTPURLResponse) throws -> Any {

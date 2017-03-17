@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 import APIKit
+import PINRemoteImage
 
 enum CollectionViewID : Int{
     case MySketch = 0
@@ -33,6 +34,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
 
     var showingView:CollectionViewID = .MySketch
     var sketches:[Sketch] = []
+    var pickups:[Inspiration] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,21 +47,28 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         self.mySketchCollectionView.delegate = self
         self.mySketchCollectionView.dataSource = self
         self.mySketchCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        // Do any additional setup after loading the view.
         
-        let request = GetFollowTimeLineRequest(pager: 1)
+        self.pickupCollectionView.register(sketchCellNib, forCellWithReuseIdentifier: "sketchCell")
+        self.pickupCollectionView.delegate = self
+        self.pickupCollectionView.dataSource = self
+        self.pickupCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        // Do any additional setup after loading the view.
+        let request = GetPickupTimeLineRequest(pager: 1)
         Session.send(request) { result in
             switch result {
             case .success(let timeline):
                 print(timeline)
+                self.pickups = timeline.inspirations
+                self.pickupCollectionView.reloadData()
                 
             case .failure(.responseError(let inspixError as InspixError)):
                 print(inspixError.message)
-        
+                
             case .failure(let error):
                 print("error: \(error)")
             }
         }
+
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
@@ -71,6 +80,22 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
             sketches.insert(sketch, at: 0)
         }
         self.mySketchCollectionView.reloadData()
+        
+        let request = GetPickupTimeLineRequest(pager: 1)
+        Session.send(request) { result in
+            switch result {
+            case .success(let timeline):
+                print(timeline)
+                self.pickups = timeline.inspirations
+                self.pickupCollectionView.reloadData()
+                
+            case .failure(.responseError(let inspixError as InspixError)):
+                print(inspixError.message)
+                
+            case .failure(let error):
+                print("error: \(error)")
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -81,19 +106,31 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     
     //MARK: - CollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
-        
         let sketchCell:SketchCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "sketchCell", for: indexPath) as! SketchCollectionViewCell
-        
-        if let compositedImageData = sketches[indexPath.row].compositedImage {
-            sketchCell.thumbnailImageView.image = UIImage(data: compositedImageData as Data)
+ 
+        // 要素数を入れる、要素以上の数字を入れると表示でエラーとなる
+        if collectionView.tag == CollectionViewID.MySketch.rawValue {
+            if let compositedImageData = sketches[indexPath.row].compositedImage {
+                sketchCell.thumbnailImageView.image = UIImage(data: compositedImageData as Data)
+            }
+        }else if collectionView.tag == CollectionViewID.Pickup.rawValue {
+            sketchCell.thumbnailImageView.pin_setImage(from: URL(string: pickups[indexPath.row].compositedImageUrl))
         }
+        
         return sketchCell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let nextView = mainStoryboard.instantiateViewController(withIdentifier: "PostDetailViewController") as! PostDetailViewController
-        nextView.sketch = sketches[indexPath.row]
-        self.navigationController?.pushViewController(nextView, animated: true)
+        if collectionView.tag == CollectionViewID.MySketch.rawValue {
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let nextView = mainStoryboard.instantiateViewController(withIdentifier: "PostDetailViewController") as! PostDetailViewController
+            nextView.sketch = sketches[indexPath.row]
+            self.navigationController?.pushViewController(nextView, animated: true)
+        }else if collectionView.tag == CollectionViewID.Pickup.rawValue {
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let nextView = mainStoryboard.instantiateViewController(withIdentifier: "PostDetailViewController") as! PostDetailViewController
+            nextView.inspiration = pickups[indexPath.row]
+            self.navigationController?.pushViewController(nextView, animated: true)
+        }
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -113,7 +150,12 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // 要素数を入れる、要素以上の数字を入れると表示でエラーとなる
-        return sketches.count
+        if collectionView.tag == CollectionViewID.MySketch.rawValue {
+            return sketches.count
+        }else if collectionView.tag == CollectionViewID.Pickup.rawValue {
+            return pickups.count
+        }
+        return 1
     }
 
     @IBAction func selectMySwitch(_ sender: UIButton) {

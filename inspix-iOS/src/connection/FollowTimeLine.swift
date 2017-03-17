@@ -11,7 +11,7 @@ import Foundation
 import APIKit
 import Decodable
 
-struct GetFollowTimeLineRequest : InspixRequest {
+struct GetPickupTimeLineRequest : InspixRequest {
     let pager : Int
     
     typealias Response = TimeLineResponse
@@ -26,7 +26,7 @@ struct GetFollowTimeLineRequest : InspixRequest {
         
     }
     var path: String {
-        return "/followTimeline"
+        return "/pickupTimeline"
     }
     func response(from object: Any, urlResponse: HTTPURLResponse) throws -> TimeLineResponse {
         return try TimeLineResponse.decode(object)

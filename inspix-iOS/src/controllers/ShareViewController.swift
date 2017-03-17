@@ -93,6 +93,7 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate {
         let timeString = formatter.string(from: now as Date)
         sketch.time = timeString
         
+        UIImageWriteToSavedPhotosAlbum(self.compositedImage!, self, nil, nil)
         let realm = try! Realm()
         
         //Realmへのアップロード
