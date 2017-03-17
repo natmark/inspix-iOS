@@ -34,7 +34,7 @@ class CameraViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         colorButtons.forEach({ $0.clipsToBounds = true; $0.layer.cornerRadius = 15;$0.layer.borderColor = UIColor.white.cgColor; $0.layer.borderWidth = 3.0 })
-        colorButtons.first.borderColor = UIColor.clear.cgColor
+        colorButtons.first.layer.borderColor = UIColor.clear.cgColor
         
         if let inspiration = inspiration{
             shutterBtn.isEnabled = false
