@@ -12,6 +12,7 @@ class DrawableView: UIImageView {
     var blendMode:CGBlendMode = CGBlendMode.color
     var previousTouchLocation: CGPoint?
     var coalescedTouches : [UITouch]?
+    var penColor = UIColor.black
     init() {
         super.init(frame: CGRect.zero)
         initialize()
@@ -43,7 +44,7 @@ class DrawableView: UIImageView {
 
         let cgContext = UIGraphicsGetCurrentContext()
         cgContext?.setLineCap(CGLineCap.round)
-        cgContext?.setStrokeColor(UIColor.black.cgColor)
+        cgContext?.setStrokeColor(penColor.cgColor)
         cgContext?.setBlendMode(blendMode)
         for coalescedTouch in coalescedTouches
         {

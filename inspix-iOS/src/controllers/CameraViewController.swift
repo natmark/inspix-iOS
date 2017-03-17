@@ -22,6 +22,8 @@ class CameraViewController: UIViewController {
     @IBOutlet weak var eraserBtn: UIBarButtonItem!
     @IBOutlet weak var pinnedImageView: UIImageView!
     
+    @IBOutlet var colorButtons:[UIButton]!
+    
     var isShowingGuide = false
     var isPinningPhoto = false
     var isSelectingPen = true
@@ -31,6 +33,9 @@ class CameraViewController: UIViewController {
     @IBOutlet weak var shutterBtn: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
+        colorButtons.forEach({ $0.clipsToBounds = true; $0.layer.cornerRadius = 15;$0.layer.borderColor = UIColor.white.cgColor; $0.layer.borderWidth = 3.0 })
+        colorButtons.first.borderColor = UIColor.clear.cgColor
+        
         if let inspiration = inspiration{
             shutterBtn.isEnabled = false
             shutterBtn.image = nil
@@ -121,6 +126,22 @@ class CameraViewController: UIViewController {
             pinBtn.tintColor = UIColor.selectedTintColor()
             isPinningPhoto = true
         }
+    }
+    @IBAction func changeColorToBlack(_ sender: UIButton) {
+        self.drawableView.penColor = UIColor.black
+        
+        colorButtons.forEach({ $0.clipsToBounds = true; $0.layer.cornerRadius = 15;$0.layer.borderColor = UIColor.white.cgColor; $0.layer.borderWidth = 3.0 })
+        sender.layer.borderColor = UIColor.clear.cgColor
+    }
+    @IBAction func changeColorToBlue(_ sender: UIButton) {
+        self.drawableView.penColor = UIColor.selectedTintColor()
+        colorButtons.forEach({ $0.clipsToBounds = true; $0.layer.cornerRadius = 15;$0.layer.borderColor = UIColor.white.cgColor; $0.layer.borderWidth = 3.0 })
+        sender.layer.borderColor = UIColor.clear.cgColor
+    }
+    @IBAction func changeColorToPink(_ sender: UIButton) {
+        self.drawableView.penColor = UIColor(red: 232/255.0, green: 122/255.0, blue: 164/255.0, alpha: 1.0)
+        colorButtons.forEach({ $0.clipsToBounds = true; $0.layer.cornerRadius = 15;$0.layer.borderColor = UIColor.white.cgColor; $0.layer.borderWidth = 3.0 })
+        sender.layer.borderColor = UIColor.clear.cgColor
     }
 
     /*
