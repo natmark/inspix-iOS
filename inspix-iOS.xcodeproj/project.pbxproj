@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F703778C1E7B851800837265 /* NokkariRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F703778B1E7B851800837265 /* NokkariRequest.swift */; };
+		F703778E1E7B9D1200837265 /* KininaruRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F703778D1E7B9D1200837265 /* KininaruRequest.swift */; };
 		F70377901E7BA96500837265 /* KininaruList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F703778F1E7BA96500837265 /* KininaruList.swift */; };
 		F72E5F311E7A5E9C00CE979D /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72E5F301E7A5E9C00CE979D /* PostDetailViewController.swift */; };
 		F72E5F331E7A617300CE979D /* Weather.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F72E5F321E7A617300CE979D /* Weather.xcassets */; };
@@ -74,6 +75,7 @@
 
 /* Begin PBXFileReference section */
 		F703778B1E7B851800837265 /* NokkariRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NokkariRequest.swift; sourceTree = "<group>"; };
+		F703778D1E7B9D1200837265 /* KininaruRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KininaruRequest.swift; sourceTree = "<group>"; };
 		F703778F1E7BA96500837265 /* KininaruList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KininaruList.swift; sourceTree = "<group>"; };
 		F72E5F301E7A5E9C00CE979D /* PostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		F72E5F321E7A617300CE979D /* Weather.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Weather.xcassets; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				F72E5F341E7A728700CE979D /* PostInspiration.swift */,
+				F703778D1E7B9D1200837265 /* KininaruRequest.swift */,
 				F703778B1E7B851800837265 /* NokkariRequest.swift */,
 				F703778F1E7BA96500837265 /* KininaruList.swift */,
 				F72E5F381E7A72A400CE979D /* ImageUpload.swift */,
@@ -500,6 +503,7 @@
 				F748D0501E780669001C9419 /* CameraViewController.swift in Sources */,
 				F703778C1E7B851800837265 /* NokkariRequest.swift in Sources */,
 				F7A43E841E7A2AF1006570E7 /* SketchCollectionViewCell.swift in Sources */,
+				F703778E1E7B9D1200837265 /* KininaruRequest.swift in Sources */,
 				F76F5F7A1E7ADD6500AF2C4A /* Nokkari.swift in Sources */,
 				F748E4511E77BD8B00356B7E /* UserConfigManager.swift in Sources */,
 				F72E5F3D1E7AB26D00CE979D /* UserTimeLine.swift in Sources */,
