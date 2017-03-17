@@ -221,6 +221,5 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         },
             completion: nil
         )
-
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PostDetailViewController: UIViewController {
+class PostDetailViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     var sketch : Sketch?
     var inspiration : Inspiration?
     
@@ -18,6 +18,8 @@ class PostDetailViewController: UIViewController {
     @IBOutlet weak var userNoteTextView: PlaceHolderTextView!
     @IBOutlet weak var postedTimeLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var nokkariCollectionView: UICollectionView!
+    @IBOutlet weak var resketchCountLabel: UILabel!
     
     @IBOutlet weak var kininaruBtn: UIButton!
     @IBOutlet weak var resketchBtn: UIButton!
@@ -26,6 +28,12 @@ class PostDetailViewController: UIViewController {
         super.viewDidLoad()
         userNoteTextView.placeHolder = ""
         userNoteTextView.isEditable = false
+
+        let sketchCellNib = UINib(nibName: "SketchCollectionViewCell", bundle: nil)
+        self.nokkariCollectionView.register(sketchCellNib, forCellWithReuseIdentifier: "sketchCell")
+        self.nokkariCollectionView.delegate = self
+        self.nokkariCollectionView.dataSource = self
+        self.nokkariCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         if let sketch = sketch {
             self.reactionView.isHidden = true
             if let compositedImage = sketch.compositedImage{
@@ -37,6 +45,7 @@ class PostDetailViewController: UIViewController {
             return
         }
         if let inspiration = inspiration {
+            self.resketchCountLabel.text = "リアクション \(inspiration.nokkarare.count)件"
             self.reactionView.isHidden = false
             print(inspiration)
             
@@ -91,12 +100,48 @@ class PostDetailViewController: UIViewController {
     @IBAction func pressedResketch(_ sender: Any) {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let nextView = mainStoryboard.instantiateViewController(withIdentifier: "CameraViewController") as! CameraViewController
-        print(inspiration)
         
         nextView.inspiration = inspiration
         self.navigationController?.pushViewController(nextView, animated: true)
     }
- 
+    //MARK: - CollectionView
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
+        let sketchCell:SketchCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "sketchCell", for: indexPath) as! SketchCollectionViewCell
+        
+        // 要素数を入れる、要素以上の数字を入れると表示でエラーとなる
+
+        if let compositedImageUrl = inspiration?.nokkarare[indexPath.row].compositedImageUrl{
+            sketchCell.thumbnailImageView.pin_setImage(from: URL(string:compositedImageUrl))
+        }
+        
+        return sketchCell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    }
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1.0
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 1.0
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.frame.size.width / 2 - 0.5
+        let returnSize = CGSize(width: width, height: width)
+        
+        return returnSize
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // 要素数を入れる、要素以上の数字を入れると表示でエラーとなる
+        if let inspiration = inspiration{
+            return inspiration.nokkarare.count
+        }
+        return 0
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
