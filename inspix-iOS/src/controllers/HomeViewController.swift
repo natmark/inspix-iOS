@@ -57,7 +57,6 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         Session.send(request) { result in
             switch result {
             case .success(let timeline):
-                print(timeline)
                 self.pickups = timeline.inspirations
                 self.pickupCollectionView.reloadData()
                 

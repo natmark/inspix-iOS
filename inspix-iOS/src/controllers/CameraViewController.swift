@@ -102,6 +102,7 @@ class CameraViewController: UIViewController {
             let nextView = mainStoryboard.instantiateViewController(withIdentifier: "ShareViewController") as! ShareViewController
             nextView.photoImage = photoImage
             nextView.sketchImage = sketchImage
+            nextView.inspiration = inspiration
             self.navigationController?.pushViewController(nextView, animated: true)
 
             return

@@ -54,7 +54,6 @@ class PostDetailViewController: UIViewController {
                 let dateStr: String = formatter.string(from: date as Date)
                 self.postedTimeLabel.text = dateStr
             }
-            
             kininaruBtn.setTitle("\(inspiration.kininaruCount) 気になる！", for: .normal)
             resketchBtn.setTitle("\(inspiration.nokkarare.count) リスケッチ", for: .normal)
         }
@@ -92,6 +91,8 @@ class PostDetailViewController: UIViewController {
     @IBAction func pressedResketch(_ sender: Any) {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let nextView = mainStoryboard.instantiateViewController(withIdentifier: "CameraViewController") as! CameraViewController
+        print(inspiration)
+        
         nextView.inspiration = inspiration
         self.navigationController?.pushViewController(nextView, animated: true)
     }

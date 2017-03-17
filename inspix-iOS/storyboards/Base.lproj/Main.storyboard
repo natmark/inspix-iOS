@@ -472,53 +472,29 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Opn-Ye-EDI">
                                                 <rect key="frame" x="0.0" y="573" width="375" height="40"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EhF-xG-CRH">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EhF-xG-CRH">
                                                         <rect key="frame" x="71.5" y="0.0" width="112" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="112" id="j59-L6-uYV"/>
                                                         </constraints>
+                                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="12"/>
                                                         <inset key="titleEdgeInsets" minX="10" minY="3" maxX="0.0" maxY="0.0"/>
-                                                        <state key="normal" image="icon_kininaru">
-                                                            <attributedString key="attributedTitle">
-                                                                <fragment content="6 ">
-                                                                    <attributes>
-                                                                        <font key="NSFont" size="12" name="HiraginoSans-W6"/>
-                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                    </attributes>
-                                                                </fragment>
-                                                                <fragment content="気になる！">
-                                                                    <attributes>
-                                                                        <font key="NSFont" size="12" name="HiraginoSans-W3"/>
-                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                    </attributes>
-                                                                </fragment>
-                                                            </attributedString>
+                                                        <state key="normal" title="6 気になる！" image="icon_kininaru">
+                                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="pressedKininaru:" destination="ux5-UC-p5P" eventType="touchUpInside" id="neo-kc-Bod"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lsM-7d-o7n">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lsM-7d-o7n">
                                                         <rect key="frame" x="192.5" y="0.0" width="110" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="110" id="9cL-Dr-UZc"/>
                                                         </constraints>
+                                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="12"/>
                                                         <inset key="titleEdgeInsets" minX="10" minY="3" maxX="0.0" maxY="0.0"/>
-                                                        <state key="normal" image="icon_resketch">
-                                                            <attributedString key="attributedTitle">
-                                                                <fragment content="3 ">
-                                                                    <attributes>
-                                                                        <font key="NSFont" size="12" name="HiraginoSans-W6"/>
-                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                    </attributes>
-                                                                </fragment>
-                                                                <fragment content="リスケッチ">
-                                                                    <attributes>
-                                                                        <font key="NSFont" size="12" name="HiraginoSans-W3"/>
-                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                    </attributes>
-                                                                </fragment>
-                                                            </attributedString>
+                                                        <state key="normal" title="3 リスケッチ" image="icon_resketch">
+                                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="pressedResketch:" destination="ux5-UC-p5P" eventType="touchUpInside" id="0f7-cc-LC0"/>

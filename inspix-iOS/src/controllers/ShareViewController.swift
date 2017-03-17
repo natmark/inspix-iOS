@@ -117,6 +117,8 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate {
         
         if let inspiration = inspiration {
             //乗っかり
+            print(inspiration.id)
+            
             uploadImage(completionHandler:{ url in
                 let request = PostNokkariRequest(baseImageUrl: url["base_image_url"]!,
                                                  compositedImageUrl: url["composited_image_url"]!,

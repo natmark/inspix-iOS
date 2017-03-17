@@ -33,7 +33,7 @@ struct PostNokkariRequest : InspixRequest {
         
     }
     var path: String {
-        return "/register"
+        return "/nokkari"
     }
     func response(from object: Any, urlResponse: HTTPURLResponse) throws -> NokkariResponse {
         return try NokkariResponse.decode(object)
