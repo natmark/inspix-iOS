@@ -33,11 +33,6 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate {
         if let _ = inspiration {
             sketchTitleTextField.isHidden = true
         }
-        guard let sketchImage = sketchImage else{
-            compositedImage = photoImage
-            compositedImageView.image = photoImage
-            return
-        }
         
         //位置情報取得開始
         if CLLocationManager.locationServicesEnabled() {
@@ -45,6 +40,12 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
         }
         
+        guard let sketchImage = sketchImage else{
+            compositedImage = photoImage
+            compositedImageView.image = photoImage
+            return
+        }
+
         //画像の合成
        let photoRect:(width:Int,height:Int) = ((photoImage?.cgImage?.width)!,(photoImage?.cgImage?.height)!)
 
