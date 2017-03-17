@@ -67,7 +67,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
                 print("error: \(error)")
             }
         }
-
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false

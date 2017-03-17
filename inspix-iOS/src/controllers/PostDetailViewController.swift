@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import APIKit
 class PostDetailViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     var sketch : Sketch?
     var inspiration : Inspiration?
@@ -24,6 +24,9 @@ class PostDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
     @IBOutlet weak var kininaruBtn: UIButton!
     @IBOutlet weak var resketchBtn: UIButton!
     
+    var isKininatteru : Bool = false
+    var kininatteruCount : Int = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
         userNoteTextView.placeHolder = ""
@@ -64,6 +67,14 @@ class PostDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
                 self.postedTimeLabel.text = dateStr
             }
             kininaruBtn.setTitle("\(inspiration.kininaruCount) 気になる！", for: .normal)
+            isKininatteru = inspiration.kininatteru
+            kininatteruCount = inspiration.kininaruCount
+            
+            if inspiration.kininatteru {
+                kininaruBtn.setImage(UIImage(named: "icon_kininaru_highlight"), for: .normal)
+            }else{
+                kininaruBtn.setImage(UIImage(named: "icon_kininaru"), for: .normal)
+            }
             resketchBtn.setTitle("\(inspiration.nokkarare.count) リスケッチ", for: .normal)
         }
         // Do any additional setup after loading the view.
@@ -96,6 +107,50 @@ class PostDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
         _ = self.navigationController?.popViewController(animated: true)
     }
     @IBAction func pressedKininaru(_ sender: Any) {
+        guard let inspiration = inspiration else {
+            return
+        }
+        if inspiration.kininatteru {
+            //解除
+            let request = DeleteKininaruRequest(inspirationId: inspiration.id)
+            Session.send(request) { result in
+                switch result {
+                case .success(_):
+                    self.isKininatteru = false
+                    self.kininatteruCount -= 1
+                    self.kininaruBtn.setTitle("\(self.kininatteruCount) 気になる！", for: .normal)
+                    self.kininaruBtn.setImage(UIImage(named: "icon_kininaru"), for: .normal)
+                    
+                    break
+                case .failure(.responseError(let inspixError as InspixError)):
+                    print(inspixError.message)
+                    
+                case .failure(let error):
+                    print("error: \(error)")
+                }
+            }
+ 
+
+        }else{
+            //気になる
+            let request = PutKininaruRequest(inspirationId: inspiration.id)
+            Session.send(request) { result in
+                switch result {
+                case .success(_):
+                    self.isKininatteru = true
+                    self.kininatteruCount += 1
+                    self.kininaruBtn.setTitle("\(self.kininatteruCount) 気になる！", for: .normal)
+                    self.kininaruBtn.setImage(UIImage(named: "icon_kininaru_highlight"), for: .normal)
+                    
+                    break
+                case .failure(.responseError(let inspixError as InspixError)):
+                    print(inspixError.message)
+                    
+                case .failure(let error):
+                    print("error: \(error)")
+                }
+            }
+        }
     }
     @IBAction func pressedResketch(_ sender: Any) {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
