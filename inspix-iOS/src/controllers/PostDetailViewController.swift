@@ -43,15 +43,17 @@ class PostDetailViewController: UIViewController {
             postedImageView.pin_setImage(from: URL(string: inspiration.compositedImageUrl))
             userNoteTextView.attributedText = String.tagAttributedStr(from: inspiration.caption)
             self.navItem.title = inspiration.title
-            let date = NSDate(timeIntervalSince1970: TimeInterval(inspiration.capturedTime))
-            
-            // NSDate型を日時文字列に変換するためのNSDateFormatterを生成
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd HH:mm"
-            
-            // NSDateFormatterを使ってNSDate型 "date" を日時文字列 "dateStr" に変換
-            let dateStr: String = formatter.string(from: date as Date)
-            self.postedTimeLabel.text = dateStr
+            if let capturedTime = inspiration.capturedTime{
+                let date = NSDate(timeIntervalSince1970: TimeInterval(capturedTime))
+                
+                // NSDate型を日時文字列に変換するためのNSDateFormatterを生成
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy-MM-dd HH:mm"
+                
+                // NSDateFormatterを使ってNSDate型 "date" を日時文字列 "dateStr" に変換
+                let dateStr: String = formatter.string(from: date as Date)
+                self.postedTimeLabel.text = dateStr
+            }
             
             kininaruBtn.setTitle("\(inspiration.kininaruCount) 気になる！", for: .normal)
             resketchBtn.setTitle("\(inspiration.nokkarare.count) リスケッチ", for: .normal)
@@ -70,12 +72,14 @@ class PostDetailViewController: UIViewController {
             }
         }
         if let inspiration = inspiration {
-            if let url = URL(string: "http://maps.apple.com/maps?daddr=\((inspiration.latitude)),\((inspiration.longitude))") {
-                if #available(iOS 10.0, *) {
-                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                } else {
-                    // Fallback on earlier versions
-                    UIApplication.shared.openURL(url)
+            if let latitude = inspiration.latitude, let longitude = inspiration.longitude{
+                if let url = URL(string: "http://maps.apple.com/maps?daddr=\((latitude)),\((longitude))") {
+                    if #available(iOS 10.0, *) {
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    } else {
+                        // Fallback on earlier versions
+                        UIApplication.shared.openURL(url)
+                    }
                 }
             }
         }
@@ -88,6 +92,7 @@ class PostDetailViewController: UIViewController {
     @IBAction func pressedResketch(_ sender: Any) {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let nextView = mainStoryboard.instantiateViewController(withIdentifier: "CameraViewController") as! CameraViewController
+        nextView.inspiration = inspiration
         self.navigationController?.pushViewController(nextView, animated: true)
     }
  

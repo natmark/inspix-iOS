@@ -16,11 +16,11 @@ struct Inspiration:Decodable {
     let compositedImageUrl: String
     let weather: String?
     let temperature: Double?
-    let capturedTime: Int
+    let capturedTime: Int?
     let kininaruCount: Int
     let kininaruUsers: [User]
-    let longitude : Double
-    let latitude : Double
+    let longitude : Double?
+    let latitude : Double?
     let caption : String
     let author : User
     let kininatteru : Bool
@@ -35,11 +35,11 @@ struct Inspiration:Decodable {
             compositedImageUrl: json => "composited_image_url",
             weather: json =>? "weather",
             temperature: json =>? "temperature",
-            capturedTime: json => "captured_time",
+            capturedTime: json =>? "captured_time",
             kininaruCount: json => "kininaru_count",
             kininaruUsers: json => "kininaru_users",
-            longitude: json => "longitude",
-            latitude: json => "latitude",
+            longitude: json =>? "longitude",
+            latitude: json =>? "latitude",
             caption: json => "caption",
             author: json => "author",
             kininatteru: json => "kininatteru",

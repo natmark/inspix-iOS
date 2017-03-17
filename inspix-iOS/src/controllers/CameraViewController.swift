@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import PINRemoteImage
 
 class CameraViewController: UIViewController {
 
@@ -25,9 +26,22 @@ class CameraViewController: UIViewController {
     var isPinningPhoto = false
     var isSelectingPen = true
     
+    var inspiration: Inspiration?
+    
+    @IBOutlet weak var shutterBtn: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if let inspiration = inspiration{
+            shutterBtn.isEnabled = false
+            shutterBtn.image = nil
+            guideBtn.image = nil
+            pinBtn.image = UIImage(named:"btn_done")
+            pinBtn.tintColor = UIColor.selectedTintColor()
+            print(inspiration.backgroundImageUrl)
+            pinnedImageView.pin_setImage(from: URL(string: inspiration.backgroundImageUrl))
+            pinnedImageView.isHidden = false
+            self.cameraView.stopCapturing()
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -78,6 +92,20 @@ class CameraViewController: UIViewController {
         })
     }
     @IBAction func pinnedPhoto(_ sender: UIBarButtonItem) {
+        if let _ = inspiration{
+            //MARK: 乗っかりモード時に、ピンボタンをフックしている
+            let photoImage = self.pinnedImageView.image!
+            let sketchImage = self.drawableView.image
+            
+            //シェア画面へ
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let nextView = mainStoryboard.instantiateViewController(withIdentifier: "ShareViewController") as! ShareViewController
+            nextView.photoImage = photoImage
+            nextView.sketchImage = sketchImage
+            self.navigationController?.pushViewController(nextView, animated: true)
+
+            return
+        }
         if isPinningPhoto == true{
             pinBtn.tintColor = UIColor.black
             pinnedImageView.isHidden = true

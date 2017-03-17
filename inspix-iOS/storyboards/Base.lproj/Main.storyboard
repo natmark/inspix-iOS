@@ -745,6 +745,7 @@
                         <outlet property="penBtn" destination="Kor-gS-8S2" id="hJ8-l8-YhA"/>
                         <outlet property="pinBtn" destination="gZm-4H-Zh6" id="hMn-q5-cjm"/>
                         <outlet property="pinnedImageView" destination="aqn-IZ-Hra" id="rtn-kC-PYH"/>
+                        <outlet property="shutterBtn" destination="jPf-3E-4hE" id="8yl-sp-BjR"/>
                         <segue destination="yAf-eu-Od7" kind="show" id="vW1-7s-SvG"/>
                     </connections>
                 </viewController>
