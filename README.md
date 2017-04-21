@@ -1,7 +1,6 @@
-![](https://github.com/team-inspix/inspix-iOS/blob/master/theme.png?raw=true)
-
 # inspix
 インスピレーションを共有できるアプリ
+![](https://github.com/team-inspix/inspix-iOS/blob/master/theme.png?raw=true)
 
 # Screenshot
 ![](https://github.com/team-inspix/inspix-iOS/blob/master/screen.png?raw=true)
